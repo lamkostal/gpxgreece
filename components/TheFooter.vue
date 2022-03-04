@@ -1,10 +1,13 @@
 <template>
- <h1>Home page</h1>
-
+  <p>I am the footer</p>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage'
+
 }
 </script>
+
+<style>
+
+</style>

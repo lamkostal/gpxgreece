@@ -1,3 +1,5 @@
+const axios= require("axios");
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -36,6 +38,9 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    ['storyblok-nuxt',{ accessToken: process.env.NODE_ENV == 'production' ? 
+    '2hwqbz1IQGl5exK8EM7kTQtt':'BEi60G3KulmzBjQhfhZwwAtt' , cacheProvider : 
+    'memory'}],
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
