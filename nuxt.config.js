@@ -47,6 +47,8 @@ export default {
   build: {
   },
   generate: {
-   
+    routes:[
+      "/","/about"
+    ]
   },
 }
