@@ -49,6 +49,6 @@ export default {
   build: {
   },
   generate: {
-    routes: ['/bikes/popz','/bikes/rock ]
+    routes: ['/bikes/popz','/bikes/rock']
   }
 }
