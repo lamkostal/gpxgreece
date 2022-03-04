@@ -1,25 +1,24 @@
-!<template>
-  
+<template>
   <div>
-  <the-header/>
-    <Nuxt />
-  <the-footer/>
-    
+      <TheHeader/>
+      <Nuxt/>
+      <TheFooter/>
   </div>
-
 </template>
 
 <script>
-import NuxtLogo from '../components/NuxtLogo.vue'
-export default {
-  components: { NuxtLogo },
+import TheHeader from '../components/TheHeader.vue'
+import TheFooter from '../components/TheFooter.vue'
 
+export default {
+components:{
+    TheFooter,
+    TheHeader
+}
 }
 </script>
 
 <style>
-*{
-    /* border:red solid 1px */
-}
+
 
 </style>
