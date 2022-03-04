@@ -47,8 +47,15 @@ export default {
   build: {
   },
   generate: {
-    routes:[
-      "/","/about"
-    ]
-  },
+    routes: function(){
+      
+       return [
+          "/",
+          "/contact",
+          "/about",
+          
+        ]
+      }
+    
+  ,
 }
