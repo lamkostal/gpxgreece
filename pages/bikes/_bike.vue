@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>the {{$route.params.bikes}}</h1>
+    <h1>the {{$route.params.bike}}</h1>
     {{bike.title}}
     <!-- <p>{{title}}</p> -->
   </div>
@@ -39,7 +39,7 @@ export default {
     bike(){
       return this.products.find( (e) =>{
 
-                   return e.title === this.$route.params.bikes
+                   return e.title === this.$route.params.bike
                     
                 })
       

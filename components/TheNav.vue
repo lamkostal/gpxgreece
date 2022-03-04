@@ -5,8 +5,8 @@
       <li>
         <ul>
             ΜΟΝΤΕΛΑ
-          <li><NuxtLink to="/popz">popz</NuxtLink></li>
-          <li><NuxtLink to="/rock">rock</NuxtLink></li>
+          <li><NuxtLink to="/bikes/popz">popz</NuxtLink></li>
+          <li><NuxtLink to="/bikes/rock">rock</NuxtLink></li>
         </ul>
       </li>
       <li><NuxtLink to="/dealers">ΑΝΤΙΠΡΟΣΩΠΟΙ</NuxtLink></li>

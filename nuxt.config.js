@@ -47,15 +47,12 @@ export default {
   build: {
   },
   generate: {
-    routes: function(){
-      
-       return [
-          "/",
-          "/contact",
-          "/about",
-          
-        ]
-      }
-    
-  ,
+    routes:  [
+      "/",
+      "/contact",
+      "/about",
+      "/dealers",
+      "/bikes"
+    ]   
+  }
 }
