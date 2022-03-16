@@ -1,9 +1,17 @@
 <template>
-  <div>
-    <h1>the {{$route.params.bike}}</h1>
-    {{bike.title}}
-    <!-- <p>{{title}}</p> -->
-  </div>
+  <div class="wrapper"> 
+  <header class="head"></header>
+  <main class="container">
+    <article class="intro">
+      <h1>the {{$route.params.bike}}</h1>
+      <h2>{{bike.title}}</h2>
+    </article>
+    <article class="pop-intro"></article>
+    <article class="rock-intro"></article>
+    <article class="map-intro"></article>
+  </main>
+</div>
+ 
 </template>
 
 <script>

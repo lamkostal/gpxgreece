@@ -9,6 +9,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'gpxgreece',
+    
     htmlAttrs: {
       lang: 'en'
     },
@@ -19,6 +20,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
+      {rel:"stylesheet",href:"https://unpkg.com/open-props"},
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },

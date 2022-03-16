@@ -1,5 +1,15 @@
-!<template>
-  <h1>Βρες έναν αντιπρόσωπο</h1>
+<template>
+  <div class="wrapper"> 
+  <header class="head"></header>
+  <main class="container">
+    <article class="intro">
+      <h1>Βρες Αντιπρόσωπο</h1>
+    </article>
+    <article class="pop-intro"></article>
+    <article class="rock-intro"></article>
+    <article class="map-intro"></article>
+  </main>
+</div>
 </template>
 
 <script>

@@ -1,5 +1,73 @@
 <template>
- <h1>Home page</h1>
+<div class="wrapper"> 
+  <header class="head">
+    <section aria-label="hero" class="hero ">
+      <img src="~/assets/img/GPX-HP-header.jpg"  alt="" class="hero_img">
+      <h1>Καλως ήρθατε στην GPX</h1>
+    </section>
+  </header>
+  <main class="container-fluid">
+    <section class="intro">
+      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit?</h2>
+     
+    </section>
+    <section aria-label="popz-intro" class="bike-intro popz-intro">
+        <div class="grid container">
+          <div class="bike-info popz-info">
+            <h2>Popz</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam ad repellendus maiores provident! Officia perferendis.
+            </p>
+            <nuxt-link to="/bikes/popz" class="btn">ΔΕΣ ΤΟ ΑΝΑΛΥΤΙΚΑ</nuxt-link>
+          </div>
+          <div class="img-pop img-pop1">
+            <img src="" alt="">
+          </div>
+          <div class="img-pop img-pop2">
+            <img src="" alt="">
+          </div>
+          <div class="img-pop img-pop3">
+            <img src="" alt="">
+          </div>
+
+        </div>
+
+    </section>
+    <section aria-label="rock-intro" class="bike-intro rock-intro">
+      <div class="grid container">
+           <div class="img-rock img-rock1">
+            <img src="" alt="">
+          </div>
+          <div class="bike-info rock-info">
+            <h2>Rock</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam ad repellendus maiores provident! Officia perferendis, reprehenderit assumenda 
+            </p>
+            <nuxt-link to="/bikes/rock" class="btn">ΔΕΣ ΤΟ ΑΝΑΛΥΤΙΚΑ</nuxt-link>
+          </div>
+         
+          <div class="img-rock img-rock2">
+            <img src="" alt="">
+          </div>
+          <div class="img-rock img-rock3">
+            <img src="" alt="">
+          </div>
+
+
+        </div>
+    </section>
+    <section aria-label="dealers-intro" class="dealers-intro">
+      <div class="container dealers-info">
+        <h2>Βρες έναν αντιπρόσωπο</h2>
+        <h3>Αναζήτησε στο δίκτυο μας τον πιο κοντινό αντιπρόσωπο σε μια περιοχή κοντά σου.</h3>
+        <div class="map-img">
+          <nuxt-link to="/dealers"><img src="~/assets/img/map-mockup.jpg" alt=""></nuxt-link>
+        </div>
+        <nuxt-link to="/dealers" class="btn">
+          Βρες αντιπρoσωπο
+        </nuxt-link>
+      </div>
+    </section>
+  </main>
+</div>
 
 </template>
 
@@ -8,3 +76,141 @@ export default {
   name: 'IndexPage'
 }
 </script>
+
+<style scoped>
+
+section{
+  position: relative;
+  min-height: 70vh;
+  overflow: hidden;
+  
+}
+main>section:nth-child(even){
+  background: var(--gray-2);
+}
+h1{
+  color:var(--gray-1);
+  transform: translateY(-10vh);
+  text-align: center;
+}
+.intro {
+  background-image: url(~/assets/img/GPX-info.jpg);
+  background-position: center;
+  background-size: contain;
+ 
+  
+}
+.intro h2{
+  position: absolute;
+  bottom: 050px;
+  left:5%;
+  z-index: 1;
+}
+.grid{
+  grid-gap:10px;
+  /* height:100vh; */
+  /* margin: auto; */
+  display: grid;
+  grid-template-columns:auto auto;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+
+  
+}
+section.bike-intro{
+  min-height: 100vh;
+  padding: 3.5em 0;
+}
+.bike-info p{
+ max-width: 40ch;
+}
+.btn{
+    font-weight: var(--font-weight-9);
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  background: var(--indigo-9);
+  color:var(--gray-0);
+  padding:12px 18px;
+  transition:all 0.2s ease;
+}
+.btn:hover{
+  
+  background: var(--indigo-6);
+  color:var(--teal-3);
+  
+}
+.img-pop, .img-rock{
+  box-shadow: var(--shadow-4);
+}
+
+.img-pop1{
+  transform: translateY(40px) translateX(-50px);
+  background: rgb(32, 63, 201);
+   width:450px;
+  height: 450px;
+
+}
+.img-pop2{
+  transform: translateY(-50px) translateX(30px);
+    width:600px;
+  height: 350px;
+  background: red;
+
+}
+.img-pop3{
+   width:450px;
+  height: 250px;
+  transform: translateY(-60px) translateX(40px);
+  background: yellow;
+
+}
+
+.img-rock1{
+  transform: translateY(40px) translateX(-50px);
+  background: rgb(32, 63, 201);
+   width:650px;
+  height: 400px;
+
+}
+.img-rock2{
+  transform: translateY(0px) translateX(-50px);
+    width:500px;
+  height: 350px;
+  background: red;
+
+}
+.img-rock3{
+  transform: translateY(-60px) translateX(-80px);
+  background: yellow;
+   width:550px;
+  height: 450px;
+
+}
+
+.dealers-info{
+  padding: 0 4em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap:10px;
+}
+.dealers-info h3{
+  max-width: 55ch;
+  margin-top: 0;
+}
+.dealers-info .btn{
+  align-self: flex-end;
+  text-transform: uppercase;
+}
+.map-img img {
+   box-shadow: var(--shadow-5);
+}
+section.dealers-intro{
+  min-height: 100vh;
+  padding: 3.5em 0;
+}
+</style>
