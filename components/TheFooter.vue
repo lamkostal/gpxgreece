@@ -12,7 +12,7 @@ export default {
 
 footer{
   width: 100%;
-  background-image: var(--gradient-23);
+  background: var(--gray-8);
   display: flex;
   justify-content: center;
   align-items: flex-end;

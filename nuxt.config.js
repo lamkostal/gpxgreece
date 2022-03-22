@@ -20,6 +20,9 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
+      {rel:"preconnect",href:"https://fonts.googleapis.com"},
+      {rel:"stylesheet",href:"https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;900&display=swap"},
+
       {rel:"stylesheet",href:"https://unpkg.com/open-props"},
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]

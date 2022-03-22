@@ -2,7 +2,11 @@
 <div class="wrapper"> 
   <header class="head">
     <section aria-label="hero" class="hero ">
+     
+      <img src="~/assets/img/popz-white.webp" alt="" class="hero_side_img hero_popz_img">
+      <img src="~/assets/img/rock-black.webp" alt="" class="hero_side_img hero_rock_img">
       <img src="~/assets/img/GPX-HP-header.jpg"  alt="" class="hero_img">
+
       <h1>Καλως ήρθατε στην GPX</h1>
     </section>
   </header>
@@ -57,12 +61,12 @@
     <section aria-label="dealers-intro" class="dealers-intro">
       <div class="container dealers-info">
         <h2>Βρες έναν αντιπρόσωπο</h2>
-        <h3>Αναζήτησε στο δίκτυο μας τον πιο κοντινό αντιπρόσωπο σε μια περιοχή κοντά σου.</h3>
+        <h3>Αναζήτησε στο δίκτυο μας τον πλησιέστερο αντιπρόσωπο σε μια περιοχή που σε βολεύει.</h3>
         <div class="map-img">
           <nuxt-link to="/dealers"><img src="~/assets/img/map-mockup.jpg" alt=""></nuxt-link>
         </div>
         <nuxt-link to="/dealers" class="btn">
-          Βρες αντιπρoσωπο
+          δες το χαρτη
         </nuxt-link>
       </div>
     </section>
@@ -89,9 +93,24 @@ main>section:nth-child(even){
   background: var(--gray-2);
 }
 h1{
+  position:absolute;
+  width:100%;
+  bottom: 0;
   color:var(--gray-1);
-  transform: translateY(-10vh);
+  transform: translateY(-50px);
   text-align: center;
+}
+.hero_side_img{
+  position: absolute;
+  z-index: 3;
+  top:100px;
+  width:700px
+}
+.hero_popz_img{
+  left:-60px
+}
+.hero_rock_img{
+  right: -60px;
 }
 .intro {
   background-image: url(~/assets/img/GPX-info.jpg);
@@ -125,22 +144,7 @@ section.bike-intro{
 .bike-info p{
  max-width: 40ch;
 }
-.btn{
-    font-weight: var(--font-weight-9);
-  display: inline-block;
-  margin-top: 5px;
-  text-decoration: none;
-  background: var(--indigo-9);
-  color:var(--gray-0);
-  padding:12px 18px;
-  transition:all 0.2s ease;
-}
-.btn:hover{
-  
-  background: var(--indigo-6);
-  color:var(--teal-3);
-  
-}
+
 .img-pop, .img-rock{
   box-shadow: var(--shadow-4);
 }
@@ -199,12 +203,18 @@ section.bike-intro{
   gap:10px;
 }
 .dealers-info h3{
-  max-width: 55ch;
+  max-width: 50ch;
   margin-top: 0;
+  line-height: 1.7;
+}
+.dealers-info h2{
+
+  margin-bottom: 0;
 }
 .dealers-info .btn{
-  align-self: flex-end;
-  text-transform: uppercase;
+  align-self: flex-start;
+  margin-top:1em;
+  
 }
 .map-img img {
    box-shadow: var(--shadow-5);
