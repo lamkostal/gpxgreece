@@ -30,6 +30,8 @@ body{
     display: flex;
     flex-direction: column;
     font-family: 'Commissioner', sans-serif;
+  background-color: var(--gray-0);
+
 }
 .container{
   width:1080px;
@@ -49,17 +51,15 @@ section{
    padding: 3.5em 0;
 }
 section.hero{
-  
+  display: flex;
   margin-top:0;
   padding: 0;
   position: relative;
- 
-  
 }
 section.hero .hero_img{
    object-fit: cover;
    width:1900px;
-   height:600px;
+   height:650px;
 }
 h1,h2{
   color: var(--gray-7);

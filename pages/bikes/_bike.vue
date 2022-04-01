@@ -10,20 +10,43 @@
         </div>
       </section>
     </header>
-    <main class="container">
-      <section class="intro bike-colors">
-        <h1>{{ bike.title }}</h1>
-        <h2>Χρωματισμοί</h2>
-        <div class="bike-colors-wrapper">
-          <div class="bike-colors-images">
-            <img src="" alt="" />
-            <img src="" alt="" />
-            <img src="" alt="" />
+    <main>
+      <section class="intro">
+         <h1>Γνωρίστε το {{ bike.title }}</h1>
+          <h2>Χρωματισμοί</h2>
+        <div class="container bike-colors">
+         
+          <div class="bike-colors-wrapper">
+            <div class="bike-colors-images">
+              <img v-show="bikeColor===index"
+                v-for="(item, index) in bike.BikeColors"
+                :key="item.ColorImage.id"
+                :src="item.ColorImage.filename"
+                :alt="item.ColorImage.alt"
+              />
+            </div>
+            <div class="bike-colors-bullets">
+              <div class="bullet-wrap" v-for="(bullet,index) in bike.BikeColors"
+                :key="bullet.ColorImage.id"
+               >
+                <div  @click="bikeColor=index" class="bullet"  :style="{ backgroundColor: bullet.BulletColor.color }">
+                </div>
+                <span>{{ bullet.BulletColorName }}</span>
+              </div>
+            </div>
           </div>
-          <div class="bike-colors-bullets">
-            <div><div class="bullet"></div><span>color name</span></div>
-            <div><div class="bullet"></div><span>color name</span></div>
-            <div><div class="bullet"></div><span>color name</span></div>
+        </div>
+      </section>
+      <section class="details">
+        <h2>Λεπτομέρειες</h2>
+        <div class="container-fluid">
+          <div class="detail" v-for="detail in bike.Details" :key="detail.DetailImage.id">
+            <div class="detail-img">
+              <img :src="detail.DetailImage.filename" alt="">
+            </div>
+            <div class="detail-text">
+              <p>{{detail.DetailText}}</p>
+            </div>
           </div>
         </div>
       </section>
@@ -33,6 +56,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      bikeColor: 1,
+    };
+  },
   asyncData(context) {
     return context.app.$storyapi
       .get("cdn/stories", {
@@ -51,6 +79,8 @@ export default {
               title: pr.content.name,
               HeaderImage: pr.content.HeaderImage.filename,
               ImageAlt: pr.content.HeaderImage.alt,
+              BikeColors: pr.content.BikeColors,
+              Details:pr.content.Details
             };
           }),
         };
@@ -71,7 +101,11 @@ export default {
 </script>
 
 <style scoped>
-
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .header-btn-container {
   position: absolute;
   top: 0;
@@ -87,17 +121,23 @@ export default {
 }
 .header-btn {
   background: var(--orange-8);
-  background: rgb(143, 143, 143,0.8);
+  background: rgb(143, 143, 143, 0.8);
   border: var(--border-size-2) solid var(--gray-0);
   font-weight: var(--font-weight-5);
-
 }
-h1{
-  color:var(--blue-9);
+h1 {
+  letter-spacing: 0.05em;
+  color: var(--blue-9);
   margin: 0;
   /* text-transform: uppercase; */
   font-size: var(--font-size-5);
-  
+}
+h2{
+  color: var(--gray-5);
+  font-weight: var(--font-weight-4);
+}
+.intro {
+  background: rgb(41, 44, 53);
 }
 .bike-colors {
   display: flex;
@@ -105,22 +145,77 @@ h1{
   align-items: center;
 }
 .bike-colors-wrapper {
-  max-width: 80%;
-  width: 800px;
-  /* background: #000; */
+  width: 100%;
   height: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.bike-colors-images {
+  position: relative;
+  width: 650px;
+  max-width: 100%;
+  height: 400px;
+  /* background: #000; */
+}
+.bike-colors-images img {
+  position: absolute;
+  top: -2rem;
+  left: 0;
 }
 .bike-colors-bullets {
   display: flex;
   justify-content: center;
-  gap: 4rem;
+  gap: 2rem;
+  text-align: center;
+  color: var(--gray-0);
+}
+.bullet-wrap{
+  width: 6rem; 
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 .bullet {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background: #000;
+  border: 4px solid #000;
+  cursor: pointer;
 }
+.detail{
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* column-gap: 4rem; */
+  background-color: var(--gray-0);
+
+}
+.detail:nth-child(even){
+  flex-direction: row-reverse;
+  background: var(--gray-2);
+
+}
+.detail-img{
+  flex-basis: 550px;
+  overflow: hidden;
+  box-shadow: var(--shadow-4);
+}
+.detail-img img{
+  
+  border-radius:10px;
+  
+}
+.detail-text{
+  flex-basis: 40%;
+text-align: center;
+font-size: var(--font-size-5);
+}
+
+
 </style>

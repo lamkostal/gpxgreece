@@ -11,7 +11,7 @@ export default {
     title: 'gpxgreece',
     
     htmlAttrs: {
-      lang: 'en'
+      lang: 'el'
     },
     meta: [
       { charset: 'utf-8' },
