@@ -44,8 +44,9 @@
             <div class="detail-img">
               <img :src="detail.DetailImage.filename" alt="">
             </div>
-            <div class="detail-text">
-              <p>{{detail.DetailText}}</p>
+            <div class="detail-text-wrap">
+              <p class="detail-text">{{detail.DetailText}}</p>
+              <p class="detail-text-desc">{{detail.DetailTextDesc}}</p>
             </div>
           </div>
         </div>
@@ -133,7 +134,7 @@ h1 {
   font-size: var(--font-size-5);
 }
 h2{
-  color: var(--gray-5);
+  color: var(--gray-1);
   font-weight: var(--font-weight-4);
 }
 .intro {
@@ -187,35 +188,76 @@ h2{
   border: 4px solid #000;
   cursor: pointer;
 }
+.details{
+  background-color: var(--gray-5);
+
+}
 .detail{
   padding: 4rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* column-gap: 4rem; */
-  background-color: var(--gray-0);
+  column-gap: 4rem;
+  /* transform-style: preserve-3d; */
+  perspective: 1100px;
+
+
 
 }
 .detail:nth-child(even){
   flex-direction: row-reverse;
-  background: var(--gray-2);
+  
 
 }
 .detail-img{
-  flex-basis: 550px;
+  display: flex;
+  flex-basis: 500px;
   overflow: hidden;
   box-shadow: var(--shadow-4);
+  flex-wrap: wrap;
+  border-radius:20px;
+  transform: rotateY(20deg);
+  z-index: 10;
+  /* transform-style: preserve-3d; */
+transition: all 0.5s;
+
+  
 }
-.detail-img img{
-  
-  border-radius:10px;
-  
+.detail-img:hover{
+    transform: rotateY(0deg);
+
+}
+.detail:nth-of-type(2n) .detail-img{
+  transform: rotateY(-20deg);
+}
+.detail-img:hover{
+    transform: rotateY(0deg) !important;
+
+}
+.detail-text-wrap{
+  flex-basis: 30%;
+text-align: center;
+/* display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center; */
+
+
 }
 .detail-text{
-  flex-basis: 40%;
-text-align: center;
+  
 font-size: var(--font-size-5);
+font-weight: var(--font-weight-8);
+color: var(--blue-7);
+
 }
+.detail-text-desc{
+font-size: var(--font-size-3);
+font-weight: var(--font-weight-4);
+color: var(--gray-9);
+max-width: 35ch;
+}
+
 
 
 </style>
