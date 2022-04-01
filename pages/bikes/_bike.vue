@@ -51,6 +51,19 @@
           </div>
         </div>
       </section>
+      <section id="specifications">
+        <h2>Τεχνικά Χαρακτηριστικά</h2>
+        <div class="specifications container">
+          <div class="specs-category" v-for="(category,index) in bike.Specifications" :key="category.SpecCatName">
+            <span class="cat-title">{{category.SpecCatName}}</span>
+            <div class="spec" v-for="spec in category.Specification" :key="spec.specName">
+              <span class="spec-name">{{spec.specName}}</span>
+              <span class="spec-value">{{spec.specValue}}</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
     </main>
   </div>
 </template>
@@ -81,7 +94,8 @@ export default {
               HeaderImage: pr.content.HeaderImage.filename,
               ImageAlt: pr.content.HeaderImage.alt,
               BikeColors: pr.content.BikeColors,
-              Details:pr.content.Details
+              Details:pr.content.Details,
+              Specifications:pr.content.Specifications
             };
           }),
         };
@@ -219,43 +233,65 @@ h2{
   transform: rotateY(20deg);
   z-index: 10;
   /* transform-style: preserve-3d; */
-transition: all 0.5s;
-
-  
+transition: all 0.5s; 
 }
 .detail-img:hover{
     transform: rotateY(0deg);
-
 }
 .detail:nth-of-type(2n) .detail-img{
   transform: rotateY(-20deg);
 }
 .detail-img:hover{
     transform: rotateY(0deg) !important;
-
 }
 .detail-text-wrap{
-  flex-basis: 30%;
+flex-basis: 30%;
 text-align: center;
 /* display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center; */
-
-
 }
 .detail-text{
-  
 font-size: var(--font-size-5);
 font-weight: var(--font-weight-8);
 color: var(--blue-7);
-
 }
 .detail-text-desc{
 font-size: var(--font-size-3);
 font-weight: var(--font-weight-4);
 color: var(--gray-9);
 max-width: 35ch;
+}
+.specifications{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap:20px
+}
+.specs-category{
+  flex-basis: 30%;
+}
+.cat-title{
+  display: block;
+  font-weight: var(--font-weight-8);
+  font-size: var(--font-size-3);
+  color: var(--gray-7);
+  margin: 10px 0;
+}
+.spec{
+  
+ display: flex;
+ justify-content: space-between;
+ border-top: 1px solid var(--gray-4);
+ padding: 8px 5px;
+ 
+}
+.spec:nth-of-type(2n+1){
+ background: var(--gray-2);
+}
+.spec-value{
+  flex-basis: 40%;
 }
 
 
