@@ -18,19 +18,19 @@
     <section aria-label="popz-intro" class="bike-intro popz-intro">
         <div class="grid container">
           <div class="bike-info popz-info">
-            <h2>Popz</h2>
+            <h2>Popz 125</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam ad repellendus maiores provident! Officia perferendis.
             </p>
             <nuxt-link to="/bikes/popz" class="btn">ΔΕΣ ΤΟ ΑΝΑΛΥΤΙΚΑ</nuxt-link>
           </div>
           <div class="img-pop img-pop1">
-            <img src="" alt="">
+            <img src="~/assets/img/popz/poz-HP-white.jpg" alt="">
           </div>
           <div class="img-pop img-pop2">
-            <img src="" alt="">
+            <img src="~/assets/img/popz/popz-HP-recolour.jpg" alt="">
           </div>
           <div class="img-pop img-pop3">
-            <img src="" alt="">
+            <img src="~/assets/img/popz/poz-HP-sq.jpg" alt="">
           </div>
 
         </div>
@@ -39,20 +39,20 @@
     <section aria-label="rock-intro" class="bike-intro rock-intro">
       <div class="grid container">
            <div class="img-rock img-rock1">
-            <img src="" alt="">
+            <img src="~/assets/img/rock/rock-HP1.jpg" alt="">
           </div>
           <div class="bike-info rock-info">
-            <h2>Rock</h2>
+            <h2>Rock 125</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam ad repellendus maiores provident! Officia perferendis, reprehenderit assumenda 
             </p>
             <nuxt-link to="/bikes/rock" class="btn">ΔΕΣ ΤΟ ΑΝΑΛΥΤΙΚΑ</nuxt-link>
           </div>
          
           <div class="img-rock img-rock2">
-            <img src="" alt="">
+            <img src="~/assets/img/rock/rock-HP2.jpg" alt="">
           </div>
           <div class="img-rock img-rock3">
-            <img src="" alt="">
+            <img src="~/assets/img/rock/rock-HP3.jpg" alt="">
           </div>
 
 
@@ -77,7 +77,9 @@
 
 <script>
 export default {
-  name: 'IndexPage'
+  transition: 'fade',
+
+  
 }
 </script>
 
@@ -139,42 +141,51 @@ h1{
 }
 section.bike-intro{
   min-height: 100vh;
-  padding: 3.5em 0;
+  padding: 3.5em 0 5.5em 0;
 }
 .bike-info p{
  max-width: 40ch;
 }
 
 .img-pop, .img-rock{
-  box-shadow: var(--shadow-4);
+  box-shadow: var(--shadow-5);
+  position: relative;
+  display: flex;
+}
+
+:is(.img-pop, .img-rock) img  {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .img-pop1{
   transform: translateY(40px) translateX(-50px);
-  background: rgb(32, 63, 201);
-   width:450px;
-  height: 450px;
-
+  /* background: rgb(32, 63, 201); */
+   width:500px;
+  height: 420px;
+  z-index: 1;
 }
 .img-pop2{
-  transform: translateY(-50px) translateX(30px);
+  transform: translateY(-80px) translateX(30px);
     width:600px;
-  height: 350px;
-  background: red;
-
+  height: 400px;
+  /* background: red; */
+  z-index: 2;
 }
 .img-pop3{
-   width:450px;
-  height: 250px;
-  transform: translateY(-60px) translateX(40px);
-  background: yellow;
+   width:400px;
+  height: 420px;
+  transform: translateY(40px) translateX(20px);
+  /* background: yellow; */
+  z-index: 2;
 
 }
 
 .img-rock1{
   transform: translateY(40px) translateX(-50px);
   background: rgb(32, 63, 201);
-   width:650px;
+   width:620px;
   height: 400px;
 
 }

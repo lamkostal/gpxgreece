@@ -12,19 +12,23 @@
     </header>
     <main>
       <section class="intro">
-         <h1>Γνωρίστε το {{ bike.title }}</h1>
+         <h1>Εξερευνήστε το {{ bike.title }}</h1>
           <h2>Χρωματισμοί</h2>
         <div class="container bike-colors">
          
           <div class="bike-colors-wrapper">
+           
             <div class="bike-colors-images">
-              <img v-show="bikeColor===index"
-                v-for="(item, index) in bike.BikeColors"
-                :key="item.ColorImage.id"
-                :src="item.ColorImage.filename"
-                :alt="item.ColorImage.alt"
-              />
+               
+                <img v-show="bikeColor===index"
+                  v-for="(item, index) in bike.BikeColors"
+                  :key="item.ColorImage.id"
+                  :src="item.ColorImage.filename"
+                  :alt="item.ColorImage.alt"
+                />
+             
             </div>
+           
             <div class="bike-colors-bullets">
               <div class="bullet-wrap" v-for="(bullet,index) in bike.BikeColors"
                 :key="bullet.ColorImage.id"
@@ -37,6 +41,7 @@
           </div>
         </div>
       </section>
+
       <section class="details">
         <h2>Λεπτομέρειες</h2>
         <div class="container-fluid">
@@ -51,11 +56,20 @@
           </div>
         </div>
       </section>
+      <section id="dimentions" v-if="bike.DimentionsImg">
+        <h2>Διαστάσεις</h2>
+        <div class="container dimentions-wrap"><img :src="bike.DimentionsImg.filename" :alt="bike.DimentionsImg.alt" :title="bike.DimentionsImg.title"></div>
+      </section>
       <section id="specifications">
+
         <h2>Τεχνικά Χαρακτηριστικά</h2>
         <div class="specifications container">
-          <div class="specs-category" v-for="(category,index) in bike.Specifications" :key="category.SpecCatName">
-            <span class="cat-title">{{category.SpecCatName}}</span>
+          <div class="specs-category" v-for="(category) in bike.Specifications" :key="category.SpecCatName">
+           <div class="flex-row">
+              <img :src="category.SpecCatIcon.filename" :alt="category.SpecCatName">
+
+              <span class="cat-title">{{category.SpecCatName}}</span>
+           </div>
             <div class="spec" v-for="spec in category.Specification" :key="spec.specName">
               <span class="spec-name">{{spec.specName}}</span>
               <span class="spec-value">{{spec.specValue}}</span>
@@ -70,6 +84,8 @@
 
 <script>
 export default {
+  transition: 'fade',
+
   data() {
     return {
       bikeColor: 1,
@@ -88,14 +104,15 @@ export default {
           throw "erroo";
         }
         return {
-          products: res.data.stories.map((pr) => {
+          products: res.data.stories.map((items) => {
             return {
-              title: pr.content.name,
-              HeaderImage: pr.content.HeaderImage.filename,
-              ImageAlt: pr.content.HeaderImage.alt,
-              BikeColors: pr.content.BikeColors,
-              Details:pr.content.Details,
-              Specifications:pr.content.Specifications
+              title: items.content.name,
+              HeaderImage: items.content.HeaderImage.filename,
+              ImageAlt: items.content.HeaderImage.alt,
+              BikeColors: items.content.BikeColors,
+              Details:items.content.Details,
+              Specifications:items.content.Specifications,
+              DimentionsImg:items.content.DimentionsImg
             };
           }),
         };
@@ -145,14 +162,36 @@ h1 {
   color: var(--blue-9);
   margin: 0;
   /* text-transform: uppercase; */
-  font-size: var(--font-size-5);
+  font-size: var(--font-size-6);
 }
 h2{
-  color: var(--gray-1);
+  color: var(--gray-4);
   font-weight: var(--font-weight-4);
+  margin:1rem 0rem 3rem 0rem ;
+  font-size: var(--font-size-5);
+  
+
 }
+h2:after{
+  content:"";
+  display: block;
+  width:3ch;
+  height:1px;
+  background-color:var(--gray-4);
+  margin-inline:auto ;
+  margin-top: 10px ;
+  opacity: 0.9;
+  border-radius: 15px;
+}
+section:nth-of-type(2n) h2{
+  color: var(--gray-7);
+}
+section:nth-of-type(2n) h2:after{
+  background-color: var(--gray-7);
+}
+
 .intro {
-  background: rgb(41, 44, 53);
+  background-color: rgb(41, 44, 53);
 }
 .bike-colors {
   display: flex;
@@ -164,14 +203,14 @@ h2{
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 .bike-colors-images {
   position: relative;
-  width: 650px;
+  width: 750px;
   max-width: 100%;
-  height: 400px;
+  height: 500px;
   /* background: #000; */
 }
 .bike-colors-images img {
@@ -181,8 +220,10 @@ h2{
 }
 .bike-colors-bullets {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 2rem;
+  align-content: center;
+  gap: 1rem;
   text-align: center;
   color: var(--gray-0);
 }
@@ -196,18 +237,18 @@ h2{
   gap: 10px;
 }
 .bullet {
-  width: 4rem;
-  height: 4rem;
+  width: 2.9rem;
+  height: 2.9rem;
   border-radius: 50%;
   border: 4px solid #000;
   cursor: pointer;
 }
 .details{
-  background-color: var(--gray-5);
+  background-color: var(--gray-3);
 
 }
 .detail{
-  padding: 4rem 0;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -263,14 +304,29 @@ font-weight: var(--font-weight-4);
 color: var(--gray-9);
 max-width: 35ch;
 }
+#dimentions{
+ background-color:var(--gray-7);
+ padding-inline: 8rem ;
+ background-image: url(~/assets/img/grid-monomer.png);
+ 
+}
+#dimentions img{
+  filter:invert();
+}
 .specifications{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap:20px
 }
+
 .specs-category{
   flex-basis: 30%;
+}
+.specs-category img{
+  width:25px;
+  margin-right:10px;
+  filter: sepia(100%) hue-rotate(180deg) saturate(50%);
 }
 .cat-title{
   display: block;
@@ -287,11 +343,11 @@ max-width: 35ch;
  padding: 8px 5px;
  
 }
-.spec:nth-of-type(2n+1){
+.spec:nth-of-type(2n){
  background: var(--gray-2);
 }
 .spec-value{
-  flex-basis: 40%;
+  flex-basis: 50%;
 }
 
 

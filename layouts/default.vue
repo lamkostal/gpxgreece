@@ -1,9 +1,11 @@
 <template>
-  <div>
-      <TheHeader/>
-      <Nuxt/>
-      <TheFooter/>
-  </div>
+  <transition name="fade">
+    <div>
+        <TheHeader/>
+        <Nuxt/>
+        <TheFooter/>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -11,6 +13,8 @@ import TheHeader from '../components/TheHeader.vue'
 import TheFooter from '../components/TheFooter.vue'
 
 export default {
+  transition: 'fade',
+
 components:{
     TheFooter,
     TheHeader
@@ -40,6 +44,10 @@ body{
 }
 .container-fluid{
   width:100%;
+}
+.flex-row{
+  display: flex;
+  align-items: center;
 }
 main{
   
@@ -113,6 +121,15 @@ h3,h4{
 
 
   
+}
+/* transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.25s;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
 }
 
 </style>

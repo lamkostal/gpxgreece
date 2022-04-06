@@ -2,7 +2,7 @@
   <nav>
     <ul @mouseleave="submenuOpen = false">
       <li @mouseenter="submenuOpen = false">
-        <NuxtLink to="/" exact="true">ΑΡΧΙΚΗ</NuxtLink>
+        <NuxtLink to="/" >ΑΡΧΙΚΗ</NuxtLink>
       </li>
       <li @mouseenter="submenuOpen = true">
         ΜΟΝΤΕΛΑ
@@ -32,7 +32,7 @@
           </svg>
         </span>
       </li>
-      <transition appear="true">
+      <transition >
         <div
           class="models_submenu_container"
           v-show="submenuOpen"
@@ -143,7 +143,7 @@ nav > ul {
   position: absolute;
   top: 3.8em;
   left: 0;
-  background: #fff;
+  background: var(--gray-0);
   width: 100%;
   height: 100px;
   display: flex;
