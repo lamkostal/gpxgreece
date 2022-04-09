@@ -91,6 +91,7 @@ li {
   position: relative;
   color: var(--gray-9);
   padding: 00px 25px 15px;
+      line-height: 0.9;
   cursor: pointer;
   font-size: var(--font-size-2);
 }
@@ -98,7 +99,7 @@ li {
   position: absolute;
   width: 20px;
   height: 20px;
-  top: 2.5px;
+  top: -2.5px;
   right: 2px;
   transform: scale(0.6);
   transition: all 0.2s ease-out;
@@ -159,7 +160,7 @@ nav > ul {
   width: 100%;
   height:45px;
   top:32px;
-  background: linear-gradient(90deg,#fff,30%, var(--gray-4),70%,#fff);
+  background: linear-gradient(90deg,var(--gray-0),30%, var(--gray-4),70%,var(--gray-0));
   z-index: 0;
 }
 
@@ -169,7 +170,7 @@ nav > ul {
   position: absolute;
   top: 0px;
   left: 10px;
-  /* font-family: 'Fblueoka One', cursive; */
+  
 }
 .models_submenu_item {
   position: relative;
@@ -181,7 +182,7 @@ nav > ul {
 
 /* transition */
 
-/* we will explain what these classes do next! */
+
 .v-enter-active,
 .v-leave-active {
   transition: all 0.5s ease;

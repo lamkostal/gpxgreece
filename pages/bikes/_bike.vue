@@ -18,7 +18,7 @@
          
           <div class="bike-colors-wrapper">
            
-            <div class="bike-colors-images">
+            <transition-group tag="div" name="bike" class="bike-colors-images">
                
                 <img v-show="bikeColor===index"
                   v-for="(item, index) in bike.BikeColors"
@@ -27,7 +27,7 @@
                   :alt="item.ColorImage.alt"
                 />
              
-            </div>
+            </transition-group>
            
             <div class="bike-colors-bullets">
               <div class="bullet-wrap" v-for="(bullet,index) in bike.BikeColors"
@@ -208,7 +208,7 @@ section:nth-of-type(2n) h2:after{
 }
 .bike-colors-images {
   position: relative;
-  width: 750px;
+  width: 780px;
   max-width: 100%;
   height: 500px;
   /* background: #000; */
@@ -234,17 +234,18 @@ section:nth-of-type(2n) h2:after{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 .bullet {
-  width: 2.9rem;
+  margin-top: 10px;
+  width: 5.9rem;
   height: 2.9rem;
-  border-radius: 50%;
+  border-radius: 50px;
   border: 4px solid #000;
   cursor: pointer;
 }
 .details{
-  background-color: var(--gray-3);
+  background-color: var(--gray-9);
 
 }
 .detail{
@@ -270,14 +271,18 @@ section:nth-of-type(2n) h2:after{
   overflow: hidden;
   box-shadow: var(--shadow-4);
   flex-wrap: wrap;
-  border-radius:20px;
-  transform: rotateY(20deg);
+  border-radius:70px;
+  transform: rotateY(20deg) ;
   z-index: 10;
   /* transform-style: preserve-3d; */
-transition: all 0.5s; 
+transition: all 0.35s ease-in-out; 
 }
 .detail-img:hover{
-    transform: rotateY(0deg);
+    transform: rotateY(0deg) ;
+  flex-basis: 600px;
+  border-radius:10px;
+
+
 }
 .detail:nth-of-type(2n) .detail-img{
   transform: rotateY(-20deg);
@@ -286,22 +291,23 @@ transition: all 0.5s;
     transform: rotateY(0deg) !important;
 }
 .detail-text-wrap{
-flex-basis: 30%;
+flex-basis: 35%;
 text-align: center;
-/* display: flex;
+display: flex;
 flex-direction: column;
 justify-content: center;
-align-items: center; */
+align-items: center;
 }
 .detail-text{
 font-size: var(--font-size-5);
 font-weight: var(--font-weight-8);
 color: var(--blue-7);
+margin: 10px 0;
 }
 .detail-text-desc{
 font-size: var(--font-size-3);
 font-weight: var(--font-weight-4);
-color: var(--gray-9);
+color: var(--gray-4);
 max-width: 35ch;
 }
 #dimentions{
@@ -350,6 +356,16 @@ max-width: 35ch;
   flex-basis: 50%;
 }
 
+/* transition */
+.bike-enter-active,
+.bike-leave-active {
+  transition: all 0.35s ease-out  ;
+
+}
+.bike-enter,
+.bike-leave-active {
+  opacity: 0;
+}
 
 
 </style>

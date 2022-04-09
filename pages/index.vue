@@ -12,7 +12,17 @@
   </header>
   <main class="container-fluid">
     <section class="intro">
-      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit?</h2>
+      <div class="opaque"></div>
+      <div class="intro-content container">
+         <div class="text-content">
+           <h2>Lorem ipsum</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit explicabo animi corporis iure expedita velit suscipit perferendis impedit laborum blanditiis.</p>
+         </div>
+         <div class="imgs-content">
+
+         </div>
+      </div>
+     
      
     </section>
     <section aria-label="popz-intro" class="bike-intro popz-intro">
@@ -61,7 +71,7 @@
     <section aria-label="dealers-intro" class="dealers-intro">
       <div class="container dealers-info">
         <h2>Βρες έναν αντιπρόσωπο</h2>
-        <h3>Αναζήτησε στο δίκτυο μας τον πλησιέστερο αντιπρόσωπο σε μια περιοχή που σε βολεύει.</h3>
+        <h3>Αναζήτησε στο δίκτυο μας τον πλησιέστερο αντιπρόσωπο στην περιοχή σου.</h3>
         <div class="map-img">
           <nuxt-link to="/dealers"><img src="~/assets/img/map-mockup.jpg" alt=""></nuxt-link>
         </div>
@@ -115,40 +125,56 @@ h1{
   right: -60px;
 }
 .intro {
-  background-image: url(~/assets/img/GPX-info.jpg);
+  background-image: url(~/assets/img/intro1.jpg);
   background-position: center;
-  background-size: contain;
- 
-  
+  background-size: cover;
+  min-height: 100vh;
+}
+.opaque{
+  position: absolute;
+  top:0;
+  width:100%;
+  height: 100vh;
+   background: linear-gradient(var(--gray-9),var(--gray-0));
+  opacity: 0.8;
+}
+.intro-content{
+  position: relative;
+ z-index: 1;
+ display: grid;
+ grid-template-columns: 1fr 1fr ;
+ justify-content:center ;
+ align-content:center ;
 }
 .intro h2{
-  position: absolute;
-  bottom: 050px;
-  left:5%;
-  z-index: 1;
+  font-size: var(--font-size-3);
 }
 .grid{
   grid-gap:10px;
-  /* height:100vh; */
-  /* margin: auto; */
   display: grid;
   grid-template-columns:auto auto;
   grid-template-rows: 1fr 1fr;
   justify-items: center;
-  align-items: center;
+  /* align-items: center; */
 
   
 }
 section.bike-intro{
   min-height: 100vh;
-  padding: 3.5em 0 5.5em 0;
 }
+.bike-info{
+ align-self: self-start;
+}
+.bike-info h2{
+  margin-top: 0;
+}
+
 .bike-info p{
  max-width: 40ch;
 }
 
 .img-pop, .img-rock{
-  box-shadow: var(--shadow-5);
+  box-shadow: 10px 5px 15px  rgba(128, 128, 128, 0.493);
   position: relative;
   display: flex;
 }
@@ -160,7 +186,7 @@ section.bike-intro{
 }
 
 .img-pop1{
-  transform: translateY(40px) translateX(-50px);
+  transform: translateY(0px) translateX(-50px);
   /* background: rgb(32, 63, 201); */
    width:500px;
   height: 420px;
@@ -176,14 +202,14 @@ section.bike-intro{
 .img-pop3{
    width:400px;
   height: 420px;
-  transform: translateY(40px) translateX(20px);
+  transform: translateY(25px) translateX(20px);
   /* background: yellow; */
   z-index: 2;
 
 }
 
 .img-rock1{
-  transform: translateY(40px) translateX(-50px);
+  transform: translateY(0px) translateX(0px);
   background: rgb(32, 63, 201);
    width:620px;
   height: 400px;
@@ -197,7 +223,7 @@ section.bike-intro{
 
 }
 .img-rock3{
-  transform: translateY(-60px) translateX(-80px);
+  transform: translateY(-120px) translateX(-80px);
   background: yellow;
    width:550px;
   height: 450px;
@@ -223,7 +249,7 @@ section.bike-intro{
   margin-bottom: 0;
 }
 .dealers-info .btn{
-  align-self: flex-start;
+  flex-basis: 50%;
   margin-top:1em;
   
 }
@@ -232,6 +258,6 @@ section.bike-intro{
 }
 section.dealers-intro{
   min-height: 100vh;
-  padding: 3.5em 0;
+  
 }
 </style>

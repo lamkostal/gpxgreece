@@ -38,7 +38,7 @@ body{
 
 }
 .container{
-  width:1080px;
+  width:1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -50,13 +50,13 @@ body{
   align-items: center;
 }
 main{
-  
+  position: relative;
 }
 img{
   max-width: 100%;
 }
 section{
-   padding: 3.5em 0;
+   padding: 5.5em 0;
 }
 section.hero{
   display: flex;
@@ -90,7 +90,7 @@ h3,h4{
   display: inline-block;
   margin-top: 5px;
   text-decoration: none;
-  background: var(--blue-7);
+  background: var(--gray-9);
   color:var(--gray-0);
   padding:15px 20px;
   transition:all 0.3s ease;
@@ -104,23 +104,18 @@ h3,h4{
   opacity:0;
   transition:all 0.3s ease;
   right:12px;
-
-
-  
 }
 .btn:hover{
   
-  background: var(--blue-5);
+  background: var(--blue-8);
   padding:15px 35px 15px 20px;
+  border: none;
   
 }
 .btn:hover::after{
   opacity: 1;
   /* transform: translateX(-15px); */
   right:12px;
-
-
-  
 }
 /* transition */
 .fade-enter-active,
