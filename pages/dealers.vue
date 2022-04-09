@@ -51,7 +51,7 @@
       </section>
       <section class="dealers-section-contact">
    <div class="dealer-contact">
-     <h2 >Σας ενδιαφέρει να γίνετε αντιπρόσωπος της GPX στην Ελλάδα?</h2>
+     <h2 >Σας ενδιαφέρει να γίνετε αντιπρόσωπος της <b>GPX</b>;</h2>
      <h3>Στείλε μας το μήνυμά σας, και θα επικοινωνήσουμε μαζί σας</h3>
      <form class="contact-form row">
         <div class="form-field col x-50">
@@ -137,21 +137,45 @@ export default {
     
   },
   mounted(){
+    // custom icon
+    var LeafIcon = L.Icon.extend({
+    options: {
+       iconSize:     [25,41],
+      //  shadowSize:   [50, 20],
+       iconAnchor:   [12, 41],
+       shadowAnchor: [12, 41],
+       popupAnchor:  [0, -26]
+    }
+});
+var gpxIcon = new LeafIcon({
+    iconUrl: `https://res.cloudinary.com/lamkos/image/upload/v1649500624/GPX/marker-icon-2x-red_rqgj1d.png`,
+    shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png'
+})
+
     var map = L.map('map',{scrollWheelZoom: false}).setView([38.960,22.239], 6.9);
     this.dealers.forEach(el => {
       console.log(el)
-      var marker = L.marker([el.lat,el.lon]);
-      marker.bindPopup(`<b>${el.name}</b><br>${el.street}, ${el.code}<br><b> ${el.phone}</b><br>${el.email}<br><a href="${el.website}">${el.website}</a>`);
+      var marker = L.marker([el.lat,el.lon],{icon:gpxIcon});
+      marker.bindPopup(`<b>${el.name}</b><br>${el.street}, ${el.city}, ${el.code}<br><b> ${el.phone}</b><br>${el.email}<br><a href="${el.website}">${el.website}</a>`);
       marker.addTo(map)
     });
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWxraWQiLCJhIjoiY2wxcTQxdWx3MWhnYTNkbzJyODRyNTVxbyJ9.ObiYpLrx9bBnYRnd_74JWA',   {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    L.tileLayer(
+      // 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWxraWQiLCJhIjoiY2wxcTQxdWx3MWhnYTNkbzJyODRyNTVxbyJ9.ObiYpLrx9bBnYRnd_74JWA',
+      'https://api.maptiler.com/maps/bright/{z}/{x}/{y}.png?key=J9Xj7Qc5hqRW3MjpyuIy',
+      // 'https://api.maptiler.com/maps/voyager/{z}/{x}/{y}.png?key=J9Xj7Qc5hqRW3MjpyuIy',
+       {
+    // subdomains: ['a','b','c'],
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     maxZoom: 18,
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoiZWxraWQiLCJhIjoiY2wxcTQxdWx3MWhnYTNkbzJyODRyNTVxbyJ9.ObiYpLrx9bBnYRnd_74JWA'
+    accessToken: 'pk.eyJ1IjoiZWxraWQiLCJhIjoiY2wxcTQxdWx3MWhnYTNkbzJyODRyNTVxbyJ9.ObiYpLrx9bBnYRnd_74JWA',
+    // style: 'https://api.maptiler.com/maps/voyager/style.json?key=J9Xj7Qc5hqRW3MjpyuIy'
 }).addTo(map);
+
+
+ 
   }
 };
 </script>
@@ -312,7 +336,7 @@ li {
   width: 100%;
   height: 36px;
   border-width: 0 0 2px 0;
-  border-color: #000;
+  border-color: var(--gray-7);
   font-family: Lusitana, serif;
   font-size: 18px;
   line-height: 26px;
@@ -324,16 +348,16 @@ li {
 }
 .contact-form .input-text:focus + .label, .contact-form .input-text.not-empty + .label {
   transform: translateY(-24px);
+  color: var(--blue-9);
 }
 .contact-form .label {
   position: absolute;
   left: 20px;
   bottom: 11px;
-  font-family: Lusitana, serif;
   font-size: 18px;
   line-height: 26px;
   font-weight: 400;
-  color: #888;
+  color: var(--gray-5);
   cursor: text;
   transition: transform 0.2s ease-in-out;
 }
