@@ -152,7 +152,7 @@ var gpxIcon = new LeafIcon({
     shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png'
 })
 
-    var map = L.map('map',{scrollWheelZoom: false}).setView([38.960,22.239], 7.1);
+    var map = L.map('map',{scrollWheelZoom: false,dragging: !L.Browser.mobile, tap: !L.Browser.mobile }).setView([38.960,22.239], 7.1);
     this.dealers.forEach(el => {
       console.log(el)
       var marker = L.marker([el.lat,el.lon],{icon:gpxIcon});
