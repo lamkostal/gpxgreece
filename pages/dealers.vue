@@ -152,7 +152,7 @@ var gpxIcon = new LeafIcon({
     shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png'
 })
 
-    var map = L.map('map',{scrollWheelZoom: false}).setView([38.960,22.239], 6.9);
+    var map = L.map('map',{scrollWheelZoom: false}).setView([38.960,22.239], 7.1);
     this.dealers.forEach(el => {
       console.log(el)
       var marker = L.marker([el.lat,el.lon],{icon:gpxIcon});
@@ -160,18 +160,19 @@ var gpxIcon = new LeafIcon({
       marker.addTo(map)
     });
     L.tileLayer(
-      // 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWxraWQiLCJhIjoiY2wxcTQxdWx3MWhnYTNkbzJyODRyNTVxbyJ9.ObiYpLrx9bBnYRnd_74JWA',
-      'https://api.maptiler.com/maps/bright/{z}/{x}/{y}.png?key=J9Xj7Qc5hqRW3MjpyuIy',
-      // 'https://api.maptiler.com/maps/voyager/{z}/{x}/{y}.png?key=J9Xj7Qc5hqRW3MjpyuIy',
+      // 'https://api.mapbox.com/styles/v1/elkid/ckz42ccyt000p17nxm7m84fy0/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWxraWQiLCJhIjoiY2wxcTQxdWx3MWhnYTNkbzJyODRyNTVxbyJ9.ObiYpLrx9bBnYRnd_74JWA&zoomwheel=true&fresh=true#5.9/38.383/24.704',//mapbox
+      // 'https://api.maptiler.com/maps/bright/{z}/{x}/{y}.png?key=J9Xj7Qc5hqRW3MjpyuIy',//maptiler
+      // 'https://api.maptiler.com/maps/voyager/{z}/{x}/{y}.png?key=J9Xj7Qc5hqRW3MjpyuIy',//maptiler
+    //  'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', //stadia
+     'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png',//stadia
        {
     // subdomains: ['a','b','c'],
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    attribution:  '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
     maxZoom: 18,
-    id: 'mapbox/streets-v11',
+    // id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoiZWxraWQiLCJhIjoiY2wxcTQxdWx3MWhnYTNkbzJyODRyNTVxbyJ9.ObiYpLrx9bBnYRnd_74JWA',
-    // style: 'https://api.maptiler.com/maps/voyager/style.json?key=J9Xj7Qc5hqRW3MjpyuIy'
+    // accessToken: 'pk.eyJ1IjoiZWxraWQiLCJhIjoiY2wxcTQxdWx3MWhnYTNkbzJyODRyNTVxbyJ9.ObiYpLrx9bBnYRnd_74JWA',//mapbox
 }).addTo(map);
 
 
