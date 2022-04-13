@@ -28,6 +28,7 @@ components:{
   /* position: relative; */
 }
 body{
+  color:var(--gray-8);
   margin: 0;
   padding: 0;
    min-height: 100vh;
@@ -48,6 +49,8 @@ body{
 .flex-row{
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap:5px
 }
 main{
   position: relative;
@@ -75,9 +78,13 @@ h1,h2{
 h1{
   text-align:center;
    font-size: var(--font-size-5);
+   font-weight: var(--font-weight-9);
 }
 h2{
-  font-size: var(--font-size-6);
+  font-size: var(--font-size-5);
+   font-weight: var(--font-weight-8);
+
+ 
 }
 h3,h4{
   color: var(--gray-6);
@@ -116,6 +123,112 @@ h3,h4{
   opacity: 1;
   /* transform: translateX(-15px); */
   right:12px;
+}
+/* ΦΟΡΜΕΣ */
+.align-center {
+  text-align: center;
+}
+.row {
+  margin: -20px 0;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row .col {
+  padding: 0 20px;
+  float: left;
+  box-sizing: border-box;
+}
+.col-right{
+  padding: 0 20px;
+  float: right;
+
+}
+.row .col.x-50 {
+  width: 50%;
+}
+.row .col.x-100 {
+  width: 100%;
+}
+
+.content-wrapper {
+  min-height: 100%;
+  position: relative;
+}
+.dealers-section-contact{
+  background-color: var(--gray-1);
+  min-height: 100vh;
+}
+
+.dealer-contact {
+  width:800px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.contact-form {
+  margin-top: 4rem;
+}
+
+.contact-form .form-field {
+  position: relative;
+  margin: 32px 0;
+}
+.contact-form .input-text {
+  display: block;
+  width: 100%;
+  height: 36px;
+  border-width: 0 0 2px 0;
+  border-color: var(--gray-7);
+  font-family: Lusitana, serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  background: transparent;
+}
+.contact-form .input-text:focus {
+  outline: none;
+}
+.contact-form .input-text:focus + .label, .contact-form .input-text.not-empty + .label {
+  transform: translateY(-24px);
+  color: var(--blue-9);
+}
+.contact-form .label {
+  position: absolute;
+  left: 20px;
+  bottom: 11px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: var(--gray-5);
+  cursor: text;
+  transition: transform 0.2s ease-in-out;
+}
+input[type="submit" i]{
+  display: block;
+  border:none;
+}
+input[type="submit" i]:hover{
+   padding:15px 20px;
+}
+.note {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-family: Lusitana, serif;
+  font-size: 16px;
+  line-height: 21px;
+}
+.note .link {
+  color: #888;
+  text-decoration: none;
+}
+.note .link:hover {
+  text-decoration: underline;
 }
 /* transition */
 .fade-enter-active,

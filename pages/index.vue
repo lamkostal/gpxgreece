@@ -174,7 +174,7 @@ section.bike-intro{
 }
 
 .img-pop, .img-rock{
-  box-shadow: 10px 5px 15px  rgba(128, 128, 128, 0.493);
+  box-shadow: 5px 5px 20px 2px rgba(128, 128, 128, 0.403);
   position: relative;
   display: flex;
 }
