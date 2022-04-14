@@ -38,8 +38,15 @@ body{
   background-color: var(--gray-0);
 
 }
+
+ul{
+  list-style: none;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
 .container{
   width:1200px;
+  width:min(100%,1200px);
   margin-left: auto;
   margin-right: auto;
 }
@@ -49,8 +56,7 @@ body{
 .flex-row{
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap:5px
+  gap:12px
 }
 main{
   position: relative;
@@ -59,25 +65,29 @@ img{
   max-width: 100%;
 }
 section{
-   padding: 5.5em 0;
+   padding: 4.5em 0 4em;
 }
 section.hero{
   display: flex;
-  margin-top:0;
   padding: 0;
   position: relative;
+  margin-top: 100px;
+
 }
 section.hero .hero_img{
    object-fit: cover;
    width:1900px;
    height:650px;
 }
+.top-section{
+  margin-top: 100px;
+}
 h1,h2{
   color: var(--gray-7);
 }
 h1{
   text-align:center;
-   font-size: var(--font-size-5);
+   font-size: var(--font-size-6);
    font-weight: var(--font-weight-9);
 }
 h2{
@@ -157,17 +167,7 @@ h3,h4{
   min-height: 100%;
   position: relative;
 }
-.dealers-section-contact{
-  background-color: var(--gray-1);
-  min-height: 100vh;
-}
 
-.dealer-contact {
-  width:800px;
-  max-width: 100%;
-  margin: 0 auto;
-  position: relative;
-}
 .contact-form {
   margin-top: 4rem;
 }

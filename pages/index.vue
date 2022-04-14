@@ -1,7 +1,7 @@
 <template>
 <div class="wrapper"> 
   <header class="head">
-    <section aria-label="hero" class="hero ">
+    <section aria-label="hero" class="hero top-section">
      
       <img src="~/assets/img/popz-white.webp" alt="" class="hero_side_img hero_popz_img">
       <img src="~/assets/img/rock-black.webp" alt="" class="hero_side_img hero_rock_img">
@@ -87,13 +87,22 @@
 
 <script>
 export default {
-  transition: 'fade',
+  // transition: 'fade',
+  mounted(){
+    let gsap=this.$gsap
+    gsap.fromTo('h1',{y:10},{y:-20})
+    // gsap.fromTo('img',{opacity:0},{opacity:1,duration:3})
+    gsap.fromTo('.hero_popz_img',{x:-100,scale:0.8,opacity:0},{x:20,scale:1,opacity:1,duration:0.8})
+    gsap.fromTo('.hero_rock_img',{x:100,scale:0.8,opacity:0},{x:-20,scale:1,opacity:1,duration:0.8})
+
+  }
 
   
 }
 </script>
 
 <style scoped>
+/* img{opacity: 0;} */
 
 section{
   position: relative;
@@ -102,7 +111,7 @@ section{
   
 }
 main>section:nth-child(even){
-  background: var(--gray-2);
+  /* background: var(--gray-2); */
 }
 h1{
   position:absolute;
@@ -184,6 +193,12 @@ section.bike-intro{
   width: 100%;
   height: 100%;
 }
+.popz-intro{
+  background-color:var(--gray-2) ;
+  background-image: url(~/assets/img/curve.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
 
 .img-pop1{
   transform: translateY(0px) translateX(-50px);
@@ -202,7 +217,7 @@ section.bike-intro{
 .img-pop3{
    width:400px;
   height: 420px;
-  transform: translateY(25px) translateX(20px);
+  transform: translateY(-25px) translateX(20px);
   /* background: yellow; */
   z-index: 2;
 
@@ -229,7 +244,9 @@ section.bike-intro{
   height: 450px;
 
 }
-
+.dealers-intro{
+  padding-top: 0;
+}
 .dealers-info{
   padding: 0 4em;
   display: flex;

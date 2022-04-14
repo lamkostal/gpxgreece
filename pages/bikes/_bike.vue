@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <header class="head">
-      <section aria-label="hero" class="hero">
+      <section aria-label="hero top-section" class="hero">
         <img :src="bike.HeaderImage" alt="bike.ImageAlt" class="hero_img" />
         <div class="header-btn-container">
           <nuxt-link class="btn header-btn" to="/dealers"
@@ -159,7 +159,7 @@ section{
 }
 h1 {
   letter-spacing: 0.05em;
-  color: var(--blue-9);
+  color: var(--blue-7);
   margin: 0;
   /* text-transform: uppercase; */
   font-size: var(--font-size-6);
@@ -183,11 +183,18 @@ h2:after{
   opacity: 0.9;
   border-radius: 15px;
 }
-section:nth-of-type(2n) h2{
+section h2{
+  color: var(--gray-2);
+}
+section h2:after{
+  background-color: var(--gray-2);
+}
+#specifications h2{
   color: var(--gray-7);
 }
-section:nth-of-type(2n) h2:after{
-  background-color: var(--gray-7);
+#specifications h2:after{
+   background-color: var(--gray-7);
+
 }
 
 .intro {
@@ -203,7 +210,7 @@ section:nth-of-type(2n) h2:after{
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 .bike-colors-images {

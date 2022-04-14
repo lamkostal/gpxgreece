@@ -1,8 +1,17 @@
 const axios= require("axios");
 
 export default {
-  // Target: https://go.nuxtjs.dev/config-target
-  // target: 'static',
+  
+
+  gsap: {
+    extraPlugins: {
+      scrollTo: true,
+      scrollTrigger: true
+    },
+    extraEases: {
+      expoScaleEase: true
+    }
+  },
   target: 'static',
   mode: 'universal',
 
@@ -49,7 +58,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
+  buildModules: [ 'nuxt-gsap-module',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

@@ -286,6 +286,21 @@ li {
 span>svg{
   width:20px;
 }
+.dealers-section-contact{
+  background-color: var(--gray-1);
+  background-image: url(~/assets/img/GPX-road.svg);
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: 100% 101%;
+  min-height: 100vh;
+}
+
+.dealer-contact {
+  width:800px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
 /* transition group */
 .list-enter-active,
 .list-leave-active {

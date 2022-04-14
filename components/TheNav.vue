@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav id="desktop-nav">
     <ul @mouseleave="submenuOpen = false">
       <li @mouseenter="submenuOpen = false">
         <NuxtLink to="/" >ΑΡΧΙΚΗ</NuxtLink>
@@ -84,16 +84,24 @@ export default {
 </script>
 
 <style scoped>
+@media(max-width:1024px){
+  #desktop-nav{
+  display: none;
+}
+}
+
 img {
   max-width: 100%;
 }
 li {
   position: relative;
   color: var(--gray-9);
-  padding: 00px 25px 15px;
-      line-height: 0.9;
+  padding: 00px 20px 0px;
+  line-height: 0.9;
   cursor: pointer;
-  font-size: var(--font-size-2);
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-4);
+
 }
 .submenu-toggle {
   position: absolute;
@@ -129,20 +137,22 @@ a:active {
 a.nuxt-link-exact-active {
   color: var(--blue-9);
 }
-ul {
-  padding: 0;
-  margin-top: 15px;
-  list-style: none;
-}
+
 nav {
   margin: 0 auto;
+  height: 100%;
 }
 nav > ul {
+  height: 100%;
   display: flex;
+  align-items: center;
+  padding: 0;
+  margin-top: 0;
+  list-style: none;
 }
 .models_submenu_container {
   position: absolute;
-  top: 3.8em;
+  top: 80%;
   left: 0;
   background: var(--gray-0);
   width: 100%;
@@ -152,7 +162,7 @@ nav > ul {
   justify-content: center;
   gap: 10px;
   transform: translateY(0px);
-  z-index: 1;
+  z-index: 10000;
   /* box-shadow: var(--shadow-4); */
 }
 .deco-rect{
@@ -185,12 +195,12 @@ nav > ul {
 
 .v-enter-active,
 .v-leave-active {
-  transition: all 0.5s ease;
+  transition: all 0.25s ease-out;
 }
 
 .v-enter,
 .v-leave-to {
   opacity: 0;
-  transform: translateY(-5px);
+  transform: translateY(-15px);
 }
 </style>
