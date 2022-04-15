@@ -224,6 +224,7 @@ section.bike-intro {
 .bike-info h2 {
   margin-top: 0;
   font-size: var(--font-size-7);
+  color:var(--blue-7)
 
 }
 
@@ -292,7 +293,7 @@ section.bike-intro {
 section.dealers-intro {
   min-height: 100vh;
   background:linear-gradient(var(--gray-0) 30%,var(--gray-5));
-  /* padding-top: 0; */
+  padding-top: 0;
   padding-bottom: 14rem;
 }
 .dealers-info {

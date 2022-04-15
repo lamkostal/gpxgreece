@@ -56,7 +56,6 @@ beforeDestroy () {
 <style scoped>
 
 header {
-
     height: 100px;
     width: 100%;
     display: flex;
@@ -67,7 +66,8 @@ header {
     z-index: 10000;
     background: var(--gray-0);
   transition: all 0.25s ease;
-  border-bottom:1px solid var(--gray-5)
+  border-bottom:1px solid var(--gray-5);
+  -webkit-backface-visibility: hidden;
 
 }
 .logo-container {
@@ -76,10 +76,8 @@ header {
   z-index: 2;
   width: 150px;
   transform: scale(1);
-  
   transition: all 0.25s ease;
   margin-left: 5em;
-
 }
 .scrolled{
   height: 50px;

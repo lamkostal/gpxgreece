@@ -61,7 +61,7 @@
         </div>
       </section>
       <section class="dealers-section-contact">
-   <div class="dealer-contact">
+   <div class="dealer-contact align-center">
      <h2 >Σας ενδιαφέρει να γίνετε αντιπρόσωπος της <b>GPX</b>;</h2>
      <h3>Στείλε μας το μήνυμά σας, και θα επικοινωνήσουμε μαζί σας</h3>
      <form class="contact-form row">
@@ -219,6 +219,7 @@ h3{
 .filters{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap:20px;
   margin: 2.5rem 0 3rem 0;
 }
@@ -240,10 +241,10 @@ h3{
 }
 .dealers-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
   padding: 2rem 0;
   justify-content: start;
-  padding: 0 0rem 0 4rem;
+  padding: 0 1rem 0 1rem;
   gap:2rem;
   /* margin-top: 5rem; */
   
@@ -251,7 +252,7 @@ h3{
 }
 .dealers-list > ul {
   margin: 0rem;
-  padding:  1rem 0 1rem 2rem;
+  padding:  1rem 1rem 1rem 1rem;
   display: flex;
   flex-direction: column;
   list-style: none;
