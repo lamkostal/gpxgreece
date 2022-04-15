@@ -18,7 +18,12 @@ export default {
 components:{
     TheFooter,
     TheHeader
-}
+},
+mounted(){
+
+
+  }
+
 }
 </script>
 
@@ -56,7 +61,7 @@ ul{
 .flex-row{
   display: flex;
   align-items: center;
-  gap:12px
+  gap:7px
 }
 main{
   position: relative;
@@ -72,6 +77,7 @@ section.hero{
   padding: 0;
   position: relative;
   margin-top: 100px;
+  z-index: 1;
 
 }
 section.hero .hero_img{

@@ -87,6 +87,7 @@ export default {
  padding: 3.5rem 0 ;
  display: flex;
  justify-content: space-between;
+ flex-wrap: wrap;
 
 
 }

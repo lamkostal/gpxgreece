@@ -12,6 +12,8 @@
     </header>
     <main>
       <section class="intro">
+        <div class="bg-intro"></div>
+
          <h1>Εξερευνήστε το {{ bike.title }}</h1>
           <h2>Χρωματισμοί</h2>
         <div class="container bike-colors">
@@ -129,6 +131,96 @@ export default {
       });
     },
   },
+  mounted(){
+
+     let gsap = this.$gsap;
+      gsap.from('h1', {
+        opacity:0,
+        duration:1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: 'h1',
+          start: "top-=300 top+=200",
+          // scrub: true,
+          end: "+=500",
+          // markers: true,
+        },
+      });
+
+ var headings2 = gsap.utils.toArray("h2");
+    headings2.forEach((h2) => {
+      gsap.from(h2, {
+        scale:0,
+        opacity: 0,
+        duration:1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: h2,
+          start: "top-=500 top+=100",
+          // scrub: true,
+          // end: "+=500",
+          // markers: true,
+        },
+      });
+    });
+
+    var details = gsap.utils.toArray(".detail-img");
+    details.forEach((detail) => {
+      gsap.to(detail, {
+        rotationY:0,
+        // scale:2,
+        duration:0.3,
+        flexBasis:600,
+        borderRadius:20,
+pin: true,
+        ease:"linear",
+        scrollTrigger: {
+          trigger: detail,
+          start: "top+=40 center+=50",
+          toggleActions:"play reverse restart reverse",
+
+          // scrub: true,
+          end: "bottom center-=50",
+          // markers: true,
+        },
+      });
+    });
+    var colorbikes = gsap.utils.toArray(".bike-colors-images");
+
+      colorbikes.forEach((img) => {
+      gsap.from(img, {
+        x: -250,
+        scale:0.5,
+        opacity: 0,
+        duration:1.5,
+        delay:0.2,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: img,
+          start: "top center+=400",
+        toggleActions:"play none none reset",
+
+          // scrub: true,
+          // end: "+=500",
+          // markers: true,
+        },
+      });
+    });
+// INTRO BIKE
+    gsap.to('.bg-intro',{
+      scale:7.5,
+      duration:3.5,
+        ease: "power4.out",
+      
+      scrollTrigger:{
+        trigger:'.intro',
+        start:'top bottom',
+        toggleActions:"play none none reset",
+
+        // scrub:true
+      }
+    })
+  }
 };
 </script>
 
@@ -163,6 +255,8 @@ h1 {
   margin: 0;
   /* text-transform: uppercase; */
   font-size: var(--font-size-6);
+  opacity: 1;
+  z-index: 1;
 }
 h2{
   color: var(--gray-4);
@@ -198,7 +292,22 @@ section h2:after{
 }
 
 .intro {
-  background-color: rgb(41, 44, 53);
+  /* background-color: rgb(41, 44, 53); */
+  position: relative;
+  overflow: hidden;
+}
+.bg-intro{
+  position: absolute;
+  width:100vh;
+  height:100vh;
+  border-radius: 50%;
+  background: var(--gray-9);
+  top:0;
+  left:-50%;
+  z-index: 0;
+ transform: scale(0);
+
+  
 }
 .bike-colors {
   display: flex;
@@ -233,6 +342,7 @@ section h2:after{
   gap: 1rem;
   text-align: center;
   color: var(--gray-0);
+  z-index: 1;
 }
 .bullet-wrap{
   width: 6rem; 
@@ -256,21 +366,16 @@ section h2:after{
 
 }
 .detail{
-  padding: 2rem 0;
+  padding: 3.5rem 0;
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 4rem;
-  /* transform-style: preserve-3d; */
-  perspective: 1100px;
-
-
-
+  column-gap: 0rem;
+  perspective: 1000px;
 }
 .detail:nth-child(even){
   flex-direction: row-reverse;
-  
-
 }
 .detail-img{
   display: flex;
@@ -278,25 +383,26 @@ section h2:after{
   overflow: hidden;
   box-shadow: var(--shadow-4);
   flex-wrap: wrap;
-  border-radius:70px;
-  transform: rotateY(20deg) ;
+  border-radius:0px;
+  /* border:8px solid white; */
+  transform: rotateY(30deg) ;
   z-index: 10;
   /* transform-style: preserve-3d; */
-transition: all 0.35s ease-in-out; 
+/* transition: all 0.35s ease-in-out;  */
 }
 .detail-img:hover{
-    transform: rotateY(0deg) ;
+    /* transform: rotateY(0deg) ;
   flex-basis: 600px;
-  border-radius:10px;
-
+  border-radius:20px; */
+  /* border:8px solid transparent; */
 
 }
 .detail:nth-of-type(2n) .detail-img{
-  transform: rotateY(-20deg);
+  transform: rotateY(-30deg);
 }
-.detail-img:hover{
+/* .detail-img:hover{
     transform: rotateY(0deg) !important;
-}
+} */
 .detail-text-wrap{
 flex-basis: 35%;
 text-align: center;
@@ -319,7 +425,7 @@ max-width: 35ch;
 }
 #dimentions{
  background-color:var(--gray-7);
- padding-inline: 8rem ;
+ /* padding-inline: 8rem ; */
  background-image: url(~/assets/img/grid-monomer.png);
  
 }
@@ -335,10 +441,21 @@ max-width: 35ch;
 
 .specs-category{
   flex-basis: 30%;
+  flex-grow: 1;
+}
+@media (max-width:1024px){
+  .specs-category{
+  flex-basis:45%;
+}
+}
+@media (max-width:768px){
+  .specs-category{
+  flex-basis:90%;
+}
 }
 .specs-category img{
   width:25px;
-  margin-right:10px;
+  
   filter: sepia(100%) hue-rotate(180deg) saturate(50%);
 }
 .cat-title{
