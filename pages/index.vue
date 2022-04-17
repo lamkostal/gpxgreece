@@ -99,7 +99,7 @@
 export default {
   // transition: 'fade',
   mounted() {
-    let gsap = this.$gsap;
+    
     gsap.fromTo("h1", { y: 10 }, { y: -20 });
     
     gsap.fromTo(

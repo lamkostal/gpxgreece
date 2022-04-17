@@ -14,29 +14,31 @@
       <section class="intro">
         <div class="bg-intro"></div>
 
-         <h1>Εξερευνήστε το {{ bike.title }}</h1>
-          <h2>Χρωματισμοί</h2>
+        <h1>Εξερευνήστε το {{ bike.title }}</h1>
+        <h2>Χρωματισμοί</h2>
         <div class="container bike-colors">
-         
           <div class="bike-colors-wrapper">
-           
             <transition-group tag="div" name="bike" class="bike-colors-images">
-               
-                <img v-show="bikeColor===index"
-                  v-for="(item, index) in bike.BikeColors"
-                  :key="item.ColorImage.id"
-                  :src="item.ColorImage.filename"
-                  :alt="item.ColorImage.alt"
-                />
-             
+              <img
+                v-show="bikeColor === index"
+                v-for="(item, index) in bike.BikeColors"
+                :key="item.ColorImage.id"
+                :src="item.ColorImage.filename"
+                :alt="item.ColorImage.alt"
+              />
             </transition-group>
-           
+
             <div class="bike-colors-bullets">
-              <div class="bullet-wrap" v-for="(bullet,index) in bike.BikeColors"
+              <div
+                class="bullet-wrap"
+                v-for="(bullet, index) in bike.BikeColors"
                 :key="bullet.ColorImage.id"
-               >
-                <div  @click="bikeColor=index" class="bullet"  :style="{ backgroundColor: bullet.BulletColor.color }">
-                </div>
+              >
+                <div
+                  @click="bikeColor = index"
+                  class="bullet"
+                  :style="{ backgroundColor: bullet.BulletColor.color }"
+                ></div>
                 <span>{{ bullet.BulletColorName }}</span>
               </div>
             </div>
@@ -47,38 +49,57 @@
       <section class="details">
         <h2>Λεπτομέρειες</h2>
         <div class="container-fluid">
-          <div class="detail" v-for="detail in bike.Details" :key="detail.DetailImage.id">
+          <div
+            class="detail"
+            v-for="detail in bike.Details"
+            :key="detail.DetailImage.id"
+          >
             <div class="detail-img">
-              <img :src="detail.DetailImage.filename" alt="">
+              <img :src="detail.DetailImage.filename" alt="" />
             </div>
             <div class="detail-text-wrap">
-              <p class="detail-text">{{detail.DetailText}}</p>
-              <p class="detail-text-desc">{{detail.DetailTextDesc}}</p>
+              <p class="detail-text">{{ detail.DetailText }}</p>
+              <p class="detail-text-desc">{{ detail.DetailTextDesc }}</p>
             </div>
           </div>
         </div>
       </section>
       <section id="dimentions" v-if="bike.DimentionsImg">
         <h2>Διαστάσεις</h2>
-        <div class="container dimentions-wrap"><img :src="bike.DimentionsImg.filename" :alt="bike.DimentionsImg.alt" :title="bike.DimentionsImg.title"></div>
+        <div class="container dimentions-wrap">
+          <img
+            :src="bike.DimentionsImg.filename"
+            :alt="bike.DimentionsImg.alt"
+            :title="bike.DimentionsImg.title"
+          />
+        </div>
       </section>
       <section id="specifications">
-
         <h2>Τεχνικά Χαρακτηριστικά</h2>
         <div class="specifications container">
-          <div class="specs-category" v-for="(category) in bike.Specifications" :key="category.SpecCatName">
-           <div class="flex-row">
-              <img :src="category.SpecCatIcon.filename" :alt="category.SpecCatName">
+          <div
+            class="specs-category"
+            v-for="category in bike.Specifications"
+            :key="category.SpecCatName"
+          >
+            <div class="flex-row">
+              <img
+                :src="category.SpecCatIcon.filename"
+                :alt="category.SpecCatName"
+              />
 
-              <span class="cat-title">{{category.SpecCatName}}</span>
-           </div>
-            <div class="spec" v-for="spec in category.Specification" :key="spec.specName">
-              <span class="spec-name">{{spec.specName}}</span>
-              <span class="spec-value">{{spec.specValue}}</span>
+              <span class="cat-title">{{ category.SpecCatName }}</span>
+            </div>
+            <div
+              class="spec"
+              v-for="spec in category.Specification"
+              :key="spec.specName"
+            >
+              <span class="spec-name">{{ spec.specName }}</span>
+              <span class="spec-value">{{ spec.specValue }}</span>
             </div>
           </div>
         </div>
-
       </section>
     </main>
   </div>
@@ -86,7 +107,7 @@
 
 <script>
 export default {
-  transition: 'fade',
+  transition: "fade",
 
   data() {
     return {
@@ -100,7 +121,7 @@ export default {
         starts_with: `bikes`,
       })
       .then((res) => {
-        console.log(res);
+        console.log("ela"+res);
 
         if (!res.data.stories.length) {
           throw "erroo";
@@ -112,9 +133,9 @@ export default {
               HeaderImage: items.content.HeaderImage.filename,
               ImageAlt: items.content.HeaderImage.alt,
               BikeColors: items.content.BikeColors,
-              Details:items.content.Details,
-              Specifications:items.content.Specifications,
-              DimentionsImg:items.content.DimentionsImg
+              Details: items.content.Details,
+              Specifications: items.content.Specifications,
+              DimentionsImg: items.content.DimentionsImg,
             };
           }),
         };
@@ -131,28 +152,28 @@ export default {
       });
     },
   },
-  mounted(){
+  mounted() {
+  setTimeout(()=>{
+     // let gsap = this.$gsap;
+    gsap.from("h1", {
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: "h1",
+        start: "top-=300 top+=200",
+        // scrub: true,
+        end: "+=500",
+        // markers: true,
+      },
+    });
 
-     let gsap = this.$gsap;
-      gsap.from('h1', {
-        opacity:0,
-        duration:1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: 'h1',
-          start: "top-=300 top+=200",
-          // scrub: true,
-          end: "+=500",
-          // markers: true,
-        },
-      });
-
- var headings2 = gsap.utils.toArray("h2");
+    var headings2 = gsap.utils.toArray("h2");
     headings2.forEach((h2) => {
       gsap.from(h2, {
-        scale:0,
+        scale: 0,
         opacity: 0,
-        duration:1.2,
+        duration: 1.2,
         ease: "power3.out",
         scrollTrigger: {
           trigger: h2,
@@ -167,38 +188,38 @@ export default {
     var details = gsap.utils.toArray(".detail-img");
     details.forEach((detail) => {
       gsap.to(detail, {
-        rotationY:0,
+        rotationY: 0,
         // scale:2,
-        duration:0.3,
-        flexBasis:600,
-        borderRadius:20,
-pin: true,
-        ease:"linear",
+        duration: 0.3,
+        flexBasis: 600,
+        borderRadius: 20,
+        
+        ease: "linear",
         scrollTrigger: {
           trigger: detail,
-          start: "top+=40 center+=50",
-          toggleActions:"play reverse restart reverse",
+          start: "top center",
+          toggleActions: "restart reverse restart reverse",
 
           // scrub: true,
-          end: "bottom center-=50",
+          end: "bottom center",
           // markers: true,
         },
       });
     });
     var colorbikes = gsap.utils.toArray(".bike-colors-images");
 
-      colorbikes.forEach((img) => {
+    colorbikes.forEach((img) => {
       gsap.from(img, {
         x: -250,
-        scale:0.5,
+        scale: 0.5,
         opacity: 0,
-        duration:1.5,
-        delay:0.2,
+        duration: 1.5,
+        delay: 0.2,
         ease: "power4.out",
         scrollTrigger: {
           trigger: img,
           start: "top center+=400",
-        toggleActions:"play none none reset",
+          toggleActions: "play none none reset",
 
           // scrub: true,
           // end: "+=500",
@@ -206,26 +227,29 @@ pin: true,
         },
       });
     });
-// INTRO BIKE
-    gsap.to('.bg-intro',{
-      scale:7.5,
-      duration:3.5,
-        ease: "power4.out",
-      
-      scrollTrigger:{
-        trigger:'.intro',
-        start:'top bottom',
-        toggleActions:"play none none reset",
+    // INTRO BIKE
+    gsap.to(".bg-intro", {
+      scale: 7.5,
+      duration: 3.5,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: ".intro",
+        start: "top bottom",
+        toggleActions: "play none none reset",
 
         // scrub:true
-      }
-    })
-  }
+      },
+    });
+
+  },100)
+
+   
+  },
 };
 </script>
 
 <style scoped>
-section{
+section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -258,37 +282,34 @@ h1 {
   opacity: 1;
   z-index: 1;
 }
-h2{
+h2 {
   color: var(--gray-4);
   font-weight: var(--font-weight-4);
-  margin:1rem 0rem 3rem 0rem ;
+  margin: 1rem 0rem 3rem 0rem;
   font-size: var(--font-size-5);
-  
-
 }
-h2:after{
-  content:"";
+h2:after {
+  content: "";
   display: block;
-  width:3ch;
-  height:1px;
-  background-color:var(--gray-4);
-  margin-inline:auto ;
-  margin-top: 10px ;
+  width: 3ch;
+  height: 1px;
+  background-color: var(--gray-4);
+  margin-inline: auto;
+  margin-top: 10px;
   opacity: 0.9;
   border-radius: 15px;
 }
-section h2{
+section h2 {
   color: var(--gray-2);
 }
-section h2:after{
+section h2:after {
   background-color: var(--gray-2);
 }
-#specifications h2{
+#specifications h2 {
   color: var(--gray-7);
 }
-#specifications h2:after{
-   background-color: var(--gray-7);
-
+#specifications h2:after {
+  background-color: var(--gray-7);
 }
 
 .intro {
@@ -296,18 +317,16 @@ section h2:after{
   position: relative;
   overflow: hidden;
 }
-.bg-intro{
+.bg-intro {
   position: absolute;
-  width:100vh;
-  height:100vh;
+  width: 100vh;
+  height: 100vh;
   border-radius: 50%;
   background: var(--gray-9);
-  top:0;
-  left:-50%;
+  top: 0;
+  left: -50%;
   z-index: 0;
- transform: scale(0);
-
-  
+  transform: scale(0);
 }
 .bike-colors {
   display: flex;
@@ -344,8 +363,8 @@ section h2:after{
   color: var(--gray-0);
   z-index: 1;
 }
-.bullet-wrap{
-  width: 6rem; 
+.bullet-wrap {
+  width: 6rem;
   white-space: nowrap;
   display: flex;
   flex-direction: column;
@@ -361,11 +380,10 @@ section h2:after{
   border: 4px solid #000;
   cursor: pointer;
 }
-.details{
+.details {
   background-color: var(--gray-9);
-
 }
-.detail{
+.detail {
   padding: 3.5rem 0;
   margin-top: 1rem;
   display: flex;
@@ -374,122 +392,108 @@ section h2:after{
   column-gap: 0rem;
   perspective: 1000px;
 }
-.detail:nth-child(even){
+.detail:nth-child(even) {
   flex-direction: row-reverse;
 }
-.detail-img{
+.detail-img {
   display: flex;
   flex-basis: 500px;
   overflow: hidden;
   box-shadow: var(--shadow-4);
   flex-wrap: wrap;
-  border-radius:0px;
+  border-radius: 0px;
   /* border:8px solid white; */
-  transform: rotateY(30deg) ;
+  transform: rotateY(30deg);
   z-index: 10;
   /* transform-style: preserve-3d; */
-/* transition: all 0.35s ease-in-out;  */
+  /* transition: all 0.35s ease-in-out;  */
 }
-.detail-img:hover{
-    /* transform: rotateY(0deg) ;
-  flex-basis: 600px;
-  border-radius:20px; */
-  /* border:8px solid transparent; */
 
-}
-.detail:nth-of-type(2n) .detail-img{
+.detail:nth-of-type(2n) .detail-img {
   transform: rotateY(-30deg);
 }
-/* .detail-img:hover{
-    transform: rotateY(0deg) !important;
-} */
-.detail-text-wrap{
-flex-basis: 35%;
-text-align: center;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+
+.detail-text-wrap {
+  flex-basis: 35%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.detail-text{
-font-size: var(--font-size-5);
-font-weight: var(--font-weight-8);
-color: var(--blue-7);
-margin: 10px 0;
+.detail-text {
+  font-size: var(--font-size-5);
+  font-weight: var(--font-weight-8);
+  color: var(--blue-7);
+  margin: 10px 0;
 }
-.detail-text-desc{
-font-size: var(--font-size-3);
-font-weight: var(--font-weight-4);
-color: var(--gray-4);
-max-width: 35ch;
+.detail-text-desc {
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-4);
+  color: var(--gray-4);
+  max-width: 35ch;
 }
-#dimentions{
- background-color:var(--gray-7);
- /* padding-inline: 8rem ; */
- background-image: url(~/assets/img/grid-monomer.png);
- 
+#dimentions {
+  background-color: var(--gray-7);
+  /* padding-inline: 8rem ; */
+  background-image: url(~/assets/img/grid-monomer.png);
 }
-#dimentions img{
-  filter:invert();
+#dimentions img {
+  filter: invert();
 }
-.specifications{
+.specifications {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap:20px
+  gap: 20px;
 }
 
-.specs-category{
+.specs-category {
   flex-basis: 30%;
   flex-grow: 1;
 }
-@media (max-width:1024px){
-  .specs-category{
-  flex-basis:45%;
+@media (max-width: 1024px) {
+  .specs-category {
+    flex-basis: 45%;
+  }
 }
+@media (max-width: 768px) {
+  .specs-category {
+    flex-basis: 90%;
+  }
 }
-@media (max-width:768px){
-  .specs-category{
-  flex-basis:90%;
-}
-}
-.specs-category img{
-  width:25px;
-  
+.specs-category img {
+  width: 25px;
+
   filter: sepia(100%) hue-rotate(180deg) saturate(50%);
 }
-.cat-title{
+.cat-title {
   display: block;
   font-weight: var(--font-weight-8);
   font-size: var(--font-size-3);
   color: var(--gray-7);
   margin: 10px 0;
 }
-.spec{
-  
- display: flex;
- justify-content: space-between;
- border-top: 1px solid var(--gray-4);
- padding: 8px 5px;
- 
+.spec {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--gray-4);
+  padding: 8px 5px;
 }
-.spec:nth-of-type(2n){
- background: var(--gray-2);
+.spec:nth-of-type(2n) {
+  background: var(--gray-2);
 }
-.spec-value{
+.spec-value {
   flex-basis: 50%;
 }
 
 /* transition */
 .bike-enter-active,
 .bike-leave-active {
-  transition: all 0.35s ease-out  ;
-
+  transition: all 0.35s ease-out;
 }
 .bike-enter,
 .bike-leave-active {
   opacity: 0;
 }
-
-
 </style>

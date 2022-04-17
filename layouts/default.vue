@@ -80,10 +80,16 @@ section.hero{
   z-index: 1;
 
 }
+:root{
+   /* --full-height:100vh; */
+
+}
 section.hero .hero_img{
    object-fit: cover;
-   width:1900px;
-   height:650px;
+   /* width:1900px; */
+   width:100%;
+   /* height:calc(var(--full-height)-100px); */
+   height:90vh;
 }
 .top-section{
   margin-top: 100px;
