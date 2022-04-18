@@ -153,6 +153,7 @@ export default {
     },
   },
   mounted() {
+    // GSAP ANIMATIONS
   setTimeout(()=>{
      // let gsap = this.$gsap;
     gsap.from("h1", {
@@ -201,7 +202,7 @@ export default {
           toggleActions: "restart reverse restart reverse",
 
           // scrub: true,
-          end: "bottom center",
+          end: "bottom+=100 center",
           // markers: true,
         },
       });

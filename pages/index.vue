@@ -12,24 +12,32 @@
           alt=""
           class="hero_side_img hero_rock_img"
         />
-        <img src="~/assets/img/GPX-HP-header.jpg" alt="" class="hero_img" />
+        <img src="~/assets/img/GPX-HP-header-alt.jpg" alt="" class="hero_img" />
 
-        <h1>Καλως ήρθατε στην GPX</h1>
+        <h1> Dare to challenge</h1>
       </section>
     </header>
     <main class="container-fluid">
       <section class="intro">
         <div class="opaque"></div>
+        <img class="curve-pop" src="~/assets/img/curve-pop.svg" alt="">
+
         <div class="intro-content container">
           <div class="text-content">
-            <h2>Lorem ipsum</h2>
+            <h2>Καλως ήρθατε στην GPX</h2>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit
-              explicabo animi corporis iure expedita velit suscipit perferendis
-              impedit laborum blanditiis.
+              Η GPX είναι η μάρκα μοτοσυκλετών με έδρα την Ταϊλάνδη. Με ολοκαίνουριο εργοστάσιο 45000τ.μ κάνει<b> έρευνα</b>, <b>ανάπτυξη</b> και <b>κατασκευή</b> προϊόντων υψηλής ποιότητας σε λογικές τιμές.
             </p>
+            <p>Ιδρύθηκε το 2007 και αρχικά ως κατασκευαστής ATV και μεσα σε μια δεκαετία γνώρισε ραγδαία ανάπτυξη, εξάγωντας τις μοτοσυκλέτες σε περισσότερες από 10 χώρες.</p>
+            <p>
+              <nuxt-link to="/about">Μάθε περισσότερα</nuxt-link>
+              </p>
           </div>
-          <div class="imgs-content"></div>
+          <div class="imgs-content">
+            <img src="~/assets/img/ware1.jpg" alt="" class="ware1">
+            <img src="~/assets/img/ware2.jpg" alt="" class="ware2">
+            
+          </div>
         </div>
       </section>
       <section aria-label="popz-intro" class="bike-intro popz-intro">
@@ -43,10 +51,10 @@
             <nuxt-link to="/bikes/popz" class="btn">ΔΕΣ ΤΟ ΑΝΑΛΥΤΙΚΑ</nuxt-link>
           </div>
           <div class="img-pop img-pop1 bike-img">
-            <img src="~/assets/img/popz/poz-HP-white.jpg" alt="" />
+            <img src="~/assets/img/popz/popz-HP-recolour.jpg" alt="" />
           </div>
           <div class="img-pop img-pop2 bike-img">
-            <img src="~/assets/img/popz/popz-HP-recolour.jpg" alt="" />
+            <img src="~/assets/img/popz/poz-HP-white.jpg" alt="" />
           </div>
           <div class="img-pop img-pop3 bike-img">
             <img src="~/assets/img/popz/poz-HP-sq.jpg" alt="" />
@@ -100,7 +108,7 @@ export default {
   // transition: 'fade',
   mounted() {
     
-    gsap.fromTo("h1", { y: 10 }, { y: -20 });
+    gsap.fromTo("h1", { y: 10 }, { y: -50 ,ease:'power2.out',duration:1});
     
     gsap.fromTo(
       ".hero_popz_img",
@@ -117,15 +125,14 @@ export default {
 
     scrText.forEach((text) => {
       gsap.from(text, {
-        y: 250,
+        y: 200,
         opacity: 0,
-        duration:1,
-        ease: "power3.out",
+        duration:1.2,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: text,
-          start: "top top+=600",
-        
-          end: "+=500",
+          start: "top bottom",
+          // end: "+=500",
           // markers: true,
         },
       });
@@ -142,7 +149,7 @@ export default {
           trigger: img,
           start: "top bottom",
         
-          end: "+=500",
+          // end: "+=500",
           // markers: true,
         },
       });
@@ -163,16 +170,17 @@ section {
 h1 {
   position: absolute;
   width: 100%;
-  bottom: 0;
-  color: var(--gray-1);
+  top: 25%;
+  color: var(--gray-2);
   transform: translateY(-50px);
   text-align: center;
+  font-size:var(--font-size-8)
 }
 .hero_side_img {
   position: absolute;
   z-index: 3;
-  top: 220px;
-  width: 620px;
+  top: 120px;
+  width: 720px;
   opacity: 0;
 }
 .hero_popz_img {
@@ -181,31 +189,69 @@ h1 {
 .hero_rock_img {
   right: -60px;
 }
-.intro {
+section.intro {
   background-image: url(~/assets/img/intro1.jpg);
+  
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
   min-height: 100vh;
+
+
 }
+.text-content{
+color: var(--gray-4);
+font-size: var(--font-size-2);
+
+}
+.text-content p{
+max-width: 50ch;
+}
+.imgs-content{
+  position: relative;
+  width:40vw;
+}
+.imgs-content img{
+  position: absolute;
+}
+.ware1{
+  width:350px;
+  z-index: 11;
+  top:0px;
+  left:250px;
+  display:none;
+}
+.ware2{
+  width:500px;
+  z-index: 12;
+  top:00px;
+  left:100px;
+}
+.curve-pop{
+  position: absolute;
+  bottom: 0;
+}
+
 .opaque {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: linear-gradient(var(--gray-9), var(--gray-0));
   opacity: 0.8;
 }
 .intro-content {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-content: center;
+  place-items:start;
   align-content: center;
+  /* height: 100vh; */
 }
 .intro h2 {
-  font-size: var(--font-size-3);
+  font-size: var(--font-size-6);
+  color: var(--gray-4);
 }
 .grid {
   grid-gap: 10px;
@@ -224,7 +270,7 @@ section.bike-intro {
 .bike-info h2 {
   margin-top: 0;
   font-size: var(--font-size-7);
-  color:var(--blue-7)
+  color:var(--gray-8)
 
 }
 
@@ -254,21 +300,21 @@ section.bike-intro {
 .img-pop1 {
   transform: translateY(0px) translateX(-50px);
   /* background: rgb(32, 63, 201); */
-  width: 500px;
+  width: 550px;
   height: 420px;
   z-index: 1;
 }
 .img-pop2 {
-  transform: translateY(-80px) translateX(30px);
-  width: 600px;
-  height: 400px;
+  transform: translateY(-120px) translateX(30px);
+  width: 520px;
+  height: 460px;
   /* background: red; */
   z-index: 2;
 }
 .img-pop3 {
   width: 400px;
   height: 420px;
-  transform: translateY(-25px) translateX(20px);
+  transform: translateY(-25px) translateX(-20px);
   /* background: yellow; */
   z-index: 2;
 }
@@ -294,7 +340,9 @@ section.dealers-intro {
   min-height: 100vh;
   background:linear-gradient(var(--gray-0) 30%,var(--gray-5));
   padding-top: 0;
-  padding-bottom: 14rem;
+  padding-bottom: 10rem;
+  padding-top:5rem ;
+  border-top: 1px solid var(--gray-3);
 }
 .dealers-info {
   padding: 0 4em;

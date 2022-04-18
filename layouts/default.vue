@@ -70,7 +70,7 @@ img{
   max-width: 100%;
 }
 section{
-   padding: 4.5em 0 4em;
+   padding: 7em 0 4em;
 }
 section.hero{
   display: flex;
@@ -107,6 +107,9 @@ h2{
    font-weight: var(--font-weight-8);
 
  
+}
+a{
+  color:var(--blue-9)
 }
 h3,h4{
   color: var(--gray-6);

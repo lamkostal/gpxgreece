@@ -290,7 +290,7 @@ span>svg{
 .dealers-section-contact{
   background-color: var(--gray-1);
   background-image: url(~/assets/img/GPX-road.svg);
-  background-size: 40%;
+  background-size: 50%;
   background-repeat: no-repeat;
   background-position: 100% 101%;
   min-height: 100vh;

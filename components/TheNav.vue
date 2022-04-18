@@ -101,7 +101,9 @@ li {
   cursor: pointer;
   font-size: var(--font-size-1);
   font-weight: var(--font-weight-4);
-
+}
+li:not(:last-child){
+  border-right: 1px solid black;
 }
 .submenu-toggle {
   position: absolute;
