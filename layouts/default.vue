@@ -96,6 +96,7 @@ section.hero .hero_img{
 }
 h1,h2{
   color: var(--gray-7);
+  margin-top: 0;
 }
 h1{
   text-align:center;

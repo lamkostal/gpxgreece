@@ -38,23 +38,29 @@
           v-show="submenuOpen"
           @mouseleave="submenuOpen = false"
         >
-          <div class="models_submenu_item" @click="submenuOpen = false">
-            <NuxtLink to="/bikes/popz">
+          <div class="models_submenu_item" @click="submenuOpen = false"  >
+            <NuxtLink to="/bikes/popz" >
               <img
+              @mouseenter="popAnimDec()" 
                 src="~/assets/img/Popz-side-thumb.png"
                 alt="popz-thumbnail"
               />
               <span>POPZ</span>
+              <img class="pop-dec1" ref="popdec1" src="~/assets/img/popz/pop-dec-1.png" alt="">
+              <img class="pop-dec2" ref="popdec2" src="~/assets/img/popz/pop-dec-2.png" alt="">
             </NuxtLink>
           </div>
           <div class="models_submenu_item" @click="submenuOpen = false">
             <NuxtLink to="/bikes/rock">
               <img
+              @mouseenter="rockAnimDec()"
                 src="~/assets/img/Rock-side-thumb.png"
                 alt="rock thumbnail"
               />
 
               <span>ROCK</span>
+               <img class="rock-dec1" ref="rockdec1" src="~/assets/img/rock/rock-dec-1.png" alt="">
+              <img class="rock-dec2"  ref="rockdec2" src="~/assets/img/rock/rock-dec-2.png" alt="">
             </NuxtLink>
           </div>
           <div class="deco-rect"></div>
@@ -80,6 +86,34 @@ export default {
       submenuOpen: false,
     };
   },
+  methods:{
+    popAnimDec(){
+      let tl1=gsap.timeline()
+      tl1
+      .to(this.$refs.popdec1,{opacity:0.7,duration:0.1})
+      .to(this.$refs.popdec2,{opacity:0.7,duration:0.1},'<')
+      .fromTo(this.$refs.popdec1,{rotation:10},{rotation:-10,repeat:8,yoyo:"true",ease:'none',duration:0.1})
+      .fromTo(this.$refs.popdec2,{rotation:10},{rotation:-10,repeat:7,yoyo:"true",ease:'none',duration:0.15},'<')
+      .to(this.$refs.popdec1,{opacity:0,duration:0.05})
+      
+      .to(this.$refs.popdec2,{opacity:0,duration:0.2},'<')
+      .restart()
+      
+    },
+     
+    rockAnimDec(){
+       let tl2=gsap.timeline()
+      tl2
+      .to(this.$refs.rockdec1,{opacity:0.7,duration:0.2})
+      .to(this.$refs.rockdec2,{opacity:0.7,duration:0.2},'<')
+      .fromTo(this.$refs.rockdec1,{rotation:10},{rotation:-10,repeat:8,yoyo:"true",ease:'none',duration:0.1})
+      .fromTo(this.$refs.rockdec2,{rotation:10},{rotation:-10,repeat:7,yoyo:"true",ease:'none',duration:0.15},'<')
+      .to(this.$refs.rockdec1,{opacity:0,duration:0.2})
+      .to(this.$refs.rockdec2,{opacity:0,duration:0.2},'<')
+      .restart()
+
+    }
+  }
 };
 </script>
 
@@ -175,7 +209,44 @@ nav > ul {
   background: linear-gradient(90deg,var(--gray-0),30%, var(--gray-4),70%,var(--gray-0));
   z-index: 0;
 }
+.pop-dec1{
+  width: 5px;
+position: absolute;
+  top: 30px;
+  left: -12px;
+  transform: rotate(10deg);
+  opacity: 0;
 
+}
+.pop-dec2{
+  width: 10px;
+position: absolute;
+  top: 10px;
+  left: 100px;
+  transform: rotate(10deg);
+  opacity: 0;
+
+
+}
+.rock-dec1{
+  width: 12px;
+position: absolute;
+  top: 30px;
+  left: -12px;
+  transform: rotate(10deg);
+  opacity: 0;
+}
+.rock-dec2{
+  width: 15px;
+position: absolute;
+  top: 5px;
+  left: 100px;
+  transform: rotate(10deg);
+  opacity: 0;
+
+
+
+}
 
 .models_submenu_item span {
   font-size: var(--font-size-1);

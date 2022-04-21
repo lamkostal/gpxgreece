@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+   
     <header class="head">
       <section aria-label="hero top-section" class="hero">
         <img :src="bike.HeaderImage" alt="bike.ImageAlt" class="hero_img" />
@@ -37,7 +38,7 @@
                 <div
                   @click="bikeColor = index"
                   class="bullet"
-                  :style="{ backgroundColor: bullet.BulletColor.color }"
+                  :style="{backgroundImage: 'linear-gradient(60deg,'+ bullet.BulletColor.color + ' 0 60%,'+ bullet.BulletColor2.color + ' 62% 100%)' }"
                 ></div>
                 <span>{{ bullet.BulletColorName }}</span>
               </div>
@@ -111,7 +112,7 @@ export default {
 
   data() {
     return {
-      bikeColor: 1,
+      bikeColor: 0,
     };
   },
   asyncData(context) {
@@ -136,6 +137,7 @@ export default {
               Details: items.content.Details,
               Specifications: items.content.Specifications,
               DimentionsImg: items.content.DimentionsImg,
+              Chain:items.content.Chain
             };
           }),
         };
@@ -151,6 +153,7 @@ export default {
         return e.title.toLowerCase() == this.$route.params.bike;
       });
     },
+   
   },
   mounted() {
     // GSAP ANIMATIONS
@@ -344,7 +347,7 @@ section h2:after {
 }
 .bike-colors-images {
   position: relative;
-  width: 780px;
+  width: 800px;
   max-width: 100%;
   height: 500px;
   /* background: #000; */
@@ -378,7 +381,7 @@ section h2:after {
   width: 5.9rem;
   height: 2.9rem;
   border-radius: 50px;
-  border: 4px solid #000;
+  outline: 2px solid rgb(255, 255, 255);
   cursor: pointer;
 }
 .details {
