@@ -2,6 +2,7 @@
   <div class="wrapper"> 
   <header class="head">
       <section aria-label="hero" class="hero top-section">
+        <div class="opaque"></div>
         <img src="~/assets/img/about-header-img.jpg" alt="" class="hero_img" />
         
       </section>
@@ -46,6 +47,20 @@ export default {
 </script>
 
 <style scoped>
+.hero{
+  position: relative;
+  
+}
+.hero img{
+  height:80vh
+}
+.opaque{
+  position: absolute;
+  background-image: linear-gradient(180deg,transparent,90%,var(--gray-0));
+  width:100%;
+  height: 100%;
+  z-index: 10;
+}
 
 .about-section{
   padding-top: 4rem ;

@@ -70,7 +70,7 @@ img{
   max-width: 100%;
 }
 section{
-   padding: 7em 0 4em;
+   padding: 6em 0 4em;
 }
 section.hero{
   display: flex;

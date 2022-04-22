@@ -194,11 +194,11 @@ export default {
       gsap.to(detail, {
         rotationY: 0,
         // scale:2,
-        duration: 0.3,
+        duration: 0.5,
         flexBasis: 600,
-        borderRadius: 20,
+        borderRadius: 10,
         
-        ease: "linear",
+        ease: "power1.out",
         scrollTrigger: {
           trigger: detail,
           start: "top center",
@@ -236,6 +236,7 @@ export default {
       scale: 7.5,
       duration: 3.5,
       ease: "power4.out",
+      delay:0.3,
       scrollTrigger: {
         trigger: ".intro",
         start: "top bottom",
@@ -245,7 +246,7 @@ export default {
       },
     });
 
-  },100)
+  },200)
 
    
   },
@@ -272,8 +273,8 @@ section {
   /* background:linear-gradient(90deg,transparent,30%,rgba(36, 36, 36, 0.384)); */
 }
 .header-btn {
-  background: var(--orange-8);
-  background: rgb(143, 143, 143, 0.8);
+  background: var(--gray-9);
+  /* background: rgb(143, 143, 143, 0.8); */
   border: var(--border-size-2) solid var(--gray-0);
   font-weight: var(--font-weight-5);
 }
@@ -401,20 +402,20 @@ section h2:after {
 }
 .detail-img {
   display: flex;
-  flex-basis: 500px;
+  flex-basis: 350px;
   overflow: hidden;
   box-shadow: var(--shadow-4);
   flex-wrap: wrap;
   border-radius: 0px;
   /* border:8px solid white; */
-  transform: rotateY(30deg);
+  transform: rotateY(40deg);
   z-index: 10;
   /* transform-style: preserve-3d; */
   /* transition: all 0.35s ease-in-out;  */
 }
 
 .detail:nth-of-type(2n) .detail-img {
-  transform: rotateY(-30deg);
+  transform: rotateY(-40deg);
 }
 
 .detail-text-wrap {

@@ -125,16 +125,13 @@ export default {
   // transition: 'fade',
   mounted() {
 
-    gsap.to('.three-d',{opacity:1,delay:1,duration:0.8});
-    gsap.to('.outline',{opacity:0,delay:2});
+    gsap.to('.three-d',{opacity:1,delay:0.9,duration:0.8});
 
+    gsap.to('.outline',{opacity:0,delay:2});
 
     gsap.fromTo(".arrow", { y: 0,opacity:0.8 }, { y: 10 ,opacity:1,ease:'power2.in',duration:0.4,yoyo:true,repeat:-1});
 
-    gsap.fromTo("h1", { y: 40,opacity:0 }, { y: 0 ,opacity:1,ease:'power2.out',duration:1,delay: 1});
-
-    
-
+    gsap.fromTo("h1", { y: 40,opacity:0 }, { y: 0 ,opacity:1,ease:'power3.out',duration:1,delay: 1});
 
     gsap.from('.intro-content',{y: 100,opacity:0,duration:0.8,ease:'power2.out', scrollTrigger: {
           trigger: '.intro-content',
@@ -145,13 +142,14 @@ export default {
     gsap.fromTo(
       ".hero_popz_img",
       { x: -100, scale: 0.9, opacity: 0 },
-      { x: 50, scale: 1, opacity: 1, duration: 0.8, delay: 0.2,ease:'power2.out' }
+      { x: 50, scale: 1, opacity: 1, duration:1, delay: 1,ease:'power3.out' }
     );
     gsap.fromTo(
       ".hero_rock_img",
       { x: 100, scale: 0.9, opacity: 0 },
-      { x: -50, scale: 1, opacity: 1, duration: 0.8, delay: 0.4,ease:'power2.out' }
+      { x: -50, scale: 1, opacity: 1, duration: 1, delay: 1,ease:'power3.out' }
     );
+
     var scrText = gsap.utils.toArray(".scr-text");
 
     scrText.forEach((text) => {
@@ -178,7 +176,25 @@ export default {
         ease: "power2.out",
         scrollTrigger: {
           trigger: img,
-          start: "top bottom",
+          start: "top bottom+=100",
+        
+          // end: "+=500",
+          // markers: true,
+        },
+      });
+    });
+
+    var decos = gsap.utils.toArray(".rock-deco-bg")
+     decos.forEach((deco) => {
+      gsap.from(deco, {
+        y: 200,
+        opacity: 0,
+        scale:0.2,
+        duration:2.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: deco,
+          start: "top bottom+=100",
         
           // end: "+=500",
           // markers: true,
@@ -427,13 +443,13 @@ section.bike-intro {
 }
 .rock-deco-bg{
   position: absolute;
-  opacity: 0.2;
-  transform: scale(0.6) rotate(-10deg);
+  opacity: 0.25;
+  transform: scale(0.4) rotate(-10deg);
   
 }
 .rock-deco-bg1{
   top:10%;
-  left:90%
+  left:87%
 }
 .rock-deco-bg2{
   top:40%;
