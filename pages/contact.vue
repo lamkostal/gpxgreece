@@ -152,6 +152,7 @@ export default {
 
  }
  .contact-info{
+   flex-grow: 1;
    flex-basis: 50%;
    font-size: var(--font-size-2);
  }
@@ -162,11 +163,13 @@ export default {
    justify-content: flex-start;
    align-items: flex-start;
    flex-basis: 50%;
+   flex-grow: 1;
    gap:1.2rem;
    
    /* background: rgb(76, 76, 76); */
  }
  .contact{
+   flex-grow: 1;
    padding: 2rem;
    flex-basis: 50%;
    background: var(--gray-1);
@@ -180,6 +183,8 @@ export default {
    padding:2rem 0;
    color: var(--gray-9);
    margin-top: 0;
+   min-width: 300px;
+   max-width: 100%;
   
 
  }

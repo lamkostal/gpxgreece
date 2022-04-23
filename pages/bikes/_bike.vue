@@ -345,6 +345,7 @@ section h2:after {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 .bike-colors-images {
   position: relative;
@@ -393,6 +394,7 @@ section h2:after {
   margin-top: 1rem;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   column-gap: 0rem;
   perspective: 1000px;
@@ -436,7 +438,7 @@ section h2:after {
   font-size: var(--font-size-3);
   font-weight: var(--font-weight-4);
   color: var(--gray-4);
-  max-width: 35ch;
+  width: 30ch;
 }
 #dimentions {
   background-color: var(--gray-7);

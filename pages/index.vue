@@ -29,7 +29,7 @@
         <img class="curve-pop" src="~/assets/img/curve-pop.svg" alt="">
 
         <div class="intro-content container">
-          <div class="text-content">
+          <div class="intro-text-content">
             <h2>Καλως ήρθατε στην GPX</h2>
             <p>
               Η GPX είναι η μάρκα μοτοσυκλετών με έδρα την Ταϊλάνδη. Με ολοκαίνουριο εργοστάσιο 45000τ.μ κάνει<b> έρευνα</b>,<b>ανάπτυξη</b> και <b>κατασκευή</b> προϊόντων υψηλής ποιότητας σε λογικές τιμές.
@@ -289,11 +289,12 @@ section.intro {
   background-size: cover;
   min-height: 100vh;
 }
-.text-content{
+.intro-text-content{
 color: var(--gray-4);
 font-size: var(--font-size-2);
+padding-inline: 1.5rem;
 }
-.text-content p{
+.intro-text-content p{
 max-width: 50ch;
 }
 .imgs-content{
@@ -353,18 +354,20 @@ max-width: 50ch;
   /* align-items: center; */
   /* height: 100vh; */
 }
+@media (max-width:768px){
+  .intro-content{
+    grid-template-columns: 1fr ;
+  }
+  .imgs-content {
+    width: 100vw;
+   
+}
+}
 .intro h2 {
   font-size: var(--font-size-6);
   color: var(--gray-4);
 }
-.grid {
-  grid-gap: 10px;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: 1fr 1fr;
-  justify-items: center;
-  /* align-items: center; */
-}
+
 section.bike-intro {
   min-height: 100vh;
 }
@@ -440,6 +443,38 @@ section.bike-intro {
   
   width: 550px;
   height: 450px;
+}
+.grid {
+  grid-gap: 10px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  /* align-items: center; */
+}
+@media (max-width:768px){
+  .grid {
+  grid-gap: 40px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  /* align-items: center; */
+ }
+.img-pop1,.img-rock1,.img-pop2,.img-rock2,.img-pop3,.img-rock3{
+  transform: translateY(0px) translateX(0px);
+  width:100%;
+ }
+ .img-rock1{
+   order:2
+ }
+ .bike-info{
+   justify-self: start;
+ }
+ .bike-img{
+   height: auto;
+ }
+
 }
 .rock-deco-bg{
   position: absolute;

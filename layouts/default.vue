@@ -54,9 +54,12 @@ ul{
   width:min(100%,1200px);
   margin-left: auto;
   margin-right: auto;
+  padding-inline: 1.5rem
 }
 .container-fluid{
   width:100%;
+  
+
 }
 .flex-row{
   display: flex;

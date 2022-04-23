@@ -84,7 +84,7 @@ export default {
 
 <style scoped>
 .footer-wrap{
- padding: 3.5rem 0 ;
+ padding: 3.5rem 1.5rem ;
  display: flex;
  justify-content: space-between;
  flex-wrap: wrap;
