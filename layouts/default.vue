@@ -41,6 +41,7 @@ body{
     flex-direction: column;
     font-family: 'Commissioner', sans-serif;
   background-color: var(--gray-0);
+  overflow-x: hidden;
 
 }
 
@@ -54,7 +55,7 @@ ul{
   width:min(100%,1200px);
   margin-left: auto;
   margin-right: auto;
-  padding-inline: 1.5rem
+  
 }
 .container-fluid{
   width:100%;
@@ -83,10 +84,7 @@ section.hero{
   z-index: 1;
 
 }
-:root{
-   /* --full-height:100vh; */
 
-}
 section.hero .hero_img{
    object-fit: cover;
    /* width:1900px; */
@@ -113,7 +111,8 @@ h2{
  
 }
 a{
-  color:var(--blue-9)
+  color:var(--gray-1);
+  text-decoration: none;
 }
 h3,h4{
   color: var(--gray-6);
@@ -195,6 +194,17 @@ h3,h4{
   position: relative;
   margin: 32px 0;
 }
+.contact-form a{
+  color: var(--blue-7);
+  font-weight: var(--font-weight-6);
+  text-decoration: underline;
+}
+#checkbox{
+  display: inline;
+  width: auto;
+    height: 13px;
+    margin-right: 10px;
+}
 .contact-form .input-text {
   display: block;
   width: 100%;
@@ -252,11 +262,12 @@ input[type="submit" i]:hover{
 /* transition */
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.25s;
+  transition: all 0.2s ease-in-out;
 }
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
+  transform: translateY(-50px);
 }
 
 </style>

@@ -102,7 +102,7 @@
         </div>
       </section>
       <section aria-label="dealers-intro" class="dealers-intro">
-        <div class="container dealers-info scr-text">
+        <div class=" dealers-info scr-text">
           <h2>Βρες έναν αντιπρόσωπο</h2>
           <h3>
             Αναζήτησε στο δίκτυο μας τον πλησιέστερο αντιπρόσωπο στην περιοχή
@@ -110,8 +110,10 @@
           </h3>
           <div class="map-img">
             <nuxt-link to="/dealers"
-              ><img src="~/assets/img/map-mockup.jpg" alt=""
-            /></nuxt-link>
+              >
+              <!-- <img src="~/assets/img/map-mockup.jpg" alt=""
+            /> -->
+            </nuxt-link>
           </div>
           <nuxt-link to="/dealers" class="btn"> δες το χαρτη </nuxt-link>
         </div>
@@ -261,9 +263,7 @@ h1 {
     stroke-dashoffset: 0;
   }
 }
-.outline{
 
-}
 .three-d{
   opacity: 0;
     left: -6px;
@@ -275,6 +275,11 @@ h1 {
   top: 200px;
   width: 40%;
   opacity: 0;
+}
+@media (max-width:768px){
+  .hero_side_img {
+  display: none;
+}
 }
 .hero_popz_img {
   left: -60px;
@@ -400,6 +405,8 @@ section.bike-intro {
   background-image: url(~/assets/img/curve.svg);
   background-repeat: no-repeat;
   background-position: 100% 100%;
+    padding-inline: 1.25rem;
+
 }
 
 .img-pop1 {
@@ -407,17 +414,23 @@ section.bike-intro {
   /* background: rgb(32, 63, 201); */
   width: 550px;
   height: 420px;
+  max-width: 100%;
+
   z-index: 1;
 }
 .img-pop2 {
   transform: translateY(-120px) translateX(30px);
   width: 520px;
   height: 460px;
+  max-width: 100%;
+
   /* background: red; */
   z-index: 2;
 }
 .img-pop3 {
   width: 400px;
+  max-width: 100%;
+
   height: 420px;
   transform: translateY(-25px) translateX(-20px);
   /* background: yellow; */
@@ -428,53 +441,74 @@ section.bike-intro {
   transform: translateY(0px) translateX(0px);
   width: 620px;
   height: 400px;
+  max-width: 100%;
+
 }
 .img-rock2 {
   transform: translateY(0px) translateX(-50px);
   width: 500px;
   height: 350px;
+  max-width: 100%;
+
   
 }
 .rock-intro{
   position: relative;
+    padding-inline: 1.25rem;
+
+
 }
 .img-rock3 {
   transform: translateY(-150px) translateX(-80px);
-  
   width: 550px;
   height: 450px;
+  max-width: 100%;
+
 }
 .grid {
   grid-gap: 10px;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   justify-items: center;
   /* align-items: center; */
 }
-@media (max-width:768px){
-  .grid {
-  grid-gap: 40px;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 1fr;
-  justify-items: center;
-  /* align-items: center; */
+
+@media (max-width:1200px){
+  .bike-info{
+   justify-self: center;
  }
-.img-pop1,.img-rock1,.img-pop2,.img-rock2,.img-pop3,.img-rock3{
-  transform: translateY(0px) translateX(0px);
-  width:100%;
- }
- .img-rock1{
+  .img-rock1{
    order:2
  }
- .bike-info{
-   justify-self: start;
+   .grid {
+  grid-gap: 40px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
  }
+  .img-pop1,.img-rock1,.img-pop2,.img-rock2,.img-pop3,.img-rock3{
+  width: 100%;
+  transform: translateY(0px) translateX(0px)  
+ }
+ 
  .bike-img{
    height: auto;
  }
-
+}
+@media (max-width:768px){
+  .bike-info{
+   justify-self: start;
+ }
+ 
+ .grid{
+  justify-items: start;
+  grid-template-columns:auto;
+  grid-template-rows: auto;
+ } 
+ 
 }
 .rock-deco-bg{
   position: absolute;
@@ -495,15 +529,20 @@ section.bike-intro {
   left:85%
 }
 section.dealers-intro {
+  position: relative;
   min-height: 100vh;
-  background:linear-gradient(var(--gray-0) 30%,var(--gray-5));
+  background:linear-gradient(var(--gray-0) 2%,var(--gray-5));
+  /* background:var(--gray-2); */
+
   padding-top: 0;
   padding-bottom: 10rem;
   padding-top:5rem ;
-  border-top: 1px solid var(--gray-3);
+  /* border-top: 1px solid var(--gray-3); */
 }
 .dealers-info {
-  padding: 0 4em;
+  position: relative;
+
+  padding: 0 0em;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -523,8 +562,25 @@ section.dealers-intro {
   flex-basis: 50%;
   margin-top: 1em;
 }
-.map-img img {
-  box-shadow: var(--shadow-4);
+.map-img{
+  background-image: url(~/assets/img/map-mockup.webp);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 60vh;
+  width: 100%;
+  position: relative;
+  /* box-shadow: var(--shadow-4); */
+  opacity: 1;
 }
+.map-img a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
 
 </style>

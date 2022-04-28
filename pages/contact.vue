@@ -67,6 +67,12 @@
            <input id="message" @keyup="notEmpty3=true" class="input-text js-input" :class="{'not-empty':notEmpty3}" type="text" required>
            <label class="label" for="message">Μήνυμα</label>
         </div>
+        <div class="form-field col x-100">
+           <input id="checkbox"  class="input-text js-input"  type="checkbox" required>
+           <span>Έχω διαβάσει και συναινώ με την <nuxt-link to="/privacy">πολιτική απορρήτου</nuxt-link></span>
+
+  
+        </div>
         <div class="form-field  x-100 align-center col-right">
            <input class="btn" type="submit" value="Submit">
         </div>

@@ -74,6 +74,9 @@
             :title="bike.DimentionsImg.title"
           />
         </div>
+        <div class="dim-labels">
+          <span>Μήκος : 1880mm</span><span>Ύψος : 1070mm</span><span>Πλάτος : 745mm</span>
+        </div>
       </section>
       <section id="specifications">
         <h2>Τεχνικά Χαρακτηριστικά</h2>
@@ -195,7 +198,7 @@ export default {
         rotationY: 0,
         // scale:2,
         duration: 0.5,
-        flexBasis: 600,
+        flexBasis: 800,
         borderRadius: 10,
         
         ease: "power1.out",
@@ -352,7 +355,16 @@ section h2:after {
   width: 800px;
   max-width: 100%;
   height: 500px;
-  /* background: #000; */
+ 
+}
+@media(max-width:768px){
+  .bike-colors-images {
+  position: relative;
+  width: 800px;
+  max-width: 100%;
+  height: 70vw;
+  
+}
 }
 .bike-colors-images img {
   position: absolute;
@@ -368,6 +380,7 @@ section h2:after {
   text-align: center;
   color: var(--gray-0);
   z-index: 1;
+  padding-right: 1rem;
 }
 .bullet-wrap {
   width: 6rem;
@@ -396,15 +409,15 @@ section h2:after {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  column-gap: 0rem;
   perspective: 1000px;
+  row-gap: 1rem;
 }
 .detail:nth-child(even) {
   flex-direction: row-reverse;
 }
 .detail-img {
   display: flex;
-  flex-basis: 350px;
+  flex-basis: 450px;
   overflow: hidden;
   box-shadow: var(--shadow-4);
   flex-wrap: wrap;
@@ -414,6 +427,9 @@ section h2:after {
   z-index: 10;
   /* transform-style: preserve-3d; */
   /* transition: all 0.35s ease-in-out;  */
+}
+.detail-img img{
+  width:100%;
 }
 
 .detail:nth-of-type(2n) .detail-img {
@@ -428,6 +444,15 @@ section h2:after {
   justify-content: center;
   align-items: center;
 }
+@media (max-width:768px){
+  .detail-text-wrap {
+  flex-basis: 35%;
+  flex:1;
+  padding-inline: 1rem;
+
+  
+}
+}
 .detail-text {
   font-size: var(--font-size-5);
   font-weight: var(--font-weight-8);
@@ -438,15 +463,39 @@ section h2:after {
   font-size: var(--font-size-3);
   font-weight: var(--font-weight-4);
   color: var(--gray-4);
-  width: 30ch;
+  width:min(40ch,100%) ;
 }
 #dimentions {
   background-color: var(--gray-7);
   /* padding-inline: 8rem ; */
   background-image: url(~/assets/img/grid-monomer.png);
+  padding-bottom: 0;
 }
 #dimentions img {
   filter: invert();
+}
+.dim-labels{
+  padding: 4rem 0.5rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap:8rem;
+  color: var(--gray-0);
+  font-size: var(--font-size-fluid-1);
+  font-weight: var(--font-weight-6);
+  background: rgba(255, 255, 255, 0.116);
+
+}
+@media (max-width:768px){
+  .dim-labels{
+    flex-direction: column;
+  gap:2rem;
+  padding: 2rem 0.5rem;
+  
+
+  }
 }
 .specifications {
   display: flex;

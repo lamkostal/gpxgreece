@@ -92,8 +92,8 @@ export default {
       tl1
       .to(this.$refs.popdec1,{opacity:0.7,duration:0.1})
       .to(this.$refs.popdec2,{opacity:0.7,duration:0.1},'<')
-      .fromTo(this.$refs.popdec1,{rotation:10,scale:1,opacity:1},{rotation:-10,scale:0.8,opacity:0.5,repeat:8,yoyo:"true",ease:'none',duration:0.1})
-      .fromTo(this.$refs.popdec2,{rotation:10,scale:1,opacity:1},{rotation:-10,scale:0.8,opacity:0.5,repeat:7,yoyo:"true",ease:'none',duration:0.15},'<')
+      .fromTo(this.$refs.popdec1,{rotation:10,scale:1,opacity:1},{rotation:-10,scale:0.8,opacity:0.5,repeat:5,yoyo:"true",ease:'none',duration:0.1})
+      .fromTo(this.$refs.popdec2,{rotation:10,scale:1,opacity:1},{rotation:-10,scale:0.8,opacity:0.5,repeat:4,yoyo:"true",ease:'none',duration:0.15},'<')
       .to(this.$refs.popdec1,{opacity:0,duration:0.05})
       
       .to(this.$refs.popdec2,{opacity:0,duration:0.2},'<')
@@ -106,8 +106,8 @@ export default {
       tl2
       .to(this.$refs.rockdec1,{opacity:0.7,duration:0.2})
       .to(this.$refs.rockdec2,{opacity:0.7,duration:0.2},'<')
-      .fromTo(this.$refs.rockdec1,{rotation:10,scale:1,opacity:1},{rotation:-10,scale:0.8,opacity:0.5,repeat:8,yoyo:"true",ease:'none',duration:0.1})
-      .fromTo(this.$refs.rockdec2,{rotation:10,scale:1,opacity:1},{rotation:-10,scale:0.8,opacity:0.5,repeat:7,yoyo:"true",ease:'none',duration:0.15},'<')
+      .fromTo(this.$refs.rockdec1,{rotation:10,scale:1,opacity:1},{rotation:-10,scale:0.8,opacity:0.5,repeat:5,yoyo:"true",ease:'none',duration:0.1})
+      .fromTo(this.$refs.rockdec2,{rotation:10,scale:1,opacity:1},{rotation:-10,scale:0.8,opacity:0.5,repeat:4,yoyo:"true",ease:'none',duration:0.15},'<')
       .to(this.$refs.rockdec1,{opacity:0,duration:0.2})
       .to(this.$refs.rockdec2,{opacity:0,duration:0.2},'<')
       .restart()
