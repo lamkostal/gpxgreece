@@ -1,10 +1,14 @@
 <template>
   <header :class="{scrolled:scrolled}">
+    
     <nuxt-link to="/"
       ><div class="logo-container" :class="{logoScrolled:scrolled}">
         <img src="/GPX-logo.png" alt="gpx-logo" /></div
     ></nuxt-link>
     <the-nav />
+    <mobile-nav  :menuOpen="menuOpen" v-on:toggledbylist="menuOpen =!menuOpen"/>
+    <hamburger v-on:toggle="menuOpen =!menuOpen"/>
+
     <div class="social-wrap" title="Coming Soon!">
       <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -26,10 +30,14 @@
 </template>
 
 <script>
+import Hamburger from './Hamburger.vue';
+import MobileNav from './MobileNav.vue';
 export default {
+  components: { MobileNav, Hamburger },
   data(){
     return {
       scrolled:false,
+      menuOpen:false
     }},
     
  
@@ -37,14 +45,23 @@ export default {
   handleScroll () {
     this.scrolled = window.scrollY > 0;
   },
+  
+},
+created(){
+//  this.$on('toggle', () => {
+//         this.menuOpen =!this.menuOpen;
+//     })
 },
 beforeMount () {
   window.addEventListener('scroll', this.handleScroll);
 
 },
 mounted(){
+  // this.$on('toggle', () => {
+  //       this.menuOpen =!this.menuOpen;
+  //   })
 
-
+console.log("menu:"+this.menuOpen)
 
 },
 beforeDestroy () {
@@ -59,7 +76,7 @@ header {
     height: 100px;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
     position: fixed;
     top: 0;
@@ -70,14 +87,15 @@ header {
   -webkit-backface-visibility: hidden;
 
 }
+
 .logo-container {
   display: flex;
   position: relative;
-  z-index: 2;
+  z-index: 200000;
   width: 150px;
   transform: scale(1);
   transition: all 0.25s ease;
-  margin-left: 5em;
+ 
 }
 .scrolled{
   height: 50px;
@@ -91,6 +109,11 @@ header {
   padding-right: 4rem;
   align-items: center;
   gap:7px
+}
+@media (max-width:1024px){
+  .social-wrap{
+  display: none;
+}
 }
 .social-wrap svg{
   width:24px

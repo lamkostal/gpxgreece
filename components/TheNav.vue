@@ -175,7 +175,7 @@ a.nuxt-link-exact-active {
 }
 
 nav {
-  margin: 0 auto;
+  margin: 0;
   height: 100%;
 }
 nav > ul {

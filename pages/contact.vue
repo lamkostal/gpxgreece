@@ -104,6 +104,11 @@ export default {
   align-items: center;
   justify-content: center;
   }
+  @media (max-width:768px){
+    .title{
+      flex-direction: column;
+    }
+  }
 
  .contact-section{
   padding: 02rem 0 6rem;
@@ -176,7 +181,7 @@ export default {
  }
  .contact{
    flex-grow: 1;
-   padding: 2rem;
+   padding: 1rem;
    flex-basis: 50%;
    background: var(--gray-1);
   background-image: url(~/assets/img/GPX-road.svg);

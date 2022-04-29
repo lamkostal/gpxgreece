@@ -41,7 +41,7 @@ body{
     flex-direction: column;
     font-family: 'Commissioner', sans-serif;
   background-color: var(--gray-0);
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 
 }
 
@@ -65,6 +65,7 @@ ul{
 .flex-row{
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap:7px
 }
 main{
@@ -74,7 +75,7 @@ img{
   max-width: 100%;
 }
 section{
-   padding: 6em 0 4em;
+   padding: 6em 0 ;
 }
 section.hero{
   display: flex;
@@ -111,7 +112,7 @@ h2{
  
 }
 a{
-  color:var(--gray-1);
+  color:var(--gray-2);
   text-decoration: none;
 }
 h3,h4{

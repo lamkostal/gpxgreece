@@ -63,8 +63,35 @@
               <p class="detail-text-desc">{{ detail.DetailTextDesc }}</p>
             </div>
           </div>
+         
         </div>
+     
       </section>
+          <div class="full-width-detail container-fluid">
+          <div class="full-width-detail_img"><img :src="bike.Chain[0].Image.filename" alt=""></div>
+          <div class="full-width-detail_text">
+            
+           <div class="chain-text">
+              <h3>{{bike.Chain[0].Title}}</h3>
+              <p>{{bike.Chain[0].Text}}</p>
+           </div>
+          </div>
+        </div>
+        <div class="full-width" v-if="bike.Chain.length>1">
+          <img :src="bike.Chain[1].Image.filename " alt="">
+
+        </div>
+        <div class="full-width design" v-if="bike.Chain.length>2">
+          <div class="full-width-detail_img"><img :src="bike.Chain[2].Image.filename " alt=""></div>
+          <div class="full-width-detail_text">
+            <div class="design-text chain-text">
+              <h3>{{bike.Chain[2].Title}}</h3>
+                <p>{{bike.Chain[2].Text}}</p>
+            </div>
+          </div>
+
+        </div>
+
       <section id="dimentions" v-if="bike.DimentionsImg">
         <h2>Διαστάσεις</h2>
         <div class="container dimentions-wrap">
@@ -105,6 +132,15 @@
           </div>
         </div>
       </section>
+      <section class="certificates  " v-if="bike.Cerificates.length>0">
+        <h2>Πιστοποιητικά</h2>
+        <div class="cert-wrap flex-row container">
+          <div class="cert"  v-for="cert in bike.Cerificates" :key="cert.id">
+            <img :src="cert.filename" alt="">
+  
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -140,7 +176,8 @@ export default {
               Details: items.content.Details,
               Specifications: items.content.Specifications,
               DimentionsImg: items.content.DimentionsImg,
-              Chain:items.content.Chain
+              Chain:items.content.Chain,
+              Cerificates:items.content.Cerificates
             };
           }),
         };
@@ -191,7 +228,7 @@ export default {
         },
       });
     });
-
+//details
     var details = gsap.utils.toArray(".detail-img");
     details.forEach((detail) => {
       gsap.to(detail, {
@@ -213,6 +250,27 @@ export default {
         },
       });
     });
+    //details full width
+
+        gsap.from('.full-width-detail_img',{x:-150, duration:1,
+         scrollTrigger: {
+          trigger: '.full-width-detail_img',
+          start: "top center",
+         
+        }},)
+        gsap.from('.full-width-detail_text',{x:150,
+         duration:1,
+         scrollTrigger: {
+          trigger: '.full-width-detail_text',
+          start: "top center",
+          duration:2
+         
+        }},)
+
+    
+
+
+    //Bikes
     var colorbikes = gsap.utils.toArray(".bike-colors-images");
 
     colorbikes.forEach((img) => {
@@ -248,8 +306,65 @@ export default {
         // scrub:true
       },
     });
+    //bullets//
+       
+  ScrollTrigger.batch(".bullet-wrap", {
+  onEnter: elements => {
+    gsap.from(elements, {
+      delay:0.5,
+      ease:'power3.out',
+      duration:1.5,
+      autoAlpha: 0,
+      y: 150,
+      stagger: 0.5
+    });
+  },
+  once: true
+});
 
-  },200)
+    //SPECS//
+    ScrollTrigger.batch(".specs-category", {
+  onEnter: elements => {
+    gsap.from(elements, {
+      ease:'power3.out',
+      duration:1.5,
+      autoAlpha: 0,
+      y: 100,
+      stagger: 0.3
+    });
+  },
+  once: true
+});
+ //SPEC ITEM//
+    ScrollTrigger.batch(".spec", {
+  onEnter: elements => {
+    gsap.from(elements, {
+      ease:'power1.out',
+      duration:0.4,
+      autoAlpha: 0,
+      y: 100,
+      stagger: 0.2
+    });
+  },
+  once: true
+});
+//cert//
+    ScrollTrigger.batch(".cert", {
+  onEnter: elements => {
+    gsap.from(elements, {
+      ease:'power1.out',
+      duration:0.4,
+      autoAlpha: 0,
+      y: 100,
+      stagger: 0.2
+    });
+  },
+  once: true
+});
+
+
+
+  },250)
 
    
   },
@@ -465,6 +580,57 @@ section h2:after {
   color: var(--gray-4);
   width:min(40ch,100%) ;
 }
+.full-width-detail{
+
+  padding:2rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: rgb(0, 0, 0);
+  gap:2rem
+  
+}
+.full-width-detail_img{
+  display: flex;
+  /* flex-basis: 35%; */
+  max-width: 600px;
+  
+}
+.full-width-detail_text{
+  /* flex-basis: 30%; */
+  justify-content: center;
+  padding-left: 2rem;
+
+}
+.chain-text{
+  padding-block: 1rem;
+  /* flex-basis: 60%; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.chain-text p {
+  max-width: 30ch;
+  line-height: 1.7;
+  font-size: var(--font-size-fluid-1);
+  color:var(--gray-4);
+
+}
+.chain-text h3 {
+  font-weight: var(--font-weight-8);
+  font-size: var(--font-size-fluid-2);
+  color: var(--gray-2);
+
+}
+.full-width{
+  display: flex;
+}
+.design{
+   display: flex;
+   flex-wrap: wrap;
+   background: #C61016;
+}
 #dimentions {
   background-color: var(--gray-7);
   /* padding-inline: 8rem ; */
@@ -533,14 +699,30 @@ section h2:after {
 .spec {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid var(--gray-4);
-  padding: 8px 5px;
+  border-top: 1px solid var(--gray-3);
+  padding: 8px 15px;
 }
 .spec:nth-of-type(2n) {
-  background: var(--gray-2);
+  background: var(--gray-1);
 }
 .spec-value {
   flex-basis: 50%;
+}
+.certificates {
+ background:#fff;
+}
+.certificates h2{
+  color: var(--gray-7);
+}
+.certificates h2::after{
+  background-color: var(--gray-7);
+}
+.cert-wrap{
+ justify-content: space-around;
+ align-content: center;
+}
+.cert{
+  width: 120px;
 }
 
 /* transition */

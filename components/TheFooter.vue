@@ -41,12 +41,12 @@
       <div class="footer-col">
         <div class="footer-col-title">Site Map</div>
         <ul>
-          <li class="footer-item"><nuxt-link to="/">ΑΡΧΙΚΗ</nuxt-link></li>
+          <li class="footer-item"><nuxt-link to="/">Αρχική</nuxt-link></li>
           <li class="footer-item"><nuxt-link to="/bikes/popz">POPZ</nuxt-link></li>
           <li class="footer-item"><nuxt-link to="/bikes/rock">ROCK</nuxt-link></li>
-          <li class="footer-item"><nuxt-link to="/dealers">ΔΙΚΤΥΟ</nuxt-link></li>
-          <li class="footer-item"><nuxt-link to="/contact">ΕΠΙΚΟΙΝΩΝΙΑ</nuxt-link></li>
-          <li class="footer-item"><nuxt-link to="/about">ΣΧΕΤΙΚΑ</nuxt-link></li>
+          <li class="footer-item"><nuxt-link to="/dealers">Δίκτυο</nuxt-link></li>
+          <li class="footer-item"><nuxt-link to="/contact">Επικοινωνία</nuxt-link></li>
+          <li class="footer-item"><nuxt-link to="/about">Σχετικά</nuxt-link></li>
 
         </ul>
       </div>
