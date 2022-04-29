@@ -199,6 +199,7 @@ export default {
     // GSAP ANIMATIONS
   setTimeout(()=>{
      // let gsap = this.$gsap;
+     ScrollTrigger.refresh()
     gsap.from("h1", {
       opacity: 0,
       duration: 1.2,
