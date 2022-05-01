@@ -212,7 +212,16 @@ export default {
 </script>
 
 <style scoped>
-/* img{opacity: 0;} */
+
+.intro a{
+  color: var(--gray-0);
+  text-decoration: underline;
+  font-weight: var(--font-weight-6);
+  display: block;
+  padding-block: 1rem;
+  /* background: var(--gray-0); */
+  text-align: center;
+}
 
 section {
   position: relative;
@@ -296,6 +305,15 @@ section.intro {
   background-attachment: fixed;
   background-size: cover;
   min-height: 100vh;
+}
+@media (max-width:768px){
+  section.intro {
+  background-image: url(~/assets/img/intro1.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 150vw;
+  }
 }
 .intro-text-content{
 color: var(--gray-4);
@@ -571,7 +589,7 @@ section.dealers-intro {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  height: 70vh;
+  height: 25rem;
   width: 100%;
   position: relative;
   /* box-shadow: var(--shadow-4); */

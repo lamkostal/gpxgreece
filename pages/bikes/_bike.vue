@@ -196,7 +196,7 @@ export default {
        
   },
   computed: {
-    bike() {
+    bike(){
       
       return this.products.find((e) => {
         
@@ -241,6 +241,7 @@ export default {
       });
     });
 //details
+    
     var details = gsap.utils.toArray(".detail-img");
     details.forEach((detail) => {
       gsap.to(detail, {
@@ -265,8 +266,9 @@ export default {
     var detailstext = gsap.utils.toArray(".detail-text-wrap");
     detailstext.forEach((detailt) => {
       gsap.from(detailt, {
-        y: 160,
-        duration: 1.5,
+        opacity:0,
+        y: 70,
+        duration: 1,
         ease: "power1.out",
         scrollTrigger: {
           trigger: detailt,
@@ -277,16 +279,16 @@ export default {
 
     //details full width
 
-        gsap.from('.full-width-detail_img',{x:-150, duration:1,
+        gsap.from('.full-width-detail_img',{x:-150,opacity:0, duration:1,
          scrollTrigger: {
-          trigger: '.full-width-detail_img',
+          trigger: '.full-width-detail',
           start: "top center",
          
         }},)
-        gsap.from('.full-width-detail_text',{x:150,
+        gsap.from('.full-width-detail_text',{x:150,opacity:0,
          duration:1,
          scrollTrigger: {
-          trigger: '.full-width-detail_text',
+          trigger: '.full-width-detail',
           start: "top center",
           duration:2
          
@@ -341,7 +343,7 @@ export default {
       duration:1.5,
       autoAlpha: 0,
       y: 150,
-      stagger: 0.5
+      stagger: 0.2
     });
   },
   once: true
@@ -606,13 +608,14 @@ section h2:after {
   width:min(40ch,100%) ;
 }
 .full-width-detail{
-
   padding:2rem 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   background: rgb(0, 0, 0);
-  gap:2rem
+  gap:2rem;
+
+  overflow:hidden;
   
 }
 .full-width-detail_img{

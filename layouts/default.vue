@@ -41,7 +41,7 @@ body{
     flex-direction: column;
     font-family: 'Commissioner', sans-serif;
   background-color: var(--gray-0);
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 
 }
 
