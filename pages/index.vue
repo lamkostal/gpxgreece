@@ -102,9 +102,9 @@
         </div>
       </section>
       <section aria-label="dealers-intro" class="dealers-intro">
-        <div class=" dealers-info scr-text">
-          <h2>Βρες έναν αντιπρόσωπο</h2>
-          <h3>
+        <div class=" dealers-info ">
+          <h2 class="scr-text">Βρες έναν αντιπρόσωπο</h2>
+          <h3 class="scr-text">
             Αναζήτησε στο δίκτυο μας τον πλησιέστερο αντιπρόσωπο στην περιοχή
             σου.
           </h3>
@@ -125,7 +125,12 @@
 <script>
 export default {
   // transition: 'fade',
+  beforeMount(){
+ ScrollTrigger.refresh()
+  },
   mounted() {
+    
+    
 
     gsap.to('.three-d',{opacity:1,delay:0.9,duration:0.8});
 
@@ -151,7 +156,7 @@ export default {
       { x: 100, scale: 0.9, opacity: 0 },
       { x: -50, scale: 1, opacity: 1, duration: 1, delay: 1,ease:'power3.out' }
     );
-
+    //TEXTS
     var scrText = gsap.utils.toArray(".scr-text");
 
     scrText.forEach((text) => {
@@ -162,12 +167,13 @@ export default {
         ease: "power2.out",
         scrollTrigger: {
           trigger: text,
-          start: "top-=50 bottom",
+          start: "center bottom",
           // end: "+=500",
           // markers: true,
         },
       });
     });
+    //IMAGES
     var images = gsap.utils.toArray(".bike-img");
 
      images.forEach((img) => {
@@ -178,14 +184,11 @@ export default {
         ease: "power2.out",
         scrollTrigger: {
           trigger: img,
-          start: "top bottom+=100",
-        
-          // end: "+=500",
-          // markers: true,
+          start: "top+=50 bottom",
         },
       });
     });
-
+    //DECO ELEMENTS
     var decos = gsap.utils.toArray(".rock-deco-bg")
      decos.forEach((deco) => {
       gsap.from(deco, {
@@ -536,12 +539,11 @@ section.dealers-intro {
 
   padding-top: 0;
   padding-bottom: 10rem;
-  padding-top:5rem ;
+  padding-top:0rem ;
   /* border-top: 1px solid var(--gray-3); */
 }
 .dealers-info {
   position: relative;
-
   padding: 0 0em;
   display: flex;
   justify-content: center;
@@ -554,6 +556,7 @@ section.dealers-intro {
   max-width: 50ch;
   margin-top: 0;
   line-height: 1.7;
+  padding-bottom: 2rem;
 }
 .dealers-info h2 {
   margin-bottom: 0;
@@ -568,8 +571,7 @@ section.dealers-intro {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: center;
-  height: 60vh;
+  height: 70vh;
   width: 100%;
   position: relative;
   /* box-shadow: var(--shadow-4); */

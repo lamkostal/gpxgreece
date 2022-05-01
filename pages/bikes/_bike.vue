@@ -160,12 +160,14 @@ export default {
         version: process.env.NODE_ENV == "production" ? "published" : "draft",
         starts_with: `bikes`,
       })
+      
       .then((res) => {
+        // ()=>ScrollTrigger.refresh()
         console.log("ela"+res);
-
         if (!res.data.stories.length) {
           throw "erroo";
         }
+
         return {
           products: res.data.stories.map((items) => {
             return {
@@ -179,17 +181,25 @@ export default {
               Chain:items.content.Chain,
               Cerificates:items.content.Cerificates
             };
-          }),
+          
+          })
+              
         };
+        
+        
       })
       .catch((e) => {
         console.log(e);
         context.error({ statusCode: 404, message: "Page does not exist" });
-      });
+      })
+      
+       
   },
   computed: {
     bike() {
+      
       return this.products.find((e) => {
+        
         return e.title.toLowerCase() == this.$route.params.bike;
       });
     },
@@ -198,8 +208,9 @@ export default {
   mounted() {
     // GSAP ANIMATIONS
   setTimeout(()=>{
+    ScrollTrigger.refresh()
      // let gsap = this.$gsap;
-     ScrollTrigger.refresh()
+    
     gsap.from("h1", {
       opacity: 0,
       duration: 1.2,
@@ -222,7 +233,7 @@ export default {
         ease: "power3.out",
         scrollTrigger: {
           trigger: h2,
-          start: "top-=500 top+=100",
+          start: "bottom bottom",
           // scrub: true,
           // end: "+=500",
           // markers: true,
@@ -235,10 +246,9 @@ export default {
       gsap.to(detail, {
         rotationY: 0,
         // scale:2,
-        duration: 0.5,
+        duration: 0.8,
         flexBasis: 800,
         borderRadius: 10,
-        
         ease: "power1.out",
         scrollTrigger: {
           trigger: detail,
@@ -251,6 +261,20 @@ export default {
         },
       });
     });
+    //detail-text-wrap
+    var detailstext = gsap.utils.toArray(".detail-text-wrap");
+    detailstext.forEach((detailt) => {
+      gsap.from(detailt, {
+        y: 160,
+        duration: 1.5,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: detailt,
+          start: "top bottom",
+        },
+      });
+    });
+
     //details full width
 
         gsap.from('.full-width-detail_img',{x:-150, duration:1,
