@@ -302,11 +302,11 @@ export default {
 
     colorbikes.forEach((img) => {
       gsap.from(img, {
-        x: -250,
-        scale: 0.5,
+        x: -150,
+        scale: 0.8,
         opacity: 0,
-        duration: 1.5,
-        delay: 0.2,
+        duration: 1.2,
+        delay: 0.4,
         ease: "power4.out",
         scrollTrigger: {
           trigger: img,
@@ -322,7 +322,7 @@ export default {
     // INTRO BIKE
     gsap.to(".bg-intro", {
       scale: 7.5,
-      duration: 3.5,
+      duration: 2.6,
       ease: "power4.out",
       delay:0.3,
       scrollTrigger: {
@@ -338,10 +338,11 @@ export default {
   ScrollTrigger.batch(".bullet-wrap", {
   onEnter: elements => {
     gsap.from(elements, {
-      delay:0.5,
+      delay:0.3,
       ease:'power3.out',
       duration:1.5,
       autoAlpha: 0,
+      opacity:0,
       y: 150,
       stagger: 0.2
     });
@@ -391,7 +392,7 @@ export default {
 
 
 
-  },250)
+  },350)
 
    
   },
@@ -460,6 +461,11 @@ section h2:after {
 }
 #specifications h2:after {
   background-color: var(--gray-7);
+}
+@media (max-width:768px){
+  #specifications h2 {
+  font-size: var(--font-size-4);
+  }
 }
 
 .intro {

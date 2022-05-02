@@ -595,6 +595,12 @@ section.dealers-intro {
   /* box-shadow: var(--shadow-4); */
   opacity: 1;
 }
+@media (max-width:768px){
+  .map-img{
+  background-attachment:unset;
+
+  }
+}
 .map-img a{
   display: block;
   width: 100%;

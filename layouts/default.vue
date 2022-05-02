@@ -36,12 +36,10 @@ body{
   color:var(--gray-8);
   margin: 0;
   padding: 0;
-   min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Commissioner', sans-serif;
+  
+  font-family: 'Commissioner', sans-serif;
   background-color: var(--gray-0);
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 
 }
 
@@ -108,9 +106,8 @@ h1{
 h2{
   font-size: var(--font-size-5);
    font-weight: var(--font-weight-8);
-
- 
 }
+
 a{
   color:var(--gray-2);
   text-decoration: none;
