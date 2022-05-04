@@ -208,8 +208,8 @@ export default {
   mounted() {
     // GSAP ANIMATIONS
   setTimeout(()=>{
-    ScrollTrigger.refresh()
-     // let gsap = this.$gsap;
+    
+    
     
     gsap.from("h1", {
       opacity: 0,
@@ -396,6 +396,9 @@ export default {
 
    
   },
+  updated(){
+    ScrollTrigger.refresh()
+  }
 };
 </script>
 
