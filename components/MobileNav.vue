@@ -40,9 +40,7 @@ export default {
      this.$emit('toggledbylist')
    }
   },
-  computed(){
-    
-  }
+  
 };
 </script>
 

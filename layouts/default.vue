@@ -28,6 +28,9 @@ mounted(){
 </script>
 
 <style>
+html{
+  scroll-behavior: smooth;
+}
 *{
   box-sizing: border-box;
   /* position: relative; */

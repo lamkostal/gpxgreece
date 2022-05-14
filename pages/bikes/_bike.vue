@@ -197,7 +197,7 @@ export default {
   },
   computed: {
     bike(){
-      
+      ScrollTrigger.refresh()
       return this.products.find((e) => {
         
         return e.title.toLowerCase() == this.$route.params.bike;
@@ -208,6 +208,7 @@ export default {
   mounted() {
     // GSAP ANIMATIONS
   setTimeout(()=>{
+    
     
     
     
@@ -396,9 +397,7 @@ export default {
 
    
   },
-  updated(){
-    ScrollTrigger.refresh()
-  }
+
 };
 </script>
 
