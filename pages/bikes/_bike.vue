@@ -162,11 +162,11 @@ export default {
       })
       
       .then((res) => {
-        // ()=>ScrollTrigger.refresh()
-        console.log("ela"+res);
+        
         if (!res.data.stories.length) {
           throw "erroo";
         }
+        ScrollTrigger.refresh()
 
         return {
           products: res.data.stories.map((items) => {
@@ -197,7 +197,6 @@ export default {
   },
   computed: {
     bike(){
-      ScrollTrigger.refresh()
       return this.products.find((e) => {
         
         return e.title.toLowerCase() == this.$route.params.bike;
