@@ -57,10 +57,9 @@
         <img src="~/assets/img/popz/pop-dec-1.png" alt="" class="rock-deco-bg rock-deco-bg3">
         <div class="grid container">
           <div class="bike-info popz-info scr-text">
-            <h2>Popz 125</h2>
+            <h2>POPz 125</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-              quibusdam ad repellendus maiores provident! Officia perferendis.
+             Ανακάλυψε την POPz πλευρα της ζωής! Με κινητήρα 125κ.εκ, ποιοτική κατασκευή και ασυναγώνιστη τιμή έρχεται να δώσει μια νέα νότα στους δρόμους της πόλης
             </p>
             <nuxt-link to="/bikes/popz" class="btn">ΔΕΣ ΤΟ ΑΝΑΛΥΤΙΚΑ</nuxt-link>
           </div>
@@ -84,7 +83,7 @@
             <img src="~/assets/img/rock/rock-HP1.jpg" alt="" />
           </div>
           <div class="bike-info rock-info scr-text">
-            <h2>Rock 125</h2>
+            <h2>ROCK 125</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
               quibusdam ad repellendus maiores provident! Officia perferendis,
@@ -402,11 +401,15 @@ section.bike-intro {
 }
 .bike-info h2 {
   margin-top: 0;
+  margin-bottom: 1.5rem;
   font-size: var(--font-size-7);
   color:var(--gray-8)
 }
 .bike-info p {
   max-width: 40ch;
+  line-height: 1.7;
+  font-size: var(--font-size-2);
+
 }
 .img-pop,
 .img-rock {

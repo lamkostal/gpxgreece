@@ -199,7 +199,7 @@ nav > ul {
   gap: 10px;
   transform: translateY(0px);
   z-index: 10000;
-  /* box-shadow: var(--shadow-4); */
+  box-shadow: var(--shadow-4);
 }
 .deco-rect{
   position: absolute;
@@ -243,9 +243,6 @@ position: absolute;
   left: 100px;
   transform: rotate(10deg);
   opacity: 0;
-
-
-
 }
 
 .models_submenu_item span {
@@ -261,6 +258,7 @@ position: absolute;
   width: 120px;
   height: 50px;
   z-index: 1;
+  transform: translateX(-100%);
 }
 
 /* transition */

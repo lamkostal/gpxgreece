@@ -102,7 +102,7 @@
           />
         </div>
         <div class="dim-labels">
-          <span>Μήκος : 1880mm</span><span>Ύψος : 1070mm</span><span>Πλάτος : 745mm</span>
+          <span>Μήκος : {{bike.DimText[0].Length}}mm</span><span>Ύψος : {{bike.DimText[0].Height}}mm</span><span>Πλάτος :{{bike.DimText[0].Width}}mm</span>
         </div>
       </section>
       <section id="specifications">
@@ -166,7 +166,7 @@ export default {
         if (!res.data.stories.length) {
           throw "erroo";
         }
-        ScrollTrigger.refresh()
+        
 
         return {
           products: res.data.stories.map((items) => {
@@ -178,6 +178,7 @@ export default {
               Details: items.content.Details,
               Specifications: items.content.Specifications,
               DimentionsImg: items.content.DimentionsImg,
+              DimText: items.content.DimText,
               Chain:items.content.Chain,
               Cerificates:items.content.Cerificates
             };
@@ -191,8 +192,10 @@ export default {
       .catch((e) => {
         console.log(e);
         context.error({ statusCode: 404, message: "Page does not exist" });
-      })
+      }
       
+      )
+      // .then(()=>ScrollTrigger.refresh())
        
   },
   computed: {
@@ -208,9 +211,7 @@ export default {
     // GSAP ANIMATIONS
   setTimeout(()=>{
     
-    
-    
-    
+    ScrollTrigger.refresh()
     gsap.from("h1", {
       opacity: 0,
       duration: 1.2,
@@ -247,10 +248,10 @@ export default {
       gsap.to(detail, {
         rotationY: 0,
         // scale:2,
-        duration: 0.8,
+        duration: 1.8,
         flexBasis: 800,
-        borderRadius: 10,
-        ease: "power1.out",
+        borderRadius: 5,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: detail,
           start: "top center",
@@ -293,8 +294,6 @@ export default {
           duration:2
          
         }},)
-
-    
 
 
     //Bikes
@@ -392,7 +391,7 @@ export default {
 
 
 
-  },350)
+  },1000)
 
    
   },
@@ -566,7 +565,7 @@ section h2:after {
 }
 .detail-img {
   display: flex;
-  flex-basis: 450px;
+  flex-basis: 550px;
   overflow: hidden;
   box-shadow: var(--shadow-4);
   flex-wrap: wrap;
@@ -612,7 +611,7 @@ section h2:after {
   font-size: var(--font-size-3);
   font-weight: var(--font-weight-4);
   color: var(--gray-4);
-  width:min(40ch,100%) ;
+  width:min(32ch,100%) ;
 }
 .full-width-detail{
   padding:2rem 0;

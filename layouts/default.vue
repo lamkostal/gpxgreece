@@ -28,9 +28,7 @@ mounted(){
 </script>
 
 <style>
-html{
-  scroll-behavior: smooth;
-}
+
 *{
   box-sizing: border-box;
   /* position: relative; */
@@ -45,7 +43,6 @@ body{
   /* overflow-x: hidden; */
 
 }
-
 ul{
   list-style: none;
   padding: 0 0 0 0;
@@ -60,8 +57,6 @@ ul{
 }
 .container-fluid{
   width:100%;
-  
-
 }
 .flex-row{
   display: flex;
@@ -86,7 +81,6 @@ section.hero{
   z-index: 1;
 
 }
-
 section.hero .hero_img{
    object-fit: cover;
    /* width:1900px; */
@@ -142,11 +136,9 @@ h3,h4{
   right:12px;
 }
 .btn:hover{
-  
   background: var(--blue-8);
   padding:15px 35px 15px 20px;
   border: none;
-  
 }
 .btn:hover::after{
   opacity: 1;
