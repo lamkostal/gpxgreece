@@ -51,7 +51,7 @@
           <h3>Στείλε το μήνυμά σου</h3>
            <form class="contact-form row"
             netlify-honeypot="bot-field"
-            data-netlify="true"
+            netlify
             name="contact" 
             method="post" 
             action="/success/">
