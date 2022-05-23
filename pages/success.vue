@@ -1,6 +1,6 @@
 <template>
  <div class="container success">
-      <h1>Το μύνημα σας εστάλει με επιτυχία</h1>
+      <h1>Το μύνημα σας εστάλη με επιτυχία</h1>
       <nuxt-link to="/" class="back-home">Επιστροφή στην αρχική σελίδα</nuxt-link>
  </div>
 </template>
