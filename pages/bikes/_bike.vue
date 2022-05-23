@@ -235,9 +235,6 @@ export default {
         scrollTrigger: {
           trigger: h2,
           start: "bottom bottom",
-          // scrub: true,
-          // end: "+=500",
-          // markers: true,
         },
       });
     });
@@ -256,10 +253,7 @@ export default {
           trigger: detail,
           start: "top center",
           toggleActions: "restart reverse restart reverse",
-
-          // scrub: true,
           end: "bottom+=100 center",
-          // markers: true,
         },
       });
     });
@@ -277,14 +271,11 @@ export default {
         },
       });
     });
-
     //details full width
-
         gsap.from('.full-width-detail_img',{x:-150,opacity:0, duration:1,
          scrollTrigger: {
           trigger: '.full-width-detail',
           start: "top center",
-         
         }},)
         gsap.from('.full-width-detail_text',{x:150,opacity:0,
          duration:1,
