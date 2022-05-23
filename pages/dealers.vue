@@ -70,7 +70,7 @@
    <div class="dealer-contact align-center">
      <h2 >Σας ενδιαφέρει να γίνετε αντιπρόσωπος της <b>GPX</b>;</h2>
      <h3>Στείλε μας το μήνυμά σας, και θα επικοινωνήσουμε μαζί σας</h3>
-     <form class="contact-form row" netlify-honeypot="bot-field" data-netlify="true" name="dealer-contact" action="/success/"
+     <form class="contact-form row" netlify-honeypot="bot-field" data-netlify="true" name="dealer-contact" 
   method="post">
         <p class="hidden">
     <label>

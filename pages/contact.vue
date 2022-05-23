@@ -49,7 +49,7 @@
         <!-- φορμα επικοινωνίας -->
         <div class="contact">
           <h3>Στείλε το μήνυμά σου</h3>
-           <form class="contact-form row" netlify-honeypot="bot-field" data-netlify="true" name="contact" action="/success/"
+           <form class="contact-form row" netlify-honeypot="bot-field" data-netlify="true" name="contact" 
   method="post">
    <p class="hidden">
     <label>
