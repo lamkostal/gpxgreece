@@ -6,14 +6,14 @@
 </head>
 
 <body {{ BODY_ATTRS }}>
-  <form name="contact" netlify netlify-honeypot="bot-field" hidden >
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden action="/success">
     <input type="text" name="name" >
     <input type="text" name="email" >
     <input type="text" name="message" >
     <input name="checkbox" class="input-text js-input" type="checkbox" required>
   </form>
 
-  <form name="dealer-contact" netlify netlify-honeypot="bot-field" hidden>
+  <form name="dealer-contact" netlify netlify-honeypot="bot-field" hidden action="/success">
     <input type="text" name="name" >
     <input type="text" name="email" >
     <input type="text" name="message" >
