@@ -54,10 +54,10 @@
             netlify
             name="contact" 
             method="post" 
-            action="/success/">
+            action="/success">
    <p class="hidden">
     <label>
-      Don’t fill this out if you’re human: <input name="bot-field" />
+      Don’t fill this out if you’re human: <input name="bot-field" >
     </label>
   </p>
         <div class="form-field col x-50">

@@ -146,7 +146,7 @@
           >
             <p class="hidden">
               <label>
-                Don’t fill this out if you’re human: <input name="bot-field" />
+                Don’t fill this out if you’re human: <input name="bot-field" >
               </label>
             </p>
             <div class="form-field col x-50">
@@ -158,7 +158,7 @@
                 :class="{ 'not-empty': notEmpty1 }"
                 type="text"
                 required
-              />
+              >
               <label class="label" for="name">Επωνυμία</label>
             </div>
             <div class="form-field col x-50">
@@ -170,7 +170,7 @@
                 :class="{ 'not-empty': notEmpty2 }"
                 type="email"
                 required
-              />
+              >
               <label class="label" for="email">E-mail</label>
             </div>
             <div class="form-field col x-100">
@@ -182,7 +182,7 @@
                 :class="{ 'not-empty': notEmpty3 }"
                 type="text"
                 required
-              />
+              >
               <label class="label" for="message">Μήνυμα</label>
             </div>
             <div class="form-field col x-100">
@@ -192,14 +192,14 @@
                 class="input-text js-input"
                 type="checkbox"
                 required
-              />
+              >
               <span
                 >Έχω διαβάσει και συναινώ με την
                 <nuxt-link to="/privacy">πολιτική απορρήτου</nuxt-link></span
               >
             </div>
             <div class="form-field col x-100 align-center">
-              <input class="btn" type="submit" value="Submit" />
+              <input class="btn" type="submit" value="Submit" >
             </div>
           </form>
         </div>
