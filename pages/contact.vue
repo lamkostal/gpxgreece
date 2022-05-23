@@ -49,8 +49,12 @@
         <!-- φορμα επικοινωνίας -->
         <div class="contact">
           <h3>Στείλε το μήνυμά σου</h3>
-           <form class="contact-form row" netlify-honeypot="bot-field" data-netlify="true" name="contact" 
-  method="post">
+           <form class="contact-form row"
+            netlify-honeypot="bot-field"
+            data-netlify="true"
+            name="contact" 
+            method="post" 
+            action="/success/">
    <p class="hidden">
     <label>
       Don’t fill this out if you’re human: <input name="bot-field" />
