@@ -59,7 +59,7 @@
           <div class="bike-info popz-info scr-text">
             <h2>POPz 125</h2>
             <p>
-             Ανακάλυψε την POPz πλευρα της ζωής! Με κινητήρα 125κ.εκ, ποιοτική κατασκευή και ασυναγώνιστη τιμή έρχεται να δώσει μια νέα νότα στους δρόμους της πόλης
+             Ανακάλυψε την POPz πλευρα της ζωής! Με κινητήρα 125κ.εκ, ποιοτική κατασκευή και ασυναγώνιστη τιμή έρχεται να δώσει μια νέα νότα στους δρόμους της πόλης.
             </p>
             <nuxt-link to="/bikes/popz" class="btn">ΔΕΣ ΤΟ ΑΝΑΛΥΤΙΚΑ</nuxt-link>
           </div>
@@ -85,9 +85,7 @@
           <div class="bike-info rock-info scr-text">
             <h2>ROCK 125</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-              quibusdam ad repellendus maiores provident! Officia perferendis,
-              reprehenderit assumenda
+            Με 90'ς αισθητική και ροκ διάθεση έρχεται να κατακτήσει τις καθημερινές διαδομές στην πόλη. Χρηστικό, αξιόπιστο και πάντα ροκ.
             </p>
             <nuxt-link to="/bikes/rock" class="btn">ΔΕΣ ΤΟ ΑΝΑΛΥΤΙΚΑ</nuxt-link>
           </div>
@@ -110,8 +108,7 @@
           <div class="map-img">
             <nuxt-link to="/dealers"
               >
-              <!-- <img src="~/assets/img/map-mockup.jpg" alt=""
-            /> -->
+            
             </nuxt-link>
           </div>
           <nuxt-link to="/dealers" class="btn"> δες το χαρτη </nuxt-link>
@@ -128,8 +125,6 @@ export default {
  ScrollTrigger.refresh()
   },
   mounted() {
-    
-    
 
     gsap.to('.three-d',{opacity:1,delay:0.9,duration:0.8});
 
@@ -385,7 +380,6 @@ max-width: 50ch;
   }
   .imgs-content {
     width: 100vw;
-   
 }
 }
 .intro h2 {

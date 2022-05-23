@@ -262,5 +262,8 @@ input[type="submit" i]:hover{
   opacity: 0;
   transform: translateY(-50px);
 }
+.hidden{
+  visibility: hidden;
+}
 
 </style>

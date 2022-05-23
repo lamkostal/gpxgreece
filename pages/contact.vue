@@ -49,7 +49,13 @@
         <!-- φορμα επικοινωνίας -->
         <div class="contact">
           <h3>Στείλε το μήνυμά σου</h3>
-           <form class="contact-form row">
+           <form class="contact-form row" netlify-honeypot="bot-field" data-netlify="true" name="contact" action="/success"
+  method="POST">
+   <p class="hidden">
+    <label>
+      Don’t fill this out if you’re human: <input name="bot-field" />
+    </label>
+  </p>
         <div class="form-field col x-50">
            <input id="name" @keyup="notEmpty1=true" class="input-text js-input" :class="{'not-empty':notEmpty1}" type="text" required>
            <label class="label" for="name">Όνομα</label>
@@ -87,7 +93,6 @@ export default {
       notEmpty3:false,
     }
   }
-
 
 }
 </script>

@@ -195,7 +195,7 @@ export default {
       }
       
       )
-      // .then(()=>ScrollTrigger.refresh())
+  
        
   },
   computed: {
@@ -211,7 +211,7 @@ export default {
     // GSAP ANIMATIONS
   setTimeout(()=>{
     
-    ScrollTrigger.refresh()
+    // ScrollTrigger.refresh()
     gsap.from("h1", {
       opacity: 0,
       duration: 1.2,
@@ -248,10 +248,10 @@ export default {
       gsap.to(detail, {
         rotationY: 0,
         // scale:2,
-        duration: 1.8,
-        flexBasis: 800,
+        duration: 1.6,
+        flexBasis: 700,
         borderRadius: 5,
-        ease: "power3.out",
+        ease: "power2.out",
         scrollTrigger: {
           trigger: detail,
           start: "top center",
@@ -388,8 +388,6 @@ export default {
   },
   once: true
 });
-
-
 
   },1000)
 

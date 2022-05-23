@@ -54,7 +54,7 @@
             <NuxtLink to="/bikes/rock">
               <img
               @mouseenter="rockAnimDec()"
-                src="~/assets/img/Rock-side-thumb.png"
+                src="~/assets/img/Rock-bl-side-thumb-s.png"
                 alt="rock thumbnail"
               />
 

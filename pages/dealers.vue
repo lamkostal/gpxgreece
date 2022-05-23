@@ -70,7 +70,13 @@
    <div class="dealer-contact align-center">
      <h2 >Σας ενδιαφέρει να γίνετε αντιπρόσωπος της <b>GPX</b>;</h2>
      <h3>Στείλε μας το μήνυμά σας, και θα επικοινωνήσουμε μαζί σας</h3>
-     <form class="contact-form row">
+     <form class="contact-form row" netlify-honeypot="bot-field" data-netlify="true" name="dealer-contact" action="/success"
+  method="POST">
+        <p class="hidden">
+    <label>
+      Don’t fill this out if you’re human: <input name="bot-field" />
+    </label>
+  </p>
         <div class="form-field col x-50">
            <input id="name" @keyup="notEmpty1=true" class="input-text js-input" :class="{'not-empty':notEmpty1}" type="text" required>
            <label class="label" for="name">Επωνυμία</label>
