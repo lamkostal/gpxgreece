@@ -70,8 +70,8 @@
    <div class="dealer-contact align-center">
      <h2 >Σας ενδιαφέρει να γίνετε αντιπρόσωπος της <b>GPX</b>;</h2>
      <h3>Στείλε μας το μήνυμά σας, και θα επικοινωνήσουμε μαζί σας</h3>
-     <form class="contact-form row" netlify-honeypot="bot-field" data-netlify="true" name="dealer-contact" action="/success"
-  method="POST">
+     <form class="contact-form row" netlify-honeypot="bot-field" data-netlify="true" name="dealer-contact" action="/success/"
+  method="post">
         <p class="hidden">
     <label>
       Don’t fill this out if you’re human: <input name="bot-field" />
@@ -92,8 +92,6 @@
         <div class="form-field col x-100">
            <input name="checkbox" id="checkbox"  class="input-text js-input"  type="checkbox" required>
            <span>Έχω διαβάσει και συναινώ με την <nuxt-link to="/privacy">πολιτική απορρήτου</nuxt-link></span>
-
-  
         </div>
         <div class="form-field col x-100 align-center">
            <input class="btn" type="submit" value="Submit">
