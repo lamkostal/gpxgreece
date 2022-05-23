@@ -2,7 +2,7 @@ const axios= require("axios");
 
 export default {
   
-
+  ssr:false,
   target: 'static',
   // mode: 'universal',
 
