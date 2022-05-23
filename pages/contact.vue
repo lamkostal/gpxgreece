@@ -57,19 +57,19 @@
     </label>
   </p>
         <div class="form-field col x-50">
-           <input id="name" @keyup="notEmpty1=true" class="input-text js-input" :class="{'not-empty':notEmpty1}" type="text" required>
+           <input name="name" id="name" @keyup="notEmpty1=true" class="input-text js-input" :class="{'not-empty':notEmpty1}" type="text" required>
            <label class="label" for="name">Όνομα</label>
         </div>
         <div class="form-field col x-50">
-           <input id="email" @keyup="notEmpty2=true" class="input-text js-input" :class="{'not-empty':notEmpty2}" type="email" required>
+           <input name="email" id="email" @keyup="notEmpty2=true" class="input-text js-input" :class="{'not-empty':notEmpty2}" type="email" required>
            <label class="label" for="email">E-mail</label>
         </div>
         <div class="form-field col x-100">
-           <input id="message" @keyup="notEmpty3=true" class="input-text js-input" :class="{'not-empty':notEmpty3}" type="text" required>
+           <input  name="message"  id="message" @keyup="notEmpty3=true" class="input-text js-input" :class="{'not-empty':notEmpty3}" type="text" required>
            <label class="label" for="message">Μήνυμα</label>
         </div>
         <div class="form-field col x-100">
-           <input id="checkbox"  class="input-text js-input"  type="checkbox" required>
+           <input  name="checkbox"  id="checkbox"  class="input-text js-input"  type="checkbox" required>
            <span>Έχω διαβάσει και συναινώ με την <nuxt-link to="/privacy">πολιτική απορρήτου</nuxt-link></span>
 
         </div>
