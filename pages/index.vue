@@ -13,7 +13,7 @@
           class="hero_side_img hero_popz_img"
         />
         <img
-          src="~/assets/img/rock-black.webp"
+          src="~/assets/img/rock/rock-redblack-right-s.png"
           alt=""
           class="hero_side_img hero_rock_img"
         />
@@ -59,7 +59,7 @@
           <div class="bike-info popz-info scr-text">
             <h2>POPz 125</h2>
             <p>
-             Ανακάλυψε την POPz πλευρα της ζωής! Με κινητήρα 125κ.εκ, ποιοτική κατασκευή και ασυναγώνιστη τιμή έρχεται να δώσει μια νέα νότα στους δρόμους της πόλης.
+             Ξεχάστε τα τετριμμένα! Το νέο POPz ήρθε να χαράξει νέα όρια στο σχεδιασμό ενός παπιού. Ανακαλύψτε την POPz πλευρα της ζωής. Με κινητήρα 125κ.εκ, ποιοτική κατασκευή και ασυναγώνιστη τιμή έρχεται να δώσει μια νέα νότα στους δρόμους της πόλης.
             </p>
             <nuxt-link to="/bikes/popz" class="btn">ΔΕΣ ΤΟ ΑΝΑΛΥΤΙΚΑ</nuxt-link>
           </div>
@@ -85,7 +85,7 @@
           <div class="bike-info rock-info scr-text">
             <h2>ROCK 125</h2>
             <p>
-            Με 90'ς αισθητική και ροκ διάθεση έρχεται να κατακτήσει τις καθημερινές διαδομές στην πόλη. Χρηστικό, αξιόπιστο και πάντα ροκ.
+            Με σύγχρονη 90'ς αισθητική και ροκ διάθεση έρχεται να συντροφεύσει τις καθημερινές διαδομές στην πόλη. Πρακτικό, αξιόπιστο και πάντα ROCK.
             </p>
             <nuxt-link to="/bikes/rock" class="btn">ΔΕΣ ΤΟ ΑΝΑΛΥΤΙΚΑ</nuxt-link>
           </div>
@@ -132,7 +132,7 @@ export default {
 
     gsap.fromTo(".arrow", { y: 0,opacity:0.8 }, { y: 10 ,opacity:1,ease:'power2.in',duration:0.4,yoyo:true,repeat:-1});
 
-    gsap.fromTo("h1", { y: 40,opacity:0 }, { y: 0 ,opacity:1,ease:'power3.out',duration:1,delay: 1});
+    gsap.fromTo("h1", { y: 40,opacity:0 }, { y: -40 ,opacity:1,ease:'power3.out',duration:1,delay: 1});
 
     gsap.from('.intro-content',{y: 100,opacity:0,duration:0.8,ease:'power2.out', scrollTrigger: {
           trigger: '.intro-content',
@@ -142,13 +142,13 @@ export default {
         },})
     gsap.fromTo(
       ".hero_popz_img",
-      { x: -100, scale: 0.9, opacity: 0 },
-      { x: 50, scale: 1, opacity: 1, duration:1, delay: 1,ease:'power3.out' }
+      { x: 300, scale: 0.95, autoAlpha: 0,},
+      { x: 350, scale: 1, autoAlpha: 1, duration:1, delay: 1.4,ease:'power2.out' }
     );
     gsap.fromTo(
       ".hero_rock_img",
-      { x: 100, scale: 0.9, opacity: 0 },
-      { x: -50, scale: 1, opacity: 1, duration: 1, delay: 1,ease:'power3.out' }
+      { x: -450, scale: 0.95, autoAlpha: 0, },
+      { x: -400, scale: 1, autoAlpha: 1, duration: 1, delay: 1.4,ease:'power2.out' }
     );
     //TEXTS
     var scrText = gsap.utils.toArray(".scr-text");
@@ -156,7 +156,7 @@ export default {
     scrText.forEach((text) => {
       gsap.from(text, {
         y: 200,
-        opacity: 0,
+        autoAlpha: 0,
         duration:1.2,
         ease: "power2.out",
         scrollTrigger: {
@@ -173,7 +173,7 @@ export default {
      images.forEach((img) => {
       gsap.from(img, {
         y: 80,
-        opacity: 0,
+        autoAlpha: 0,
         duration:0.8,
         ease: "power2.out",
         scrollTrigger: {
@@ -187,7 +187,7 @@ export default {
      decos.forEach((deco) => {
       gsap.from(deco, {
         y: 200,
-        opacity: 0,
+        autoAlpha: 0,
         scale:0.2,
         duration:2.2,
         ease: "power2.out",
@@ -278,7 +278,7 @@ h1 {
 .hero_side_img {
   position: absolute;
   z-index: 3;
-  top: 200px;
+  top: 250px;
   width: 40%;
   opacity: 0;
 }

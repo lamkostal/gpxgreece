@@ -209,92 +209,14 @@ export default {
   },
   mounted() {
     // GSAP ANIMATIONS
-  setTimeout(()=>{
-    
-    // ScrollTrigger.refresh()
-    gsap.from("h1", {
-      opacity: 0,
-      duration: 1.2,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: "h1",
-        start: "top-=300 top+=200",
-        // scrub: true,
-        end: "+=500",
-        // markers: true,
-      },
-    });
-
-    var headings2 = gsap.utils.toArray("h2");
-    headings2.forEach((h2) => {
-      gsap.from(h2, {
-        scale: 0,
-        opacity: 0,
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: h2,
-          start: "bottom bottom",
-        },
-      });
-    });
-//details
-    
-    var details = gsap.utils.toArray(".detail-img");
-    details.forEach((detail) => {
-      gsap.to(detail, {
-        rotationY: 0,
-        // scale:2,
-        duration: 1.6,
-        flexBasis: 700,
-        borderRadius: 5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: detail,
-          start: "top center",
-          toggleActions: "restart reverse restart reverse",
-          end: "bottom+=100 center",
-        },
-      });
-    });
-    //detail-text-wrap
-    var detailstext = gsap.utils.toArray(".detail-text-wrap");
-    detailstext.forEach((detailt) => {
-      gsap.from(detailt, {
-        opacity:0,
-        y: 70,
-        duration: 1,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: detailt,
-          start: "top bottom",
-        },
-      });
-    });
-    //details full width
-        gsap.from('.full-width-detail_img',{x:-150,opacity:0, duration:1,
-         scrollTrigger: {
-          trigger: '.full-width-detail',
-          start: "top center",
-        }},)
-        gsap.from('.full-width-detail_text',{x:150,opacity:0,
-         duration:1,
-         scrollTrigger: {
-          trigger: '.full-width-detail',
-          start: "top center",
-          duration:2
-         
-        }},)
-
-
-    //Bikes
+     //Bikes
     var colorbikes = gsap.utils.toArray(".bike-colors-images");
 
     colorbikes.forEach((img) => {
       gsap.from(img, {
         x: -150,
         scale: 0.8,
-        opacity: 0,
+        autoAlpha: 0,
         duration: 1.2,
         delay: 0.4,
         ease: "power4.out",
@@ -339,6 +261,85 @@ export default {
   },
   once: true
 });
+  setTimeout(()=>{
+    
+    // ScrollTrigger.refresh()
+    gsap.from("h1", {
+      autoAlpha: 0,
+      duration: 1.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: "h1",
+        start: "top-=300 top+=200",
+        // scrub: true,
+        end: "+=500",
+        // markers: true,
+      },
+    });
+
+    var headings2 = gsap.utils.toArray("h2");
+    headings2.forEach((h2) => {
+      gsap.from(h2, {
+        scale: 0,
+        autoAlpha: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: h2,
+          start: "bottom bottom",
+        },
+      });
+    });
+//details
+    
+    var details = gsap.utils.toArray(".detail-img");
+    details.forEach((detail) => {
+      gsap.to(detail, {
+        rotationY: 0,
+        // scale:2,
+        duration: 1.2,
+        flexBasis: 700,
+        borderRadius: 5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: detail,
+          start: "top center",
+          toggleActions: "restart reverse restart reverse",
+          end: "bottom+=100 center",
+        },
+      });
+    });
+    //detail-text-wrap
+    var detailstext = gsap.utils.toArray(".detail-text-wrap");
+    detailstext.forEach((detailt) => {
+      gsap.from(detailt, {
+        autoAlpha: 0,
+        y: 70,
+        duration: 1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: detailt,
+          start: "top bottom",
+        },
+      });
+    });
+    //details full width
+        gsap.from('.full-width-detail_img',{x:-150,opacity:0, duration:1,
+         scrollTrigger: {
+          trigger: '.full-width-detail',
+          start: "top center",
+        }},)
+        gsap.from('.full-width-detail_text',{x:150,opacity:0,
+         duration:1,
+         scrollTrigger: {
+          trigger: '.full-width-detail',
+          start: "top center",
+          duration:2
+         
+        }},)
+
+
+   
 
     //SPECS//
     ScrollTrigger.batch(".specs-category", {
