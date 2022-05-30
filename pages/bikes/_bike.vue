@@ -140,6 +140,9 @@
   
           </div>
         </div>
+        <div class="warranty">
+        <img src="~/assets/img/EGGIISI.png" alt="">
+        </div>
       </section>
     </main>
   </div>
@@ -747,6 +750,12 @@ section h2:after {
 }
 .cert{
   width: 120px;
+}
+.warranty{
+  max-width:600px;
+  padding:0.5rem ;
+  margin-block:2rem;
+  border-block:1px solid black
 }
 
 /* transition */
