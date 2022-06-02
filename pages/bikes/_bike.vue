@@ -5,9 +5,10 @@
       <section aria-label="hero top-section" class="hero">
         <img :src="bike.HeaderImage" alt="bike.ImageAlt" class="hero_img" />
         <div class="header-btn-container">
-          <nuxt-link class="btn header-btn" to="/dealers"
+          <nuxt-link class="btn header-btn"  to="/dealers" v-if="bike.dealerBtn"
             >Βρες Αντιπροσωπο</nuxt-link
           >
+        <div v-else class="header-btn no-dealer">Αναμένεται 09/22</div>
         </div>
       </section>
     </header>
@@ -159,7 +160,7 @@ export default {
   },
   asyncData(context) {
     return context.app.$storyapi
-      .get("cdn/stories", {
+      .get("cdn/stories/", {
         version: process.env.NODE_ENV == "production" ? "published" : "draft",
         starts_with: `bikes`,
       })
@@ -175,6 +176,7 @@ export default {
           products: res.data.stories.map((items) => {
             return {
               title: items.content.name,
+              dealerBtn: items.content.dealerBtn,
               HeaderImage: items.content.HeaderImage.filename,
               ImageAlt: items.content.HeaderImage.alt,
               BikeColors: items.content.BikeColors,
@@ -299,10 +301,9 @@ export default {
     details.forEach((detail) => {
       gsap.to(detail, {
         rotationY: 0,
-        // scale:2,
+        scale:1,
         duration: 1.2,
-        flexBasis: 700,
-        borderRadius: 5,
+        
         ease: "power2.out",
         scrollTrigger: {
           trigger: detail,
@@ -317,9 +318,9 @@ export default {
     detailstext.forEach((detailt) => {
       gsap.from(detailt, {
         autoAlpha: 0,
-        y: 70,
-        duration: 1,
-        ease: "power1.out",
+        y: 120,
+        duration: 1.5,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: detailt,
           start: "top bottom",
@@ -362,10 +363,10 @@ export default {
   onEnter: elements => {
     gsap.from(elements, {
       ease:'power1.out',
-      duration:0.4,
+      duration:0.3,
       autoAlpha: 0,
       y: 100,
-      stagger: 0.2
+      stagger: 0.1
     });
   },
   once: true
@@ -412,10 +413,19 @@ section {
   /* background:linear-gradient(90deg,transparent,30%,rgba(36, 36, 36, 0.384)); */
 }
 .header-btn {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  color:var(--gray-0);
   background: var(--gray-9);
-  /* background: rgb(143, 143, 143, 0.8); */
   border: var(--border-size-2) solid var(--gray-0);
   font-weight: var(--font-weight-5);
+}
+.no-dealer{
+  padding:15px 20px;
+
 }
 h1 {
   letter-spacing: 0.05em;
@@ -558,13 +568,13 @@ section h2:after {
 }
 .detail-img {
   display: flex;
-  flex-basis: 550px;
+  flex-basis: 750px;
   overflow: hidden;
   box-shadow: var(--shadow-4);
   flex-wrap: wrap;
   border-radius: 0px;
   /* border:8px solid white; */
-  transform: rotateY(40deg);
+  transform: scale(0.7) rotateY(40deg);
   z-index: 10;
   /* transform-style: preserve-3d; */
   /* transition: all 0.35s ease-in-out;  */
@@ -574,7 +584,7 @@ section h2:after {
 }
 
 .detail:nth-of-type(2n) .detail-img {
-  transform: rotateY(-40deg);
+  transform: scale(0.7) rotateY(-40deg);
 }
 
 .detail-text-wrap {
