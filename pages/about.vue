@@ -130,7 +130,7 @@ p{
   gap: 1rem;
 }
 .img-container div{
- flex:0 0 500px;
+ /* flex:0 0 500px; */
  height:350px;
  overflow:hidden;
  
