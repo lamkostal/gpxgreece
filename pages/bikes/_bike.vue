@@ -261,7 +261,8 @@ export default {
       autoAlpha: 0,
       opacity:0,
       y: 150,
-      stagger: 0.2
+      stagger: 0.2,
+      lazy: false
     });
   },
   once: true
@@ -279,6 +280,7 @@ export default {
         // scrub: true,
         end: "+=500",
         // markers: true,
+        lazy: false
       },
     });
 
@@ -289,9 +291,11 @@ export default {
         autoAlpha: 0,
         duration: 1.2,
         ease: "power3.out",
+        
         scrollTrigger: {
           trigger: h2,
           start: "bottom bottom",
+          lazy: false,
         },
       });
     });
@@ -310,6 +314,7 @@ export default {
           start: "top center",
           toggleActions: "restart reverse restart reverse",
           end: "bottom+=100 center",
+          lazy: false,
         },
       });
     });
@@ -324,6 +329,7 @@ export default {
         scrollTrigger: {
           trigger: detailt,
           start: "top bottom",
+          lazy: false,
         },
       });
     });
@@ -332,12 +338,14 @@ export default {
          scrollTrigger: {
           trigger: '.full-width-detail',
           start: "top center",
+          lazy: false,
         }},)
         gsap.from('.full-width-detail_text',{x:150,opacity:0,
          duration:1,
          scrollTrigger: {
           trigger: '.full-width-detail',
           start: "top center",
+          lazy: false,
           duration:2
          
         }},)
@@ -353,6 +361,7 @@ export default {
       duration:1.5,
       autoAlpha: 0,
       y: 100,
+      lazy: false,
       stagger: 0.3
     });
   },
@@ -366,6 +375,7 @@ export default {
       duration:0.3,
       autoAlpha: 0,
       y: 100,
+      lazy: false,
       stagger: 0.1
     });
   },
@@ -379,6 +389,7 @@ export default {
       duration:0.4,
       autoAlpha: 0,
       y: 100,
+      lazy: false,
       stagger: 0.2
     });
   },
