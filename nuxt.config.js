@@ -32,11 +32,12 @@ export default {
      
     ],
     script:[
+      {src:'/js/quantacast.js',async:true },
       {src:"https://unpkg.com/leaflet@1.7.1/dist/leaflet.js",
    integrity:"sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==",
    crossorigin:""},
-   {src:'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js', body:true, defer:true},
-   {src:'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js', body:true, defer:true},
+   {src:'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js', body:true },
+   {src:'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js', body:true},
   
    ]
   },

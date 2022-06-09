@@ -8,7 +8,7 @@
           <nuxt-link class="btn header-btn"  to="/dealers" v-if="bike.dealerBtn"
             >Βρες Αντιπροσωπο</nuxt-link
           >
-        <div v-else class="header-btn no-dealer">Αναμένεται 09/22</div>
+        <div v-else class="header-btn no-dealer">Αναμένεται Σεπτέμβριο 2022</div>
         </div>
       </section>
     </header>
@@ -46,6 +46,7 @@
             </div>
           </div>
         </div>
+        <div class="price">Τιμή : {{bike.Price}}</div>
       </section>
 
       <section class="details">
@@ -185,7 +186,8 @@ export default {
               DimentionsImg: items.content.DimentionsImg,
               DimText: items.content.DimText,
               Chain:items.content.Chain,
-              Cerificates:items.content.Cerificates
+              Cerificates:items.content.Cerificates,
+              Price:items.content.price,
             };
           
           })
@@ -334,7 +336,13 @@ export default {
       });
     });
     //details full width
-        gsap.from('.full-width-detail_img',{x:-150,opacity:0, duration:1,
+    ScrollTrigger.matchMedia({
+  
+  // desktop
+  "(min-width: 800px)": function() {
+    // setup animations and ScrollTriggers for screens over 800px wide (desktop) here...
+    // ScrollTriggers will be reverted/killed when the media query doesn't match anymore.
+     gsap.from('.full-width-detail_img',{x:-150,opacity:0, duration:1,
          scrollTrigger: {
           trigger: '.full-width-detail',
           start: "top center",
@@ -349,9 +357,18 @@ export default {
           duration:2
          
         }},)
-
-
+  }, 
+  
+  // mobile
+  "(max-width: 799px)": function() {
+    // Any ScrollTriggers created inside these functions are segregated and get
+    // reverted/killed when the media query doesn't match anymore. 
    
+  }, 
+  
+});
+      
+
 
     //SPECS//
     ScrollTrigger.batch(".specs-category", {
@@ -561,6 +578,21 @@ section h2:after {
   outline: 2px solid rgb(255, 255, 255);
   cursor: pointer;
 }
+.price{
+  position:absolute;
+  padding: 1rem 3rem;
+  bottom:0px;
+  left:10%;
+  font-size: var(--font-size-3);
+  color:var(--gray-2);
+  border-radius: 40px;
+  border:2px solid var(--gray-2)
+}
+@media (max-width:768px) {
+  .price{
+    left:unset;
+  }
+}
 .details {
   background-color: var(--gray-9);
 }
@@ -579,7 +611,8 @@ section h2:after {
 }
 .detail-img {
   display: flex;
-  flex-basis: 750px;
+  justify-content: center;
+  flex-basis:45%;
   overflow: hidden;
   box-shadow: var(--shadow-4);
   flex-wrap: wrap;
@@ -590,13 +623,32 @@ section h2:after {
   /* transform-style: preserve-3d; */
   /* transition: all 0.35s ease-in-out;  */
 }
-.detail-img img{
-  width:100%;
-}
-
 .detail:nth-of-type(2n) .detail-img {
   transform: scale(0.7) rotateY(-40deg);
 }
+@media (max-width:768px){
+  .detail-img {
+  display: flex;
+  flex-basis: 750px;
+  overflow: hidden;
+  box-shadow: var(--shadow-4);
+  flex-wrap: wrap;
+  border-radius: 0px;
+  /* border:8px solid white; */
+  transform: scale(1) rotateY(0deg);
+  z-index: 10;
+  /* transform-style: preserve-3d; */
+  /* transition: all 0.35s ease-in-out;  */
+}
+.detail:nth-of-type(2n) .detail-img {
+  transform: scale(1) rotateY(0deg);
+}
+}
+.detail-img img{
+  /* width:100%; */
+}
+
+
 
 .detail-text-wrap {
   flex-basis: 35%;

@@ -133,7 +133,7 @@ export default {
 
     gsap.fromTo(".arrow", { y: 0,opacity:0.8 }, { y: 10 ,opacity:1,ease:'power2.in',duration:0.4,yoyo:true,repeat:-1});
 
-    gsap.fromTo("h1", { y: 40,opacity:0 }, { y: -10 ,opacity:1,ease:'power3.out',duration:1,delay: 1});
+    gsap.fromTo("h1", { y: 40,opacity:0 }, { y: 0 ,opacity:1,ease:'power3.out',duration:1,delay: 1});
 
     gsap.from('.intro-content',{y: 100,opacity:0,duration:0.8,ease:'power2.out', scrollTrigger: {
           trigger: '.intro-content',
@@ -143,13 +143,13 @@ export default {
         },})
     gsap.fromTo(
       ".hero_popz_img",
-      { x: 250, scale: 0.95, autoAlpha: 0,},
-      { x: 300, scale: 1, autoAlpha: 1, duration:1, delay: 1.4,ease:'power2.out' }
+      { x: '10%', scale: 0.95, autoAlpha: 0,},
+      { x: '30%', scale: 1, autoAlpha: 1, duration:1, delay: 1.4,ease:'power2.out' }
     );
     gsap.fromTo(
       ".hero_rock_img",
-      { x: -400, scale: 0.95, autoAlpha: 0, },
-      { x: -350, scale: 1, autoAlpha: 1, duration: 1, delay: 1.4,ease:'power2.out' }
+      { x: '-70%', scale: 0.95, autoAlpha: 0, },
+      { x: '-50%', scale: 1, autoAlpha: 1, duration: 1, delay: 1.4,ease:'power2.out' }
     );
     //TEXTS
     var scrText = gsap.utils.toArray(".scr-text");
