@@ -629,6 +629,7 @@ section h2:after {
 }
 @media (max-width:768px){
   .detail-img {
+     height:unset;
   display: flex;
   flex-basis: 750px;
   overflow: hidden;
@@ -646,7 +647,7 @@ section h2:after {
 }
 }
 .detail-img img{
-  /* width:100%; */
+ 
   object-fit: cover;
 }
 
