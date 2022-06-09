@@ -610,6 +610,7 @@ section h2:after {
   flex-direction: row-reverse;
 }
 .detail-img {
+  height:500px;
   display: flex;
   justify-content: center;
   flex-basis:45%;
@@ -646,6 +647,7 @@ section h2:after {
 }
 .detail-img img{
   /* width:100%; */
+  object-fit: cover;
 }
 
 
