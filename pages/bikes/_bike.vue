@@ -561,6 +561,12 @@ section h2:after {
   z-index: 1;
   padding-right: 1rem;
 }
+@media (max-width:768px){
+  .bike-colors-bullets {
+    gap: 0.2rem;
+    padding: 0;
+  }
+}
 .bullet-wrap {
   width: 6rem;
   white-space: nowrap;
@@ -642,13 +648,18 @@ section h2:after {
   /* transform-style: preserve-3d; */
   /* transition: all 0.35s ease-in-out;  */
 }
+.detail {
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+}
 .detail:nth-of-type(2n) .detail-img {
   transform: scale(1) rotateY(0deg);
 }
 }
 .detail-img img{
  
-  object-fit: cover;
+  object-fit: contain;
+  height: 100%;
 }
 
 
