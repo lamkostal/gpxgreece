@@ -1,6 +1,9 @@
 const axios= require("axios");
 
 export default {
+  sitemap: {
+    hostname:'https://gpxgreece.gr', // https://www.yoursite.com
+  },
   
   // ssr:false,
   target: 'static',
@@ -62,6 +65,7 @@ export default {
     ['storyblok-nuxt',{ accessToken: process.env.NODE_ENV == 'production' ? 
     '2hwqbz1IQGl5exK8EM7kTQtt':'BEi60G3KulmzBjQhfhZwwAtt' , cacheProvider : 
     'memory'}],
+    '@nuxtjs/sitemap'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
