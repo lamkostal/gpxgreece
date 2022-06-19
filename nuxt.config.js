@@ -2,7 +2,11 @@ const axios= require("axios");
 
 export default {
   sitemap: {
-    hostname:'https://gpxgreece.gr', // https://www.yoursite.com
+    hostname:'https://gpxgreece.gr', 
+    routes: [
+      '/bikes/popz/',
+      '/bikes/rock/',
+    ]
   },
   
   // ssr:false,
