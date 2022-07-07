@@ -73,7 +73,13 @@
 export default {
    head() {
     return {
-      title: "gpxgreece - Σχετικά"
+      title: "gpxgreece - Σχετικά",
+        link: [
+        {
+          rel: 'canonical',
+          href: 'https://gpxgreece.gr' + this.$route.path
+        }
+      ]
     };
   },
   transition: 'fade',

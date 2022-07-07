@@ -93,7 +93,13 @@
 export default {
    head() {
     return {
-      title: "gpxgreece - επικοινωνία"
+      title: "gpxgreece - επικοινωνία",
+        link: [
+        {
+          rel: 'canonical',
+          href: 'https://gpxgreece.gr' + this.$route.path
+        }
+      ]
     };
   },
   transition: 'fade',

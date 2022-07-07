@@ -153,7 +153,13 @@
 <script>
 export default { head() {
     return {
-      title: "gpxgreece - " + this.bike.title 
+      title: "gpxgreece - " + this.bike.title ,
+        link: [
+        {
+          rel: 'canonical',
+          href: 'https://gpxgreece.gr' + this.$route.path
+        }
+      ]
     };
   },
 

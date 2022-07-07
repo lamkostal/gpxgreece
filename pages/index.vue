@@ -103,8 +103,7 @@
         <div class=" dealers-info ">
           <h2 class="scr-text">Βρες έναν αντιπρόσωπο</h2>
           <h3 class="scr-text">
-            Αναζήτησε στο δίκτυο μας τον πλησιέστερο αντιπρόσωπο στην περιοχή
-            σου.
+            Αναζήτησε στο δίκτυο μας τον πλησιέστερο αντιπρόσωπο GPX στην περιοχή σου.
           </h3>
           <div class="map-img">
             <nuxt-link to="/dealers"
@@ -123,7 +122,13 @@
 export default {
    head() {
     return {
-      title: "gpxgreece - Οι μοτοσυκλέτες gpx στην Ελλάδα"
+      title: "gpxgreece - Οι μοτοσυκλέτες gpx στην Ελλάδα",
+        link: [
+        {
+          rel: 'canonical',
+          href: 'https://gpxgreece.gr' + this.$route.path
+        }
+      ]
     };
   },
   // transition: 'fade',

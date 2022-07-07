@@ -214,7 +214,13 @@
 export default {
    head() {
     return {
-      title: "gpxgreece - Βρείτε αντιπρόσωπο"
+      title: "gpxgreece - Βρείτε αντιπρόσωπο",
+        link: [
+        {
+          rel: 'canonical',
+          href: 'https://gpxgreece.gr' + this.$route.path
+        }
+      ]
     };
   },
   transition: "fade",

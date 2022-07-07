@@ -154,7 +154,13 @@
 export default {
    head() {
     return {
-      title: "gpxgreece - Απόρρητο"
+      title: "gpxgreece - Απόρρητο",
+        link: [
+        {
+          rel: 'canonical',
+          href: 'https://gpxgreece.gr' + this.$route.path
+        }
+      ]
     };
   },
 
