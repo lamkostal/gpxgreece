@@ -1,4 +1,4 @@
-!<template>
+<template>
   <section class="top-section container"><h1>Πολιτική απορρήτου</h1>
  <p>Έκδοση: 18/05/2022
  </p>
@@ -152,6 +152,11 @@
 
 <script>
 export default {
+   head() {
+    return {
+      title: "gpxgreece - Απόρρητο"
+    };
+  },
 
 }
 </script>

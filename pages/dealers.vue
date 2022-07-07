@@ -212,6 +212,11 @@
 
 <script>
 export default {
+   head() {
+    return {
+      title: "gpxgreece - Βρείτε αντιπρόσωπο"
+    };
+  },
   transition: "fade",
   data() {
     return {

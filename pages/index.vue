@@ -121,6 +121,11 @@
 
 <script>
 export default {
+   head() {
+    return {
+      title: "gpxgreece - Οι μοτοσυκλέτες gpx στην Ελλάδα"
+    };
+  },
   // transition: 'fade',
   beforeMount(){
  ScrollTrigger.refresh()

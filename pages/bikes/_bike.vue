@@ -151,7 +151,12 @@
 </template>
 
 <script>
-export default {
+export default { head() {
+    return {
+      title: "gpxgreece - " + this.bike.title 
+    };
+  },
+
   transition: "fade",
 
   data() {

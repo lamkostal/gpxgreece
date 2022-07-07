@@ -56,7 +56,7 @@
     <div><img src="~/assets/img/about/about-4-3.jpg" alt=""></div>
   </div>
     <div class="text-container">
-    <p>Σήμερα εξάγει τις μοτοσυκλέτες σε 10 χώρες στην Ασία, η Ελλάδα είναι η πρώτη ευρωπαϊκή χώρα στην οποία θα λανσαριστούν τα προϊόντα της GPX μέσω της αποκλειστικής αντιπροσώπου KSR Hellas.
+    <p>Σήμερα εξάγει τις μοτοσυκλέτες σε 10 χώρες στην Ασία, η Ελλάδα είναι η πρώτη ευρωπαϊκή χώρα στην οποία θα λανσαριστούν τα προϊόντα της GPX (gpxgreece) μέσω της αποκλειστικής αντιπροσώπου KSR Hellas.
     </p>
     </div>
     
@@ -71,6 +71,11 @@
 
 <script>
 export default {
+   head() {
+    return {
+      title: "gpxgreece - Σχετικά"
+    };
+  },
   transition: 'fade',
 mounted(){
   var aboutImgs = gsap.utils.toArray('.img-container');

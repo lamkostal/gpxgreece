@@ -91,6 +91,11 @@
 
 <script>
 export default {
+   head() {
+    return {
+      title: "gpxgreece - επικοινωνία"
+    };
+  },
   transition: 'fade',
   data(){
     return{
