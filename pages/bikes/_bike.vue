@@ -153,7 +153,7 @@
 <script>
 export default { head() {
     return {
-      title: "gpxgreece - Εξερευνήστε το" + this.bike.title ,
+      title: "gpxgreece - Εξερευνήστε το" +" "+ this.bike.title ,
         link: [
         {
           rel: 'canonical',

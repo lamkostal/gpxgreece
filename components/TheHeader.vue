@@ -3,7 +3,7 @@
     
     <nuxt-link to="/"
       ><div class="logo-container" :class="{logoScrolled:scrolled}">
-        <img src="/GPX-logo.png" alt="gpx-logo" /></div
+        <img src="/GPX-logo.png" alt="GPX - Greece" /></div
     ></nuxt-link>
     <the-nav />
     <mobile-nav  :menuOpen="menuOpen" v-on:toggledbylist="menuOpen =!menuOpen"/>
