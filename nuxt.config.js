@@ -4,8 +4,8 @@ export default {
   sitemap: {
     hostname:'https://gpxgreece.gr', 
     routes: [
-      '/bikes/popz/',
-      '/bikes/rock/',
+      '/bikes/popz',
+      '/bikes/rock',
     ]
   },
   

@@ -122,7 +122,7 @@
 export default {
    head() {
     return {
-      title: "gpxgreece - Οι μοτοσυκλέτες gpx στην Ελλάδα",
+      title: "gpxgreece - Οι μοτοσυκλέτες GPX στην Ελλάδα",
         link: [
         {
           rel: 'canonical',
