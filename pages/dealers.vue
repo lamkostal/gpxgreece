@@ -52,6 +52,10 @@
               <li class="dealer-info-item name">
                 <span> {{ dealer.name }}</span>
               </li>
+              <li class="dealer-info-item dealer-icons ">
+                <span v-show="dealer.IsShop"> <img src="~/assets/img/64-shopping-bag.svg" width="24" alt="εικονίδιο για εμπορία">Εμπορία</span>
+                <span v-show="dealer.IsRepair"><img src="~/assets/img/22-build.svg" width="24" alt="εικονίδιο για συνεργείο">Συνεργείο</span>
+              </li>
               <li class="dealer-info-item">
                 <span>
                   <svg
@@ -250,6 +254,10 @@ export default {
               name: items.content.CompanyName.length
                 ? items.content.CompanyName
                 : " ",
+              IsShop:items.content.IsShop
+                ,
+              IsRepair: items.content.IsRepair
+                ,
               street: items.content.Street.length ? items.content.Street : " ",
               city: items.content.City.length ? items.content.City : " ",
               code: items.content.PostalCode.length
@@ -420,9 +428,25 @@ li {
   font-weight: var(--font-weight-4);
   color: var(--blue-9);
   text-align: center;
+  padding-bottom: 4px;
+  align-self: center;
+  transform: translateX(-1rem);
+}
+.dealer-icons {
+  font-size: var(--font-size-0);
+  font-weight: var(--font-weight-4);
+  color: var(--gray-9);
+  text-align: center;
   padding-bottom: 7px;
   align-self: center;
   transform: translateX(-1rem);
+
+}
+.dealer-icons span{
+ padding-inline: 5px;
+}
+.dealer-icons img{
+ margin-right:3px;
 }
 span > svg {
   width: 20px;

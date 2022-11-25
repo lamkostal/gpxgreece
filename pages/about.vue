@@ -15,9 +15,11 @@
         <h1>Σχετικά</h1>
           <p>Η GPX είναι ο μεγαλύτερος κατασκευαστής δικύκλων της Ταϊλάνδης. Στα εργοστάσιά της γίνεται έρευνα, σχεδίαση και κατασκευή προϊόντων υψηλής ποιότητας σε ανταγωνιστικές τιμές.
     </p>
+    <!-- <video src=""></video> -->
+     <iframe width="100%" height="515" src="https://www.youtube.com/embed/hfFxhSKbQis" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
         
-<div class="img-container"><div><img src="~/assets/img/about/about-1.jpg" alt=""></div></div>
+<!-- <div class="img-container"><div><img src="~/assets/img/about/about-1.jpg" alt=""></div></div> -->
     <div class="text-container">
     <h2>Ιστορία</h2>
     <p>Ίδρυση το 2007. Ξεκινά σε ένα μικρό εργοστάσιο 150 τ.μ. αρχικά για την παραγωγή και αποθήκευση ATV για την αγορά της Ταϊλάνδης.
@@ -30,6 +32,7 @@
 <div class="img-container">
   <div><img src="~/assets/img/about/about-2-1.jpg" alt=""></div>
 <div>  <img src="~/assets/img/about/about-2-2.jpg" alt=""></div>
+<div><img src="~/assets/img/about/about-1.jpg" alt=""></div>
 </div>
   <div class="text-container">
   <p>Το 2011 συμμετέχει για πρώτη φορά στο Τhailand Motor show.
