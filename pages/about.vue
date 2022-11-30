@@ -16,7 +16,7 @@
           <p>Η GPX είναι ο μεγαλύτερος κατασκευαστής δικύκλων της Ταϊλάνδης. Στα εργοστάσιά της γίνεται έρευνα, σχεδίαση και κατασκευή προϊόντων υψηλής ποιότητας σε ανταγωνιστικές τιμές.
     </p>
     <!-- <video src=""></video> -->
-     <iframe width="100%" height="515" src="https://www.youtube.com/embed/hfFxhSKbQis" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+     <iframe width="100%" height="515" src="https://www.youtube.com/embed/YeSdj7dmqV8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
         
 <!-- <div class="img-container"><div><img src="~/assets/img/about/about-1.jpg" alt=""></div></div> -->
