@@ -8,7 +8,7 @@
           <nuxt-link class="btn header-btn"  to="/dealers" v-if="bike.dealerBtn"
             >Βρες Αντιπροσωπο</nuxt-link
           >
-        <div v-else class="header-btn no-dealer">Αναμένεται Μάη 2023</div>
+        <div v-else class="header-btn no-dealer">Αναμένεται</div>
         </div>
       </section>
     </header>

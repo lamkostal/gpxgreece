@@ -79,7 +79,7 @@
         </div>
       </div>
     </div>
-    <span class="copy">© copyright KSR-Hellas 2022</span>
+    <span class="copy">© copyright KSR-Hellas 2023</span>
   </footer>
 </template>
 
