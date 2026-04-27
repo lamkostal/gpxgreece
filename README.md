@@ -1,4 +1,26 @@
-# gpxgreece
+
+# GPX Greece Website
+
+This is the official website for GPX Greece, the Greek distributor of GPX motorcycles, built with Nuxt.js (Vue 2). The site presents the GPX motorcycle lineup, company information, dealer locator, and contact details for KSR Hellas.
+
+## Features
+
+- **Homepage**: Brand introduction, hero section, and highlights of GPX motorcycles.
+- **About**: Company history, milestones, and a video introduction.
+- **Bikes**: Explore the GPX motorcycle models available in Greece, with color options and details.
+- **Dealers**: Interactive map and filters to find authorized GPX dealers by region.
+- **Contact**: Contact form and company details for inquiries.
+- **Privacy**: Privacy policy in compliance with GDPR.
+
+## Tech Stack
+
+- [Nuxt.js 2](https://nuxtjs.org/) (Vue 2, SSR/Static)
+- [Storyblok](https://www.storyblok.com/) (headless CMS integration)
+- [Leaflet.js](https://leafletjs.com/) (interactive maps)
+- [GSAP](https://greensock.com/gsap/) (animations)
+- [Axios](https://axios-http.com/)
+
+## Build Setup
 
 ## Build Setup
 
@@ -17,7 +39,31 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+
+## Project Structure
+
+- `assets/` — Images, CSS, and static assets
+- `components/` — Vue components (navigation, header, footer, etc.)
+- `layouts/` — Application layouts
+- `pages/` — Main site pages (about, contact, bikes, dealers, etc.)
+- `static/` — Static files (robots.txt, JS, etc.)
+- `store/` — Vuex store (optional)
+
+## Environment Variables
+
+Storyblok API keys are managed via environment variables. See `nuxt.config.js` for details.
+
+## Contact
+
+**KSR HELLAS**  
+Λεωφ. Αθηνών 218, Χαϊδάρι 124 61, Ελλάδα  
+Τηλ: +30 210 5322105  
+Email: info@ksr-hellas.gr  
+Website: [https://ksr-hellas.gr](https://ksr-hellas.gr)
+
+## License
+
+This project is proprietary and maintained by KSR Hellas. All rights reserved.
 
 ## Special Directories
 
